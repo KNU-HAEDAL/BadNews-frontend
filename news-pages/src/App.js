@@ -7,13 +7,19 @@ import Mypage from './components/header/Mypage';
 import PageNumbers from './components/body/PageNumbers';
 
 function App() {
+    const headerStyle = {
+        display: 'flex',
+        justifyContent: 'space-between',
+    };
+
     return (
         <div className="App">
-            <div>
+            <div style={headerStyle}>
                 <TitleName />
+                <NewsSearch />
                 <Mypage />
             </div>
-            <NewsSearch />
+
             <FieldList />
             <NewsPages />
             <PageNumbers />
