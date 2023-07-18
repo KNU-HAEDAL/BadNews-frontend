@@ -1,25 +1,62 @@
+import React, { useState } from 'react';
+
 const FieldList = () => {
+    const [selectedField, setSelectedField] = useState(null);
+
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    };
+
+    const buttonStyle = {
+        background: selectedField === '정치' ? '#0357FF' : 'none',
+        color: selectedField === '정치' ? 'white' : 'black',
+        border: 'none',
+        cursor: 'pointer',
+        padding: '10px',
+        margin: '5px',
+        fontSize: '1.5rem',
+    };
+
+    const handleButtonClick = (field) => {
+        setSelectedField(field);
+    };
+
     return (
-        <div>
+        <form>
             <ul>
-                <button>정치</button>
+                <button style={buttonStyle} onClick={() => handleButtonClick('정치')}>
+                    정치
+                </button>
             </ul>
             <ul>
-                <button>경제</button>
+                <button style={buttonStyle} onClick={() => handleButtonClick('경제')}>
+                    경제
+                </button>
             </ul>
             <ul>
-                <button>사회</button>
+                <button style={buttonStyle} onClick={() => handleButtonClick('사회')}>
+                    사회
+                </button>
             </ul>
             <ul>
-                <button>IT</button>
+                <button style={buttonStyle} onClick={() => handleButtonClick('IT')}>
+                    IT
+                </button>
             </ul>
             <ul>
-                <button>연예</button>
+                <button style={buttonStyle} onClick={() => handleButtonClick('연예')}>
+                    연예
+                </button>
             </ul>
             <ul>
-                <button>스포츠</button>
+                <button style={buttonStyle} onClick={() => handleButtonClick('스포츠')}>
+                    스포츠
+                </button>
             </ul>
-        </div>
+        </form>
     );
 };
 
