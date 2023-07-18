@@ -1,4 +1,4 @@
 # frontend
 
 HAEDAL-GROWTH-HACKATHON
-frontend - Gangmins
+frontend - Gangmin
