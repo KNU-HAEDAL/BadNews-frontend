@@ -15,10 +15,7 @@ const styles = {
         border: '1px solid black',
         borderRadius: '5px',
         padding: '20px',
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
+        marginBottom: '20px',
     },
     title: {
         marginBottom: '10px',
@@ -30,17 +27,60 @@ const styles = {
     summary: {
         marginBottom: '10px',
     },
+    pageContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+    },
+    formContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
 };
 
 const NewsPages = () => {
     return (
-        <form style={styles.container}>
-            <h2 style={styles.title}>{title}</h2>
-            <ul style={styles.date}>날짜 : {date}</ul>
-            <ul style={styles.summary}>
-                요약 <p>{summary}</p>
-            </ul>
-        </form>
+        <div style={styles.pageContainer}>
+            <div style={styles.formContainer}>
+                <form style={styles.container}>
+                    <h2 style={styles.title}>{title}</h2>
+                    <ul style={styles.date}>날짜 : {date}</ul>
+                    <ul style={styles.summary}>
+                        요약 <p>{summary}</p>
+                    </ul>
+                </form>
+                <form style={styles.container}>
+                    <h2 style={styles.title}>{title}</h2>
+                    <ul style={styles.date}>날짜 : {date}</ul>
+                    <ul style={styles.summary}>
+                        요약 <p>{summary}</p>
+                    </ul>
+                </form>
+                <form style={styles.container}>
+                    <h2 style={styles.title}>{title}</h2>
+                    <ul style={styles.date}>날짜 : {date}</ul>
+                    <ul style={styles.summary}>
+                        요약 <p>{summary}</p>
+                    </ul>
+                </form>
+                <form style={styles.container}>
+                    <h2 style={styles.title}>{title}</h2>
+                    <ul style={styles.date}>날짜 : {date}</ul>
+                    <ul style={styles.summary}>
+                        요약 <p>{summary}</p>
+                    </ul>
+                </form>
+                <form style={styles.container}>
+                    <h2 style={styles.title}>{title}</h2>
+                    <ul style={styles.date}>날짜 : {date}</ul>
+                    <ul style={styles.summary}>
+                        요약 <p>{summary}</p>
+                    </ul>
+                </form>
+            </div>
+        </div>
     );
 };
 

@@ -1,8 +1,18 @@
+import React from 'react';
+import { FaSearch } from 'react-icons/fa';
+
 const NewsSearch = () => {
+    const style = {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        paddingRight: '10px',
+    };
+
     return (
-        <div>
+        <div style={style}>
             <div>
-                뉴스검색<input></input>
+                <input></input>
+                <FaSearch />
             </div>
         </div>
     );

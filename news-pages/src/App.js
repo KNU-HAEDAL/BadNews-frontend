@@ -9,8 +9,10 @@ import PageNumbers from './components/body/PageNumbers';
 function App() {
     return (
         <div className="App">
-            <TitleName />
-            <Mypage />
+            <div>
+                <TitleName />
+                <Mypage />
+            </div>
             <NewsSearch />
             <FieldList />
             <NewsPages />
