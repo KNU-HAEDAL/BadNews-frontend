@@ -1,6 +1,6 @@
 import React from 'react';
 
-const title = '기사제목 : GPT가 짱이야!';
+const title = '제목입니다';
 const date = '2023.07.18';
 const summary = 'GPT가 세상을 지배하고 있다.';
 
