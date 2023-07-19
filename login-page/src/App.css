@@ -1,9 +1,11 @@
 .App {
   justify-content: center;
   color: black;
+  font-family: Arial, sans-serif;
 }
 
 #title {
+  color:#0357ff;
   font-size: 25px;
 }
 
@@ -13,8 +15,20 @@
 
 .btn {
   justify-content: center;
-  color: #0357ff;
+  color: white;
   font-size: 16px;
+  background-color:#0357ff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: white;
+  color:#0357ff;
+  border:#0357ff;
+  border-width: 50px;
 }
 
 @keyframes App-logo-spin {
