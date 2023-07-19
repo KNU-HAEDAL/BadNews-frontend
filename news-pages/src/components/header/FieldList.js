@@ -13,6 +13,9 @@ const FieldList = () => {
             margin: '5px',
             fontSize: '1.5rem',
         },
+        containStyle: {
+            backgroundColor: ' #d7e4ff',
+        },
 
         buttonStyle: {
             background: selectedField === '정치' ? '#0357FF' : 'none',
@@ -30,7 +33,7 @@ const FieldList = () => {
     };
 
     return (
-        <form>
+        <form style={styles.containStyle}>
             <div style={styles.divStyle}>Categories</div>
             <ul>
                 <button style={styles.buttonStyle} onClick={() => handleButtonClick('정치')}>
