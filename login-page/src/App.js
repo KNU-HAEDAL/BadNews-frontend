@@ -8,8 +8,8 @@ function TextBlock() {
 }
 
 function Table() {
-  return <div className="input-table">
-    <table>
+  return <div className="input-table-outer">
+    <table className="input-table">
       <tr>
         <th><label className="txt">ID</label></th>
         <th><input type="text"></input></th>
