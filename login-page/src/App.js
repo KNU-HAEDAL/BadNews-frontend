@@ -8,9 +8,9 @@ function TextBlock() {
 }
 
 function Table() {
-  return <table className="tble">
+  return <table className="input-id-pw">
   <tr>
-    <th><label className="txt">ID</label></th>
+    <th><label className="txt" value="ID">ID</label></th>
     <th><input type="text"></input></th>
   </tr>
   <tr>
@@ -21,13 +21,13 @@ function Table() {
 }
 
 function LoginBtn() {
-  return <button className="btn">로그인</button>
+  return <button className="login-btn">로그인</button>
 }
 
 function App() {
   return (
     <div className="App">
-      <div className="box">
+      <div className="login-box">
         <form>
           <TextBlock/>
           <br/><br/>
