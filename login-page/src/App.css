@@ -1,7 +1,10 @@
 .App {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(0, 0, 0);
+  color: black;
+}
+
+#title {
+  font-size: 25px;
 }
 
 .txt {
@@ -11,10 +14,7 @@
 .btn {
   justify-content: center;
   color: #0357ff;
-}
-
-.App-link {
-  color: #61dafb;
+  font-size: 16px;
 }
 
 @keyframes App-logo-spin {
