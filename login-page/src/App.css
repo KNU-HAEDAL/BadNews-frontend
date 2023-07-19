@@ -1,11 +1,18 @@
-.App {
-  justify-content: center;
-  color: black;
+* {
   font-family: Arial, sans-serif;
+}
 
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   width: 500px;
   height: 200px;
   border: thin solid #c2c2c2;

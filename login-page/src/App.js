@@ -27,14 +27,15 @@ function LoginBtn() {
 function App() {
   return (
     <div className="App">
-      <form>
-        <TextBlock/>
-        <br/><br/>
-        <Table/>
-        <br/>
-        <LoginBtn/>
-      </form>
-      
+      <div className="box">
+        <form>
+          <TextBlock/>
+          <br/><br/>
+          <Table/>
+          <br/>
+          <LoginBtn/>
+        </form>
+      </div>
     </div>
   );
 }
