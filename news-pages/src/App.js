@@ -9,7 +9,14 @@ import PageNumbers from './components/body/PageNumbers';
 function App() {
     const headerStyle = {
         display: 'flex',
+        justifyContent: 'column',
+        alignItems: 'center',
         justifyContent: 'space-between',
+    };
+
+    const appStyle = {
+        display: 'flex',
+        flexDirection: 'column',
     };
 
     const HorizonLine = {
@@ -22,15 +29,19 @@ function App() {
 
     return (
         <div className="App">
-            <div>
+            <div style={headerStyle}>
                 <TitleName />
                 <NewsSearch />
                 <Mypage />
                 <span style={HorizonLine}></span>
             </div>
+            <div style={{ flex: 1 }}>
+                <FieldList />
+            </div>
+            <div style={{ flex: 1 }}>
+                <NewsPages />
+            </div>
 
-            <FieldList />
-            <NewsPages />
             <PageNumbers />
         </div>
     );
