@@ -9,7 +9,7 @@
   height: 100vh; /* 화면의 높이의 100 */
 }
 
-.login-box {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +23,7 @@
   padding: 25px;
 }
 
-#title {
+.title {
   color:#0357ff;
   font-size: 28px;
 }
@@ -32,14 +32,19 @@
   font-size: 16px;
 }
 
-.input-id-pw {
+.input-table {
+  display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.login-btn-outer {
+  display: flex;
+  justify-content: center;
+  
+  margin-bottom: 30px; /* 아래쪽 여백 */
 }
 
 .login-btn {
-  justify-content: center;
-  align-items: center;
   color: #0357ff;
   font-size: 16px;
   background-color: white;
@@ -47,6 +52,7 @@
   border-radius: 30px;
   padding: 8px 20px;
   cursor: pointer; /* 커서 올렸을 때 모양 변경 */
+  
 }
 
 .login-btn:hover {

@@ -2,32 +2,36 @@ import './App.css';
 
 function TextBlock() {
   return <div>
-    <strong id="title">Log In</strong>
+    <strong className="title">Log In</strong>
     <div className="txt">로그인 후 Bad News를 더욱 편리하게 사용하세요!</div>
   </div>
 }
 
 function Table() {
-  return <table className="input-id-pw">
-  <tr>
-    <th><label className="txt" value="ID">ID</label></th>
-    <th><input type="text"></input></th>
-  </tr>
-  <tr>
-    <th><label className="txt">PW</label></th>
-    <th><input type="password"></input></th>
-  </tr>
-</table>
+  return <div className="input-table">
+    <table>
+      <tr>
+        <th><label className="txt">ID</label></th>
+        <th><input type="text"></input></th>
+      </tr>
+      <tr>
+        <th><label className="txt">PW</label></th>
+        <th><input type="password"></input></th>
+      </tr>
+    </table>
+  </div>
 }
 
 function LoginBtn() {
-  return <button className="login-btn">로그인</button>
+  return <div className="login-btn-outer">
+    <button className="login-btn">로그인</button>
+    </div>
 }
 
 function App() {
   return (
     <div className="App">
-      <div className="login-box">
+      <div className="container">
         <form>
           <TextBlock/>
           <br/><br/>
