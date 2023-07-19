@@ -9,7 +9,7 @@ const styles = {
         bottom: 0,
         width: '100%',
         height: '50px',
-        backgroundColor: '#595959',
+        backgroundColor: 'lightgray',
     },
     triangleButton: {
         width: 0,

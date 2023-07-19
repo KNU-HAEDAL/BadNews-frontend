@@ -5,18 +5,12 @@ import NewsPages from './components/body/NewsPages';
 import NewsSearch from './components/body/NewsSearch';
 import Mypage from './components/header/Mypage';
 import PageNumbers from './components/body/PageNumbers';
-
+import { Mobile } from './components/Responsive';
+import { Pc } from './components/Responsive';
 function App() {
     const headerStyle = {
         display: 'flex',
-        justifyContent: 'column',
-        alignItems: 'center',
         justifyContent: 'space-between',
-    };
-
-    const appStyle = {
-        display: 'flex',
-        flexDirection: 'column',
     };
 
     const HorizonLine = {
@@ -29,20 +23,30 @@ function App() {
 
     return (
         <div className="App">
-            <div style={headerStyle}>
-                <TitleName />
-                <NewsSearch />
-                <Mypage />
-                <span style={HorizonLine}></span>
-            </div>
-            <div style={{ flex: 1 }}>
-                <FieldList />
-            </div>
-            <div style={{ flex: 1 }}>
-                <NewsPages />
-            </div>
+            <Mobile>
+                <div>
+                    <TitleName />
+                    <NewsSearch />
+                    <Mypage />
+                    <span style={HorizonLine}></span>
+                </div>
 
-            <PageNumbers />
+                <FieldList />
+                <NewsPages />
+                <PageNumbers />
+            </Mobile>
+            <Pc>
+                <div>
+                    <TitleName />
+                    <NewsSearch />
+                    <Mypage />
+                    <span style={HorizonLine}></span>
+                </div>
+
+                <FieldList />
+                <NewsPages />
+                <PageNumbers />
+            </Pc>
         </div>
     );
 }

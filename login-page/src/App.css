@@ -1,10 +1,12 @@
 .App {
   justify-content: center;
   color: black;
+  font-family: Arial, sans-serif;
 }
 
 #title {
-  font-size: 25px;
+  color:#0357ff;
+  font-size: 28px;
 }
 
 .txt {
@@ -13,15 +15,27 @@
 
 .btn {
   justify-content: center;
-  color: #0357ff;
+  color: white;
   font-size: 16px;
+  background-color:#0357ff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+.btn:hover {
+  background-color: white;
+  color:#0357ff;
+  border:#0357ff;
+  border-width: 50px;
+}
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
