@@ -1,6 +1,6 @@
 import './App.css';
 
-function LoginBlock() {
+function TextBlock() {
   return <div>
     <strong id="title">Log In</strong>
     <div className="txt">로그인 후 Bad News를 더욱 편리하게 사용하세요!</div>
@@ -8,7 +8,7 @@ function LoginBlock() {
 }
 
 function Table() {
-  return <table>
+  return <table className="tble">
   <tr>
     <th><label className="txt">ID</label></th>
     <th><input type="text"></input></th>
@@ -28,8 +28,8 @@ function App() {
   return (
     <div className="App">
       <form>
-        <LoginBlock/>
-        <br/>
+        <TextBlock/>
+        <br/><br/>
         <Table/>
         <br/>
         <LoginBtn/>

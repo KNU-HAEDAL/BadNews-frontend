@@ -2,7 +2,19 @@
   justify-content: center;
   color: black;
   font-family: Arial, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 500px;
+  height: 200px;
+  border: thin solid #c2c2c2;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #c2c2c2; /* 수평 수직 blur 색상 */
+  padding: 20px;
+  margin-bottom: 20px;
 }
+
 
 #title {
   color:#0357ff;
@@ -13,22 +25,28 @@
   font-size: 16px;
 }
 
+.tble {
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
   justify-content: center;
-  color: white;
+  align-items: center;
+  color: #0357ff;
   font-size: 16px;
-  background-color:#0357ff;
+  background-color: white;
   padding: 8px 20px;
-  border: none;
+  border: #d7e4ff;
   border-radius: 30px;
   cursor: pointer;
+  border-width: thin;
 }
 
 .btn:hover {
-  background-color: white;
+  background-color: #d7e4ff;
   color:#0357ff;
   border:#0357ff;
-  border-width: 50px;
 }
 
 /* @keyframes App-logo-spin {
