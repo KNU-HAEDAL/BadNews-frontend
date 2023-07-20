@@ -11,7 +11,7 @@ const MainPage = () => {
                 <CategoriesResult />
             </form>
         </div>
-      );
-}
+    );
+};
 
 export default MainPage;
