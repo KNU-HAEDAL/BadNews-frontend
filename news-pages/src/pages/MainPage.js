@@ -1,5 +1,4 @@
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+import Sidebar from '../components/Sidebar';
 import CategoriesResult from './components/Contents/CategoriesResult';
 import { Link } from 'react-router-dom';
 
