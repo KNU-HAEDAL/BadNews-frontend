@@ -61,7 +61,7 @@ function saveAndSend() {
 
 const LoginBtn = () => {
   return <div className="login-btn-outer">
-    <button className="login-btn" onClick="saveAndSend()">로그인</button>
+    <button className="login-btn" onClick="saveAndSend(event)">로그인</button>
   </div>
 }
 
