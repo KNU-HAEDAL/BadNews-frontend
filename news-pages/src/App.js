@@ -1,10 +1,10 @@
 import './App.css';
+import Main from './pages/MainPages';
 import Login from './pages/Login';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
-    {
-        /*const headerStyle = {
+    {/*const headerStyle = {
         display: 'flex',
         justifyContent: 'space-between',
     };
@@ -15,22 +15,21 @@ function App() {
         borderBottom: '1px solid #aaa',
         lineHeight: '0.1em',
         margin: '10px 0 20px',
-    };*/
-    }
+    };
+    */}
 
     return (
         <browserRouter>
             <div className="App">
                 <Switch>
                     <Route exact path="/">
-                        <Login />
+                        <Main />
                     </Route>
                     <Route path="/login">
                         <Login />
                     </Route>
                     
                 </Switch>
-                
             </div>
         </browserRouter>
     );

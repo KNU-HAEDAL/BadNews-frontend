@@ -1,4 +1,5 @@
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 const styles = {
   textBlock: {
@@ -41,7 +42,7 @@ function saveAndSend(event) {
 
   const url = 'http://localhost:8080/login'; // 서버의 엔드포인트 URL
   
-  // 서버로 값을 전송하는 코드를 작성합니다.
+  // 서버로 값을 전송하는 코드
   fetch(url, {
     method: 'POST',
     headers: {
@@ -55,16 +56,20 @@ function saveAndSend(event) {
       console.log(result);
     })
     .catch(error => {
-      // 에러 처리를 합니다.
+      // 에러 처리
       console.error('Error: User 정보가 없습니다. ', error);
     });
 
 }
 
 const LoginBtn = () => {
-  return <div className="login-btn-outer">
-    <button className="login-btn" onClick="saveAndSend(event)">로그인</button>
+  return ( 
+  <div className="login-btn-outer">
+    <button className="login-btn" onClick="saveAndSend(event)"><Link to="/">
+        로그인</Link>
+    </button>
   </div>
+  );
 }
 
 const Login = () => {
