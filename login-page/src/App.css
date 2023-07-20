@@ -15,22 +15,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 600px;
+  width: 550px;
   height: 230px;
   
   border: thin solid #c2c2c2; /* border-width border-style border-color */
   border-radius: 10px;
   box-shadow: 0px 0px 15px #c2c2c2; /* 수평 수직 blur 색상 */
-  padding: 15px;
+  padding: 20px;
 }
 
 .title {
   color:#0357ff;
   font-size: 28px;
+  letter-spacing: -0.5px; /* 글자 간격 */
+  line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }
 
 .txt {
   font-size: 16px;
+  line-height: 1.5;
 }
 
 .input-table-outer {
