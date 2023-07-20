@@ -1,34 +1,83 @@
-.App {
-  justify-content: center;
-  color: black;
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+* {
+  font-family: "Nanum Gothic", Arial;
 }
 
-#title {
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 화면의 높이의 100 */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 550px;
+  height: 240px;
+  
+  border: thin solid #c2c2c2; /* border-width border-style border-color */
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px #c2c2c2; /* 수평 수직 blur 색상 */
+  padding: 20px;
+}
+
+.title {
   color:#0357ff;
   font-size: 28px;
+  letter-spacing: -0.5px; /* 글자 간격 */
+  line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
+  
 }
 
 .txt {
   font-size: 16px;
+  line-height: 1.5;
 }
 
-.btn {
+#id, #pw {
+  width: 230px;
+  height: 18px;
+}
+
+.input-table-outer {
+  display: flex;
   justify-content: center;
-  color: white;
-  font-size: 16px;
-  background-color:#0357ff;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
+  align-items: center;
 }
 
-.btn:hover {
+th {
+  text-align: left;
+}
+td {
+  text-align: center;
+  height: 28px;
+}
+
+.login-btn-outer {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40px; /* 아래쪽 여백 */
+}
+
+.login-btn {
+  color: #0357ff;
+  font-size: 16px;
   background-color: white;
+  border: 2px solid #d7e4ff; /* border-width border-style border-color */
+  border-radius: 30px;
+  padding: 8px 20px;
+  cursor: pointer; /* 커서 올렸을 때 모양 변경 */
+  
+}
+
+.login-btn:hover {
+  background-color: #d7e4ff;
   color:#0357ff;
-  border:#0357ff;
-  border-width: 50px;
+  border: 2px solid #d7e4ff;
 }
 
 /* @keyframes App-logo-spin {
