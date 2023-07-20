@@ -1,0 +1,132 @@
+/* Header-container */
+
+.header-container {
+    position: absolute;
+    width: 1440px;
+    height: 147px;
+    right: 0px;
+    bottom: 877px;
+    background: #ffffff;
+    border: 1px solid rgba(194, 194, 194, 0.760784);
+
+    /* Frame 1 */
+    .frame-1 {
+        position: absolute;
+        width: 1168px;
+        height: 874px;
+        left: 274px;
+        top: 147px;
+
+        /* Ellipse 1 */
+        .ellipse-1 {
+            position: absolute;
+            width: 88px;
+            height: 89px;
+            left: 32px;
+            top: 29px;
+            background: #0357ff;
+        }
+
+        /* Bad News */
+        .bad-news {
+            position: absolute;
+            width: 264px;
+            height: 80px;
+            left: 142px;
+            top: 33px;
+            font-family: 'Jua';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 80px;
+            text-align: center;
+            color: #0357ff;
+        }
+
+        /* B */
+        .b {
+            position: absolute;
+            width: 27px;
+            height: 60px;
+            left: 63px;
+            top: 43px;
+            font-family: 'Jua';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 60px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Rectangle 3 */
+        .rectangle-3 {
+            position: absolute;
+            width: 306px;
+            height: 44px;
+            left: 995px;
+            top: 51px;
+            background: #ffffff;
+            border: 2.5px solid #0357ff;
+            border-radius: 30px;
+        }
+
+        /* Line 1 */
+        .line-1 {
+            position: absolute;
+            width: 30px;
+            height: 0px;
+            left: 1017px;
+            top: 58px;
+            border: 2px solid #0357ff;
+            transform: rotate(90deg);
+        }
+
+        /* ☌ */
+        .cross {
+            position: absolute;
+            width: 22px;
+            height: 45px;
+            left: 1300.97px;
+            top: 73.5px;
+            font-family: 'Jua';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 45px;
+            text-align: center;
+            color: #0357ff;
+            transform: rotate(120deg);
+        }
+
+        /* ???? */
+        .question {
+            position: absolute;
+            width: 64px;
+            height: 62px;
+            left: 1340px;
+            top: 41px;
+            font-family: 'Hind Guntur';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 121px;
+            color: #000000;
+        }
+
+        /* 검색어를 입력하세요 */
+        .search {
+            position: absolute;
+            width: 155px;
+            height: 21px;
+            left: 1039px;
+            top: 62px;
+            font-family: 'ABeeZee';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            color: rgba(194, 194, 194, 0.760784);
+        }
+    }
+}
