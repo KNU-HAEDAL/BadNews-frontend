@@ -21,7 +21,16 @@ function App() {
     return (
         <browserRouter>
             <div className="App">
-                <Login />
+                <Switch>
+                    <Route exact path="/">
+                        <Login />
+                    </Route>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
+                    
+                </Switch>
+                
             </div>
         </browserRouter>
     );
