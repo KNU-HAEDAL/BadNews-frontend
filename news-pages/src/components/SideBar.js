@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Categories = () => {
+const SideBar = () => {
     const [selectedField, setSelectedField] = useState(null);
 
     const styles = {
@@ -34,7 +34,7 @@ const Categories = () => {
 
     return (
         <form style={styles.containStyle}>
-            <div style={styles.divStyle}>Categories</div>
+            <div style={styles.divStyle}>SideBar</div>
             <ul>
                 <button style={styles.buttonStyle} onClick={() => handleButtonClick('정치')}>
                     정치
@@ -69,4 +69,4 @@ const Categories = () => {
     );
 };
 
-export default Categories;
+export default SideBar;
