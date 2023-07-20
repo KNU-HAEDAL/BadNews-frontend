@@ -1,18 +1,18 @@
 import Header from '../components/Header';
-import Categories from '../components/Categories';
+import Sidebar from '../components/Sidebar';
 import CategoriesResult from '../components/Contents/CategoriesResult';
 import { Link } from 'react-router-dom';
 
-const MainPages = () => {
+const MainPage = () => {
     return (
         <div className="MainPages">
             <form>
                 <Header />
-                <Categories />
+                <Sidebar />
                 <CategoriesResult />
             </form>
         </div>
       );
 }
 
-export default MainPages;
+export default MainPage;

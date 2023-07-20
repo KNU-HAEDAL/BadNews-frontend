@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Categories = () => {
+const Sidebar = () => {
     const [selectedField, setSelectedField] = useState(null);
 
     const styles = {
@@ -69,4 +69,4 @@ const Categories = () => {
     );
 };
 
-export default Categories;
+export default Sidebar;

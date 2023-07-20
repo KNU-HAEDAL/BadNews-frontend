@@ -1,5 +1,5 @@
 import './App.css';
-import Main from './pages/MainPages';
+import MainPage from './pages/MainPage';
 import Login from './pages/Login';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ function App() {
             <div className="App">
                 <Switch>
                     <Route exact path="/">
-                        <Main />
+                        <MainPage />
                     </Route>
                     <Route path="/login">
                         <Login />
