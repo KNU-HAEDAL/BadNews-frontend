@@ -28,7 +28,9 @@ const Table = () => {
   </div>
 }
 
-function saveAndSend() {
+function saveAndSend(event) {
+    event.preventDefault();
+
   // 변수에 인풋값 저장
   const idValue = document.getElementById('id').value;
   const pwValue = document.getElementById('pw').value;
@@ -65,9 +67,9 @@ const LoginBtn = () => {
   </div>
 }
 
-function App() {
+const Login = () => {
   return (
-    <div className="App">
+    <div className="Login">
       <div className="container">
         <form>
           <TextBlock/>
@@ -81,4 +83,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

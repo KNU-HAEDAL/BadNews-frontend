@@ -1,5 +1,7 @@
 import './App.css';
 import Login from './pages/Login';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 function App() {
     const headerStyle = {
         display: 'flex',
@@ -15,9 +17,11 @@ function App() {
     };
 
     return (
-        <div className="App">
-            <Login />
-        </div>
+        <browserRouter>
+            <div className="App">
+                <Login />
+            </div>
+        </browserRouter>
     );
 }
 
