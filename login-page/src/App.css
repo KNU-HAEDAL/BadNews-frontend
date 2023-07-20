@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   width: 550px;
-  height: 230px;
+  height: 240px;
   
   border: thin solid #c2c2c2; /* border-width border-style border-color */
   border-radius: 10px;
@@ -29,6 +29,7 @@
   font-size: 28px;
   letter-spacing: -0.5px; /* 글자 간격 */
   line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
+  
 }
 
 .txt {
@@ -36,13 +37,23 @@
   line-height: 1.5;
 }
 
+#id, #pw {
+  width: 230px;
+  height: 18px;
+}
+
 .input-table-outer {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-td, th {
+th {
   text-align: left;
+}
+td {
+  text-align: center;
+  height: 28px;
 }
 
 .login-btn-outer {
