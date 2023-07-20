@@ -1,4 +1,6 @@
 import './App.css';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import MainPage from './pages/MainPage';
 import Login from './pages/Login';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -21,6 +23,8 @@ function App() {
     return (
         <browserRouter>
             <div className="App">
+                <Header />
+                
                 <Switch>
                     <Route exact path="/">
                         <MainPage />
