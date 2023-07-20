@@ -32,7 +32,7 @@ function saveAndSend() {
   // 변수에 인풋값 저장
   const idValue = document.getElementById('id').value;
   const pwValue = document.getElementById('pw').value;
-
+  
   // 서버로 값을 전송하는 코드를 작성합니다.
   // 이 부분에서는 AJAX 요청이나 Fetch API 등을 사용하여 서버에 데이터를 전송할 수 있습니다.
 }
@@ -40,7 +40,7 @@ function saveAndSend() {
 const LoginBtn = () => {
   return <div className="login-btn-outer">
     <button className="login-btn" onClick="saveAndSend()">로그인</button>
-    </div>
+  </div>
 }
 
 function App() {
