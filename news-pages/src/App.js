@@ -1,9 +1,10 @@
 import './App.css';
 import Login from './pages/Login';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
-    const headerStyle = {
+    {
+        /*const headerStyle = {
         display: 'flex',
         justifyContent: 'space-between',
     };
@@ -14,7 +15,8 @@ function App() {
         borderBottom: '1px solid #aaa',
         lineHeight: '0.1em',
         margin: '10px 0 20px',
-    };
+    };*/
+    }
 
     return (
         <browserRouter>
