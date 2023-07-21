@@ -16,10 +16,10 @@ const SearchBox = () => {
 const Header = () => {
     return ( 
     <div className="Header">
-        <div className="title-container">
+        <Link to="/" className="title-container">
             <img src={logo} alt="Bad News logo" id="logo"/>
-            <Link to="/" className="header-title"><strong>Bad News</strong></Link>
-        </div>
+            <strong className="header-title">Bad News</strong>
+        </Link>
 
         <div className="search-login-container">
             <SearchBox />
