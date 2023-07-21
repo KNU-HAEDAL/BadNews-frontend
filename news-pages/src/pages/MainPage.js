@@ -9,7 +9,7 @@ const MainPage = () => {
     return (
         <div className="MainPage">
             <Sidebar />
-
+            
             <Routes>
                 <Route exact path="/" element={<CategoriesResult />} />
                 <Route exact path="/search-result" element={<SearchResult />} />

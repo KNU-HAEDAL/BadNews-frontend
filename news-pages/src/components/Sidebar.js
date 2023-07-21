@@ -5,32 +5,37 @@ import axios from 'axios';
 
 const SideBar = () => {
 
+   
+
     function showArticles (choosedCtgr){
     
-      // 변수에 인풋값 저장
-      // id 브라우저 내부 저장값으로 수정필요
-      const idValue = '1234';
-      const ctgrValue = choosedCtgr;
-      const data = {
-        userId: idValue,
-        category: ctgrValue,
-        sort: 1
-      };
+    //   // 변수에 인풋값 저장
+    //   // id 브라우저 내부 저장값으로 수정필요
+    //   const idValue = '1234';
+    //   const ctgrValue = choosedCtgr;
+    //   const data = {
+    //     userId: idValue,
+    //     category: ctgrValue,
+    //     sort: 1
+    //   };
     
-      axios.post('http://localhost:8080/article/save',{
-        userId: idValue,
-        category: ctgrValue,
-        sort: 1
-      })
-      //성공시 then 실행
-      .then(function (response) {
-        console.log(response.result);
-      })
-      //실패 시 catch 실행
-      .catch(function (error) {
-        console.log(error);
-      });
+    //   axios.post('http://localhost:8080/article/save',{
+    //     userId: idValue,
+    //     category: ctgrValue,
+    //     sort: 1
+    //   })
+    //   //성공시 then 실행
+    //   .then(function (response) {
+    //     document.querySelector('.TitleItem').value = response.data['title'];
+
+    //   })
+    //   //실패 시 catch 실행
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
     
+    document.querySelector('.TitleItem').value = 'aaa';
+
     }
 
     return (
