@@ -27,14 +27,33 @@
   text-decoration: none;
 }
 
+/* 검색창, 로그인 | 마이페이지 */
+.search-login-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* 검색창 */
-.search-box {
-  width: 200; height: 50px;
+.search-container {
   border: 2px solid #0357FF;
   border-radius: 30px;
+  align-items: center;
+  margin-right: 20px;
 }
-#search {
-  width: 1em; height: 1em;
+#search-box {
+  width: 500;
+  height: auto;
+  /* border: none; outline: none; */
+  font-size: 16px;
+}
+::placeholder {
+  color: #c2c2c2;
+}
+#search-icon {
+  width: 1.6em; height: 1.6em;
+  align-items: center;width: 500; height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* 로그인 | 마이페이지 */

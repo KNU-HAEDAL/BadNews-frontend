@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 
 const SearchBox = () => {
     return (
-        <div className="search-box">
-            <img src={search} alt="돋보기" id="search" />
+        <div className="search-container">
+            <input id="search-box" type="text" placeholder="검색어를 입력하세요"></input>
+            <img src={search} alt="돋보기" id="search-icon" />
         </div>
     );
 }
@@ -20,12 +21,14 @@ const Header = () => {
             <Link to="/" className="header-title"><strong>Bad News</strong></Link>
         </div>
 
-        <SearchBox />
+        <div className="search-login-container">
+            <SearchBox />
 
-        <div className="txt-container">
-            <Link to="/login" className="txt">로그인</Link>
-            <div className="txt">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div> 
-            <Link to="/mypage" className="txt">마이페이지</Link>
+            <div className="txt-container">
+                <Link to="/login" className="txt">로그인</Link>
+                <div className="txt">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div> 
+                <Link to="/mypage" className="txt">마이페이지</Link>
+            </div>
         </div>
     </div>
     );
