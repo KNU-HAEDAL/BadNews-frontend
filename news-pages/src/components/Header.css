@@ -1,83 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
-
-* {
-  font-family: "Nanum Gothic", Arial;
-}
+@import '../fonts/font.css';
 
 .Header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* 로고, 타이틀 */
 .title-container {
-  padding-left: 25px;
+    padding-left: 25px;
 
-  display: flex;
-  align-items: center;
-  height: 100px;
+    display: flex;
+    align-items: center;
+    height: 100px;
 }
 #logo {
-  width: 2.5em; height: 2.5em;
-  padding-right: 15px;
+    width: 2.5em;
+    height: 2.5em;
+    padding-right: 15px;
 }
 .header-title {
-  color: #0357FF;
-  font-size: 45px;
-  text-decoration: none;
+    color: #0357ff;
+    font-size: 45px;
+    font-family: 'Choromate';
+    text-decoration: none;
 }
 
 /* 검색창, 로그인 | 마이페이지 */
 .search-login-container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* 검색창 */
 .search-container {
-  padding-left: 15px; /* 컨테이너 내부 여백 */
+    padding-left: 15px; /* 컨테이너 내부 여백 */
 
-  width: 350px; height: 40px;
-  border: 2px solid #0357FF;
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
+    width: 350px;
+    height: 40px;
+    border: 2px solid #0357ff;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
 
-  padding-right: 10px; /* 컨테이너 내부 여백 */
-  
-  margin-right: 20px; /* 컨테이너 밖 여백 */
+    padding-right: 10px; /* 컨테이너 내부 여백 */
+
+    margin-right: 20px; /* 컨테이너 밖 여백 */
 }
 #search-box {
-  width: auto; height: auto;
-  /* border: none; outline: none; */
-  font-size: 16px;
+    width: auto;
+    height: auto;
+    /* border: none; outline: none; */
+    font-size: 16px;
 }
 #search-box::placeholder {
-  color: #c2c2c2;
+    color: #c2c2c2;
 }
 #search-icon {
-  margin-left: 10px; /* 이미지 밖 여백 */
+    margin-left: 10px; /* 이미지 밖 여백 */
 
-  width: 1.6em; height: 1.6em;
-  /* justify-content: center; */
-  align-items: center;
-  
-  margin-right: 15px; /* 이미지 밖 여백 */
+    width: 1.6em;
+    height: 1.6em;
+    /* justify-content: center; */
+    align-items: center;
+
+    margin-right: 15px; /* 이미지 밖 여백 */
 }
 
 /* 로그인 | 마이페이지 */
 .txt-container {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  height: 50px;
-  padding-right: 25px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 50px;
+    padding-right: 25px;
 }
 .txt {
-  display: flex;
-  align-items: center;
-  color: #595959;
-  font-size: 16px;
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #595959;
+    font-size: 16px;
+    text-decoration: none;
 }

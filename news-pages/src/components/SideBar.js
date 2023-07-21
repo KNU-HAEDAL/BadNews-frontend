@@ -1,26 +1,6 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-// const styles = {
-//     // btnStyle: {
-//     //     background: '#d7e4ff',
-//     //     border: 'none',
-//     //     cursor: 'pointer',
-//     //     padding: '10px',
-//     //     margin: '5px',
-//     //     fontSize: '18px',
-//     // },
-
-//     hoverStyle: {
-//         backgroud: '#f1f6ff',
-//     },
-
-//     containStyle: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//     },
-// };
-
 const SideBar = () => {
     return (
         <form className="Area">
