@@ -1,5 +1,7 @@
 import './Login.css';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+
 
 const styles = {
   textBlock: {
@@ -29,7 +31,7 @@ const Table = () => {
   </div>
 }
 
-function saveAndSend(event) {
+function saveAndSend (){
     //event.preventDefault();
 
   // 변수에 인풋값 저장
@@ -40,32 +42,44 @@ function saveAndSend(event) {
     pw: pwValue
   };
 
-  const url = 'http://localhost:8080/login'; // 서버의 엔드포인트 URL
   
-  // 서버로 값을 전송하는 코드
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
+  // // 서버로 값을 전송하는 코드
+  // fetch(url, {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(data)
+  // })
+  //   .then(response => response.json())
+  //   .then(result => {
+  //     // 서버의 응답을 처리합니다.
+  //     console.log(result);
+  //   })
+  //   .catch(error => {
+  //     // 에러 처리
+  //     console.error('Error: User 정보가 없습니다. ', error);
+  //   });
+
+  axios.post('http://localhost:8080/signup',{
+    id: idValue,
+    password: pwValue,
   })
-    .then(response => response.json())
-    .then(result => {
-      // 서버의 응답을 처리합니다.
-      console.log(result);
-    })
-    .catch(error => {
-      // 에러 처리
-      console.error('Error: User 정보가 없습니다. ', error);
-    });
+  //성공시 then 실행
+  .then(function (response) {
+    console.log(response.result);
+  })
+  //실패 시 catch 실행
+  .catch(function (error) {
+    console.log(error);
+  });
 
 }
 
 const LoginBtn = () => {
   return ( 
   <div className="login-btn-outer">
-    <button className="login-btn" onClick="saveAndSend(event)">
+    <button className="login-btn" onClick={saveAndSend}>
         <Link to="/" className="styled-link">로그인</Link>
     </button>
   </div>
