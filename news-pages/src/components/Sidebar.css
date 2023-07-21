@@ -15,12 +15,25 @@
     height: calc(var(--screen-height) - var(--header-height));
     left: 0px;
     top: 148px;
-    background: #d7e4ff;
+    background: #f1f6ff;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 100px;
+}
+
+#caterogies-title {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #d7e4ff;
+    /* border: 1px solid black; */
+    font-size: 20px;
+    color: #0357ff;
 }
 
 .categories-btn {
@@ -28,21 +41,19 @@
     justify-content: center;
     align-items: center;
 
-    width: 200px;
+    width: 250px;
     height: 50px;
-    background-color: #d7e4ff;
+    background-color: transparent;
     border: none;
 
     font-size: 20px;
-    font-weight: bold;
 
     cursor: pointer;
 }
 
 .categories-btn:hover {
     background-color: white;
-    color: #000000;
-    border-radius: 10px;
-
-    box-shadow: 0px 0px 15px #c2c2c2 inset;
+    color: #0357ff;
+    font-weight: bold;
+    /* box-shadow: 0px 0px 15px #c2c2c2 inset; */
 }

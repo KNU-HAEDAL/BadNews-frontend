@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #c2c2c2;
 }
 
 /* 로고, 타이틀 */
