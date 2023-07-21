@@ -1,8 +1,9 @@
 import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import MainPage from './pages/MainPage';
 import Login from './pages/Login';
+import MainPage from './pages/MainPage';
+import Mypage from './pages/Mypage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     */}
 
     return (
-        <browserRouter>
+        <BrowserRouter>
             <div className="App">
                 <Header />
                 
@@ -32,10 +33,12 @@ function App() {
                     <Route path="/login">
                         <Login />
                     </Route>
-                    
+                    <Route>
+                        <Mypage />
+                    </Route>
                 </Switch>
             </div>
-        </browserRouter>
+        </BrowserRouter>
     );
 }
 

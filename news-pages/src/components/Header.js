@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const style = {
@@ -12,7 +13,7 @@ const Header = () => {
 
     return (
         <div style={style.container}>
-            <h1 style={style.title}>BAD NEWS</h1>
+            <Link to="/"><h1 style={style.title}>Bad News</h1></Link>
         </div>
     );
 };

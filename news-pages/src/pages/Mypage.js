@@ -2,9 +2,9 @@ import Sidebar from '../components/Sidebar';
 import CategoriesResult from './components/Contents/CategoriesResult';
 import { Link } from 'react-router-dom';
 
-const MainPage = () => {
+const Mypage = () => {
     return (
-        <div className="MainPage">
+        <div className="Mypage">
             <form>
                 <Sidebar />
                 <CategoriesResult />
@@ -13,4 +13,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default Mypage;
