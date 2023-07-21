@@ -1,6 +1,6 @@
 import './PageNumbers.css';
 import { useState, useEffect } from 'react';
-import Pagination from 'react-bootstrap/Pagination';
+// import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function PageNumbers() {
