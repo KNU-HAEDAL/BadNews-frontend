@@ -1,83 +1,76 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-const SideBar = () => {
-    const [selectedField, setSelectedField] = useState(null);
-    const handleButtonClick = (field) => {
-        setSelectedField(field);
-    };
+/*
+const [selectedField, setSelctedField] = useState(null);
+const handleButtonClick = (field) => {
+    setSelectedField(field);
+}
+*/
 
-    const styles = {
-        buttonStyle: {
-            background: 'none',
-            color: 'black',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '10px',
-            margin: '5px',
-            fontSize: '18px',
-            textAlign: 'right',
-        },
-    };
+const containerStyles = {
+    buttonStyle: {
+        //background: selectedField === '정치' ? '#0357FF' : 'none',
+        //color: selectedField === '정치' ? 'white' : 'black',
+        boder: 'none',
+        cursor: 'pointer',
+        padding: '10px',
+        margin: '5px',
+        fontSize: '18px',
+    },
+};
+const styles = {
+    divStyle: {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        border: 'none',
+        padding: '10px',
+        margin: '5px',
+        fontSize: '1.5rem',
+    },
+    containStyle: {
+        backgroundColor: '#d7e4ff',
+    },
+};
+const SideBar = () => {
+    /*}
+    
+    
+};
+*/
 
     return (
         <form>
+            {' '}
             <ul>
-                <button
-                    style={styles.buttonStyle}
-                    className={`box ${selectedField === '정치' ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick('정치')}
-                >
-                    정치
-                </button>
-            </ul>
+                {' '}
+                <button style={styles} className="Politics box">
+                    {' '}
+                    정치{' '}
+                </button>{' '}
+            </ul>{' '}
             <ul>
-                <button
-                    style={styles.buttonStyle}
-                    className={`box ${selectedField === '경제' ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick('경제')}
-                >
-                    경제
-                </button>
-            </ul>
+                {' '}
+                <button className="Economy box">경제</button>{' '}
+            </ul>{' '}
             <ul>
-                <button
-                    style={styles.buttonStyle}
-                    className={`box ${selectedField === '사회' ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick('사회')}
-                >
-                    사회
-                </button>
-            </ul>
+                {' '}
+                <button className="Society box">사회</button>{' '}
+            </ul>{' '}
             <ul>
-                <button
-                    style={styles.buttonStyle}
-                    className={`box ${selectedField === 'IT' ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick('IT')}
-                >
-                    IT
-                </button>
-            </ul>
+                {' '}
+                <button className="IT box">IT</button>{' '}
+            </ul>{' '}
             <ul>
-                <button
-                    style={styles.buttonStyle}
-                    className={`box ${selectedField === '연예' ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick('연예')}
-                >
-                    연예
-                </button>
-            </ul>
+                {' '}
+                <button className="Entertainment box">연예</button>{' '}
+            </ul>{' '}
             <ul>
-                <button
-                    style={styles.buttonStyle}
-                    className={`box ${selectedField === '스포츠' ? 'selected' : ''}`}
-                    onClick={() => handleButtonClick('스포츠')}
-                >
-                    스포츠
-                </button>
-            </ul>
+                {' '}
+                <button className="Sprots box">스포츠</button>{' '}
+            </ul>{' '}
         </form>
     );
 };
-
 export default SideBar;
