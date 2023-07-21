@@ -18,7 +18,7 @@
     font-size: 32px;
     line-height: 39px;
 }
-.Politics .box {
+.Politics .sideBox {
     text-align: center;
 }
 .Economy {
@@ -33,6 +33,12 @@
     font-size: 32px;
     line-height: 39px;
 }
+
+.Economy .sideBox {
+    text-align: center;
+    color: #000000;
+}
+
 .Society {
     position: absolute;
     width: 59px;
@@ -45,10 +51,11 @@
     font-size: 32px;
     line-height: 39px;
 }
-.Society .box {
+.Society .sideBox {
     text-align: center;
     color: #000000;
 }
+
 .IT {
     position: absolute;
     width: 59px;
@@ -60,8 +67,10 @@
     font-weight: 500;
     font-size: 32px;
     line-height: 39px;
+    white-space: nowrap;
+    text-align: center;
 }
-.IT .box {
+.IT .sideBox {
     text-align: center;
     color: #000000;
 }
@@ -77,7 +86,7 @@
     font-size: 32px;
     line-height: 39px;
 }
-.Entertainment .box {
+.Entertainment .sideBox {
     color: #000000;
 }
 .Sprots {
@@ -92,7 +101,7 @@
     font-size: 32px;
     line-height: 39px;
 }
-.Sprots .box {
+.Sprots .sideBox {
     text-align: center;
     color: #000000;
 }

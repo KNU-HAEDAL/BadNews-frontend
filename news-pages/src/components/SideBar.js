@@ -1,75 +1,73 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-/*
-const [selectedField, setSelctedField] = useState(null);
-const handleButtonClick = (field) => {
-    setSelectedField(field);
-}
-*/
-
-const containerStyles = {
-    buttonStyle: {
-        //background: selectedField === '정치' ? '#0357FF' : 'none',
-        //color: selectedField === '정치' ? 'white' : 'black',
-        boder: 'none',
+const styles = {
+    btnstyle: {
+        background: '#d7e4ff',
+        border: 'none',
         cursor: 'pointer',
         padding: '10px',
         margin: '5px',
         fontSize: '18px',
     },
-};
-const styles = {
-    divStyle: {
-        display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        border: 'none',
-        padding: '10px',
-        margin: '5px',
-        fontSize: '1.5rem',
+
+    hoverStyle: {
+        backgroud: '#f1f6ff',
     },
+
     containStyle: {
-        backgroundColor: '#d7e4ff',
+        display: 'flex',
+        justifyContent: 'center',
     },
 };
 const SideBar = () => {
-    /*}
-    
-    
-};
-*/
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
 
     return (
         <form className="Area">
-            {' '}
             <ul>
-                {' '}
-                <button style={styles} className="Politics box">
-                    {' '}
-                    정치{' '}
-                </button>{' '}
-            </ul>{' '}
+                <button
+                    style={isHovered ? { ...styles.btnstyle, ...styles.hoverStyle } : styles.btnstyle}
+                    className="Politics sideBox"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    정치
+                </button>
+            </ul>
             <ul>
-                {' '}
-                <button className="Economy box">경제</button>{' '}
-            </ul>{' '}
+                <button style={styles.btnstyle} className="Economy sideBox">
+                    경제
+                </button>
+            </ul>
             <ul>
-                {' '}
-                <button className="Society box">사회</button>{' '}
-            </ul>{' '}
+                <button style={styles.btnstyle} className="Society sideBox">
+                    사회
+                </button>
+            </ul>
             <ul>
-                {' '}
-                <button className="IT box">IT</button>{' '}
-            </ul>{' '}
+                <button style={styles.btnstyle} className="IT sideBox">
+                    IT Tech
+                </button>
+            </ul>
             <ul>
-                {' '}
-                <button className="Entertainment box">연예</button>{' '}
-            </ul>{' '}
+                <button style={styles.btnstyle} className="Entertainment sideBox">
+                    연예
+                </button>
+            </ul>
             <ul>
-                {' '}
-                <button className="Sprots box">스포츠</button>{' '}
-            </ul>{' '}
+                <button style={styles.btnstyle} className="Sprots sideBox">
+                    스포츠
+                </button>
+            </ul>
         </form>
     );
 };
