@@ -38,16 +38,18 @@ const SideBar = () => {
         <form className="Area">
             <div className="categories-container">
                 <div id="categories-title">
-                    <img src={category} alt="caregories icon" id="categories-icon"/>
+                    <img src={category} alt="caregories icon" id="categories-icon" />
                     <strong>카테고리</strong>
                 </div>
 
-                <button className="categories-btn" onClick="saveAndSend(event)">정치</button>
-                <button className="categories-btn">경제</button>
-                <button className="categories-btn">사회</button>
-                <button className="categories-btn">IT | 테크</button>
-                <button className="categories-btn">연예</button>
-                <button className="categories-btn">스포츠 | 예술</button>
+                <button className="categories-btn" onClick={() => {showArticles('정치')}}>정치</button>
+                <button className="categories-btn" onClick={() => {showArticles('경제')}}>경제</button>
+                <button className="categories-btn" onClick={() => {showArticles('사회')}}>사회</button>
+                {/* IT/테크 맞나? */}
+                <button className="categories-btn" onClick={() => {showArticles('IT/과학')}}>IT | 과학</button>
+                <button className="categories-btn" onClick={() => {showArticles('생활/문화')}}>생활 | 문화</button>
+                {/* 이거도 스포츠/예술 맞나? */}
+                <button className="categories-btn" onClick={() => {showArticles('세계')}}>세계</button>
             </div>
         </form>
     );
