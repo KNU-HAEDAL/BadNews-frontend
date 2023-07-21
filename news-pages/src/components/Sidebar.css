@@ -6,37 +6,49 @@
 
 :root {
     --screen-height: 100vh; /* 화면 높이 */
-    --header-height: 200px; /* 빼고 싶은 높이 */
+    --padding: 100px; /* 빼고 싶은 높이 */
 }
-/* 사이드바 영역 (꽉 채워서) */
+/* 사이드바 영역 */
 .Area {
     display: flex;
     width: 250px;
-    height: calc(var(--screen-height) - var(--header-height));
+    height: calc(100% - 100px); /*100% - padding-bottom */
     background: #f1f6ff;
 
-    padding-top: 0px;
     padding-bottom: 100px;
 }
-/* 버튼만 담은 컨테이너 */
+/* 글자들 담은 컨테이너 */
 .categories-container {
+<<<<<<< HEAD
+    /* position: fixed; 화면이 움직여도 고정 */
+    display:flex;
+=======
     display: flex;
+>>>>>>> 52db4a1ed1851a2083ab7b36cbfc8a446141c9aa
     height: auto;
     justify-content: space-between;
     align-items: center;
     flex-direction: column; /* 세로로 배열 */
 }
-/* 카테고리 div */
+/* 카테고리 글자 */
 #categories-icon {
     width: 1.2em;
     height: 1.2em;
     margin-right: 10px;
 }
+<<<<<<< HEAD
+#categories-title {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; 
+=======
 #caterogies-title {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 250px;
+>>>>>>> 52db4a1ed1851a2083ab7b36cbfc8a446141c9aa
     height: 60px;
     background-color: #d7e4ff;
 
@@ -49,8 +61,10 @@
     justify-content: center;
     align-items: center;
 
+    flex: 1 1 0;
     width: 250px;
-    height: 60px;
+    /* height: 60px; */
+    height: auto;
     background-color: transparent;
     border: none;
 

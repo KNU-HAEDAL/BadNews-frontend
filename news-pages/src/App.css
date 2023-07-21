@@ -5,3 +5,15 @@
     src: url('./Pretendard-Light.woff') format('woff');
 }
 */
+
+body {
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
+}
