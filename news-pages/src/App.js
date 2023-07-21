@@ -6,20 +6,6 @@ import Mypage from './pages/Mypage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-    {/*const headerStyle = {
-        display: 'flex',
-        justifyContent: 'space-between',
-    };
-
-    const HorizonLine = {
-        width: '100%',
-        textAlign: 'center',
-        borderBottom: '1px solid #aaa',
-        lineHeight: '0.1em',
-        margin: '10px 0 20px',
-    };
-    */}
-
     return (
         <BrowserRouter>
             <div className="App">

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+* {
+  font-family: "Nanum Gothic", Arial;
+}
+
+.txt-box {
+
+  display: flex;
+  justify-content: right;
+}
+
+.txt {
+  color: #595959;
+  font-size: 16px;
+  text-decoration: none;
+}
