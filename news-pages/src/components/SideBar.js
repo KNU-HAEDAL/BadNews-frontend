@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 
-<<<<<<<< HEAD:news-pages/src/components/Sidebar.js
-const Sidebar = () => {
-========
 const SideBar = () => {
->>>>>>>> 0dc7557415053094765318f324a608ca0ccba02c:news-pages/src/components/SideBar.js
     const [selectedField, setSelectedField] = useState(null);
 
     const styles = {
