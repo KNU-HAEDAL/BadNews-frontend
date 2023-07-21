@@ -4,6 +4,12 @@
   font-family: "Nanum Gothic", Arial;
 }
 
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .title-container {
   display: flex;
   align-items: center;
@@ -11,7 +17,7 @@
   padding-left: 25px;
 }
 #icon {
-  size: fit-content;
+  width: 2em; height: 2em;
   padding-right: 10px;
 }
 .header-title {
