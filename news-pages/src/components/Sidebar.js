@@ -69,8 +69,4 @@ const SideBar = () => {
     );
 };
 
-<<<<<<<< HEAD:news-pages/src/components/Sidebar.js
-export default Sidebar;
-========
 export default SideBar;
->>>>>>>> 0dc7557415053094765318f324a608ca0ccba02c:news-pages/src/components/SideBar.js
