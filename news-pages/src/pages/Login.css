@@ -74,8 +74,9 @@ td {
   border-radius: 30px;
   padding: 8px 20px;
   cursor: pointer; /* 커서 올렸을 때 모양 변경 */
-  
 }
+
+Link { text-decoration: none !important; }
 
 .login-btn:hover {
   background-color: #d7e4ff;
