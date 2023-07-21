@@ -41,7 +41,7 @@ const SideBar = () => {
 */
 
     return (
-        <form>
+        <form className="Area">
             {' '}
             <ul>
                 {' '}
