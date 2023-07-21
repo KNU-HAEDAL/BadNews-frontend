@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+* {
+    font-family: 'Nanum Gothic', Arial;
+}
+
 :root {
     --screen-height: 100vh; /* 화면 높이 */
     --header-height: 200px; /* 빼고 싶은 높이 */
@@ -5,7 +11,7 @@
 
 .Area {
     display: flex;
-    width: 273px;
+    width: 250px;
     height: calc(var(--screen-height) - var(--header-height));
     left: 0px;
     top: 148px;
@@ -15,4 +21,26 @@
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.categories-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 50px;
+    background-color: #d7e4ff;
+    border: none;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.categories-btn:hover {
+    background-color: white;
+    color: #000000;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 15px #c2c2c2 inset;
 }
