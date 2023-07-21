@@ -19,12 +19,8 @@
 }
 /* 글자들 담은 컨테이너 */
 .categories-container {
-<<<<<<< HEAD
     /* position: fixed; 화면이 움직여도 고정 */
     display:flex;
-=======
-    display: flex;
->>>>>>> 52db4a1ed1851a2083ab7b36cbfc8a446141c9aa
     height: auto;
     justify-content: space-between;
     align-items: center;
@@ -36,19 +32,11 @@
     height: 1.2em;
     margin-right: 10px;
 }
-<<<<<<< HEAD
 #categories-title {
     display:flex;
     justify-content: center;
     align-items: center;
     width: 250px; 
-=======
-#caterogies-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
->>>>>>> 52db4a1ed1851a2083ab7b36cbfc8a446141c9aa
     height: 60px;
     background-color: #d7e4ff;
 
