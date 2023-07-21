@@ -1,127 +1,18 @@
+:root {
+    --screen-height: 100vh; /* 화면 높이 */
+    --header-height: 200px; /* 빼고 싶은 높이 */
+}
+
 .Area {
     display: flex;
-    align-items: flex-start;
     width: 273px;
-    height: 876px;
+    height: calc(var(--screen-height) - var(--header-height));
     left: 0px;
     top: 148px;
     background: #d7e4ff;
-}
-.Politics {
-    position: absolute;
-    width: 59px;
-    height: 39px;
-    left: 107px;
-    top: 108px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-}
-.Politics .sideBox {
-    display: flex;
-    text-align: left;
-}
-.Economy {
-    position: absolute;
-    width: 59px;
-    height: 39px;
-    left: 107px;
-    top: 217px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-}
-
-.Economy .sideBox {
-    text-align: center;
-    color: #000000;
-}
-
-.Society {
-    position: absolute;
-    width: 59px;
-    height: 39px;
-    left: 107px;
-    top: 326px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-}
-.Society .sideBox {
-    text-align: center;
-    color: #000000;
-}
-
-.IT {
-    position: absolute;
-    width: 59px;
-    height: 39px;
-    left: 107px;
-    top: 435px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-    white-space: nowrap;
-    text-align: center;
-}
-.IT .sideBox {
-    text-align: center;
-    color: #000000;
-}
-.Entertainment {
-    position: absolute;
-    width: 59px;
-    height: 39px;
-    left: 107px;
-    top: 544px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-}
-.Entertainment .sideBox {
-    color: #000000;
-}
-.Sprots {
-    position: absolute;
-    width: 98px;
-    height: 39px;
-    left: 87px;
-    top: 653px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-}
-.Sprots .sideBox {
-    text-align: center;
-    color: #000000;
-}
-
-.sidebar-btn {
-    color: #000000;
-    font-size: 32px;
-    background-color: #d7e4ff;
-    padding: 8px 20px;
-    cursor: pointer; /* 커서 올렸을 때 모양 변경 */
-}
-
-.sidebar-btn:hover {
-    background-color: #f1f6ff;
-    color: #000000;
-    border-radius: 10px;
-    width: 200px;
-    height: 50px;
-    padding: 10px 10px;
-    box-shadow: 0px 0px 15px #c2c2c2 inset;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }

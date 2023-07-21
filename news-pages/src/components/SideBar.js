@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-const styles = {
-    btnStyle: {
-        background: '#d7e4ff',
-        border: 'none',
-        cursor: 'pointer',
-        padding: '10px',
-        margin: '5px',
-        fontSize: '18px',
-    },
+// const styles = {
+//     // btnStyle: {
+//     //     background: '#d7e4ff',
+//     //     border: 'none',
+//     //     cursor: 'pointer',
+//     //     padding: '10px',
+//     //     margin: '5px',
+//     //     fontSize: '18px',
+//     // },
 
-    hoverStyle: {
-        backgroud: '#f1f6ff',
-    },
+//     hoverStyle: {
+//         backgroud: '#f1f6ff',
+//     },
 
-    containStyle: {
-        display: 'flex',
-        justifyContent: 'center',
-    },
-};
+//     containStyle: {
+//         display: 'flex',
+//         justifyContent: 'center',
+//     },
+// };
 
 const SideBar = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -34,41 +34,24 @@ const SideBar = () => {
 
     return (
         <form className="Area">
-            <ul>
-                <button
-                    style={isHovered ? { ...styles.btnStyle, ...styles.hoverStyle } : styles.btnStyle}
-                    className="Politics sideBox sidebar-btn"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    정치
-                </button>
-            </ul>
-            <ul>
-                <button style={styles.btnStyle} className="Economy sideBox">
-                    경제
-                </button>
-            </ul>
-            <ul>
-                <button style={styles.btnStyle} className="Society sideBox">
-                    사회
-                </button>
-            </ul>
-            <ul>
-                <button style={styles.btnStyle} className="IT sideBox">
-                    IT Tech
-                </button>
-            </ul>
-            <ul>
-                <button style={styles.btnStyle} className="Entertainment sideBox">
-                    연예
-                </button>
-            </ul>
-            <ul>
-                <button style={styles.btnStyle} className="Sprots sideBox">
-                    스포츠
-                </button>
-            </ul>
+            <div className="Politics sideBox sidebar-btn">
+                <button>정치</button>
+            </div>
+            <div className="Economy sideBox sidebar-btn">
+                <button>경제</button>
+            </div>
+            <div className="Society sideBox sidebar-btn">
+                <button>사회</button>
+            </div>
+            <div className="IT sideBox sidebar-btn">
+                <button>IT Tech</button>
+            </div>
+            <div className="Entertainment sideBox sidebar-btn">
+                <button>연예</button>
+            </div>
+            <div className="Sports sideBox sidebar-btn">
+                <button>스포츠</button>
+            </div>
         </form>
     );
 };
