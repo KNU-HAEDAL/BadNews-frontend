@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <div style={style.container}>
-            <Link to="/"><h1 style={style.title}>Bad News</h1></Link>
+            <Link to="/" style={{textDecoration: 'none'}}><h1 style={style.title}>Bad News</h1></Link>
         </div>
     );
 };

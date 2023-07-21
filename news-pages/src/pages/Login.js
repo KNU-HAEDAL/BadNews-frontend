@@ -66,7 +66,7 @@ const LoginBtn = () => {
   return ( 
   <div className="login-btn-outer">
     <button className="login-btn" onClick="saveAndSend(event)">
-        <Link to="/">로그인</Link>
+        <Link to="/" className="styled-link">로그인</Link>
     </button>
   </div>
   );

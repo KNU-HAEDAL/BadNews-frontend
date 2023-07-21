@@ -66,8 +66,6 @@ td {
   margin-bottom: 40px; /* 아래쪽 여백 */
 }
 
-Link { text-decoration-line: none; }
-
 .login-btn {
   color: #0357ff;
   font-size: 16px;
@@ -83,3 +81,9 @@ Link { text-decoration-line: none; }
   color:#0357ff;
   border: 2px solid #d7e4ff;
 }
+
+.styled-link {
+  text-decoration: none;
+  color: #0357ff;
+}
+/* style={{textDecoration: 'none', color: '#0357ff'}} */
