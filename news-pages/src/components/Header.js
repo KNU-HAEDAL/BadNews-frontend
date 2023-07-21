@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const SearchBox = () => {
     return (
         <div className="search-container">
-            <input id="search-box" type="text" placeholder="검색어를 입력하세요"></input>
-            <img src={search} alt="돋보기" id="search-icon" />
+            <input id="search-box" type="text" placeholder="검색어를 입력하세요" img></input>
+            <Link to="/"><img src={search} alt="돋보기" id="search-icon" /></Link>
         </div>
     );
 }
