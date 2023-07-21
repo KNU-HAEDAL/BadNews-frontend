@@ -5,9 +5,8 @@ import axios from 'axios';
 
 const SideBar = () => {
 
-   
-
-    function showArticles (choosedCtgr){
+    const showArticles = (choosedCtgr) => {
+        choosedCtgr.
     
     //   // 변수에 인풋값 저장
     //   // id 브라우저 내부 저장값으로 수정필요
@@ -46,13 +45,11 @@ const SideBar = () => {
                     <strong>카테고리</strong>
                 </div>
 
-                <button className="categories-btn" onClick={() => {showArticles('정치')}}>정치</button>
+                <button className="categories-btn" onClick={(e) => {showArticles('정치')}}>정치</button>
                 <button className="categories-btn" onClick={() => {showArticles('경제')}}>경제</button>
                 <button className="categories-btn" onClick={() => {showArticles('사회')}}>사회</button>
-                {/* IT/테크 맞나? */}
                 <button className="categories-btn" onClick={() => {showArticles('IT/과학')}}>IT | 과학</button>
                 <button className="categories-btn" onClick={() => {showArticles('생활/문화')}}>생활 | 문화</button>
-                {/* 이거도 스포츠/예술 맞나? */}
                 <button className="categories-btn" onClick={() => {showArticles('세계')}}>세계</button>
             </div>
         </form>
