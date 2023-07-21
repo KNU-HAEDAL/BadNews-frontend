@@ -1,13 +1,14 @@
 .PageWrap1 {
-    flex: auto;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .PageWrap2 {
     box-sizing: border-box;
-    margin-bottom: 30px;
+
+    margin-top: 200px;
 }
 .PageWrap3 {
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .FormContainer {
@@ -36,8 +37,20 @@
 }
 .DateItem {
     box-sizing: border-box;
-    left: 100px;
+    left: 1000px;
 }
 .SummaryItem {
     margin-bottom: '10px';
+}
+
+.CategoryNameContainer {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1048px;
+    height: auto;
+    left: 300px;
+    top: 102px;
+
+    margin-top: 15px;
 }
