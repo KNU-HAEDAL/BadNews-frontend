@@ -26,7 +26,7 @@ function App() {
                 <Header />
                 
                 <Routes>
-                    {/*<Route exact path="/" element={<MainPage />} />*/}
+                    <Route exact path="/" element={<MainPage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/mypage" element={<Mypage />} />
                 </Routes>
