@@ -16,9 +16,9 @@ const SideBar = () => {
                 </button>
                 <button className="categories-btn">경제</button>
                 <button className="categories-btn">사회</button>
-                <button className="categories-btn">IT | 테크</button>
-                <button className="categories-btn">연예</button>
-                <button className="categories-btn">스포츠 | 예술</button>
+                <button className="categories-btn">IT | 과학</button>
+                <button className="categories-btn">세계</button>
+                <button className="categories-btn">생활 | 문화</button>
             </div>
         </form>
     );

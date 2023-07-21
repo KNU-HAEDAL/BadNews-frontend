@@ -61,13 +61,16 @@ function saveAndSend (){
   //     console.error('Error: User 정보가 없습니다. ', error);
   //   });
 
+  alert("Test")
+
   axios.post('http://localhost:8080/signup',{
     id: idValue,
     password: pwValue,
   })
   //성공시 then 실행
   .then(function (response) {
-    console.log(response.result);
+    console.log(response.data);
+    
   })
   //실패 시 catch 실행
   .catch(function (error) {
