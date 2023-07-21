@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Sidebar.css';
 
 const styles = {
-    btnstyle: {
+    btnStyle: {
         background: '#d7e4ff',
         border: 'none',
         cursor: 'pointer',
@@ -20,6 +20,7 @@ const styles = {
         justifyContent: 'center',
     },
 };
+
 const SideBar = () => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -35,7 +36,7 @@ const SideBar = () => {
         <form className="Area">
             <ul>
                 <button
-                    style={isHovered ? { ...styles.btnstyle, ...styles.hoverStyle } : styles.btnstyle}
+                    style={isHovered ? { ...styles.btnStyle, ...styles.hoverStyle } : styles.btnStyle}
                     className="Politics sideBox"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
@@ -44,27 +45,27 @@ const SideBar = () => {
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnstyle} className="Economy sideBox">
+                <button style={styles.btnStyle} className="Economy sideBox">
                     경제
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnstyle} className="Society sideBox">
+                <button style={styles.btnStyle} className="Society sideBox">
                     사회
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnstyle} className="IT sideBox">
+                <button style={styles.btnStyle} className="IT sideBox">
                     IT Tech
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnstyle} className="Entertainment sideBox">
+                <button style={styles.btnStyle} className="Entertainment sideBox">
                     연예
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnstyle} className="Sprots sideBox">
+                <button style={styles.btnStyle} className="Sprots sideBox">
                     스포츠
                 </button>
             </ul>
