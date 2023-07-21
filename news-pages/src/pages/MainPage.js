@@ -4,10 +4,8 @@ import SearchResult from '../components/Contents/SearchResult';
 import { Route, Routes, Link, useLocation } from 'react-router-dom';
 
 const MainPage = () => {
-    // let location = useLocation(); /* 현재 경로의 path */
-
     return (
-        <div className="MainPage">
+        <div className="MainPage" style={{ height: 'calc(100% - 101px)'}}>
             <Sidebar />
             
             <Routes>
