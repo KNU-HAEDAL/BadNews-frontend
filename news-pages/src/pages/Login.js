@@ -29,8 +29,8 @@ const Table = () => {
   </div>
 }
 
-function saveAndSend(event) {
-    event.preventDefault();
+function saveAndSend() {
+    //event.preventDefault();
 
   // 변수에 인풋값 저장
   const idValue = document.getElementById('id').value;
@@ -65,7 +65,7 @@ function saveAndSend(event) {
 const LoginBtn = () => {
   return ( 
   <div className="login-btn-outer">
-    <button className="login-btn" onClick="saveAndSend(event)"><Link to="/">
+    <button className="login-btn" onClick="saveAndSend()"><Link to="/">
         로그인</Link>
     </button>
   </div>
