@@ -19,16 +19,17 @@ const style = {
 };
 
 const Header = () => {
-    return (
+    return ( <div>
         <div style={style.container}>
-            <Link to="/" style={style.title}><strong>Bad News</strong></Link>
-
-            <div className="txt-box">
-                <Link to="/login" className="txt">로그인</Link>
-                <> | </> 
-                <Link to="/mypage" className="txt">마이페이지</Link>
-            </div>
+            <Link to="/" style={style.title}><strong>Bad News</strong></Link>          
         </div>
+
+        <div className="txt-box">
+            <Link to="/login" className="txt">로그인</Link>
+            <div className="txt">{' | '}</div> 
+            <Link to="/mypage" className="txt">마이페이지</Link>
+        </div>
+    </div>
     );
 };
 
