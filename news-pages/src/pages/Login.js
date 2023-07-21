@@ -9,7 +9,7 @@ const styles = {
 
 const TextBlock = () => {
   return <div style={styles.textBlock}>
-    <strong className="title">Log In</strong>
+    <strong className="login-title">Log In</strong>
     <div className="txt">로그인 후 Bad News를 더욱 편리하게 사용하세요!</div>
   </div>
 }
@@ -75,7 +75,7 @@ const LoginBtn = () => {
 const Login = () => {
   return (
     <div className="Login">
-      <div className="container">
+      <div className="input-container">
         <form>
           <TextBlock/>
           <br/><br/>

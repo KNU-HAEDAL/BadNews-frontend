@@ -11,7 +11,7 @@
   height: 100vh; /* 화면의 높이의 100 */
 }
 
-.container {
+.input-table-outer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
   padding: 20px;
 }
 
-.title {
+.login-title {
   color:#0357ff;
   font-size: 28px;
   letter-spacing: -0.5px; /* 글자 간격 */
