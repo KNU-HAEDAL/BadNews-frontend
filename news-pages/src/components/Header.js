@@ -1,12 +1,13 @@
 import React from 'react';
 import './Header.css';
+import icon from '../icon.png'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    return ( <div>
+    return ( 
+    <div className="Header">
         <div className="title-container">
-            <img src="frontend/news-pages/public/icon.png" alt="icon" id="icon"/>
-            {/* frontend/news-pages/src/components/Header.js */}
+            <img src={icon} alt="icon" id="icon"/>
             <Link to="/" className="header-title"><strong>Bad News</strong></Link>
         </div>
 
@@ -16,7 +17,7 @@ const Header = () => {
 
         <div className="txt-container">
             <Link to="/login" className="txt">로그인</Link>
-            <div className="txt">&nbsp;&nbsp;|&nbsp;&nbsp;</div> 
+            <div className="txt">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div> 
             <Link to="/mypage" className="txt">마이페이지</Link>
         </div>
     </div>
