@@ -4,7 +4,6 @@
     font-family: 'Pretendard';
 }
 
-
 :root {
     --screen-height: 100vh; /* 화면 높이 */
     --header-height: 200px; /* 빼고 싶은 높이 */
@@ -18,27 +17,27 @@
 
     padding-top: 0px;
     padding-bottom: 100px;
-
 }
 /* 버튼만 담은 컨테이너 */
 .categories-container {
-    display:flex;
+    display: flex;
     height: auto;
     justify-content: space-between;
     align-items: center;
     flex-direction: column; /* 세로로 배열 */
-
 }
 /* 카테고리 div */
 #categories-icon {
-    width: 1.2em; height: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
     margin-right: 10px;
 }
 #caterogies-title {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px; height: 60px;
+    width: 250px;
+    height: 60px;
     background-color: #d7e4ff;
 
     font-size: 20px;
