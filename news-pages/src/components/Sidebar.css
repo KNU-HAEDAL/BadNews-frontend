@@ -4,15 +4,16 @@
     font-family: 'Pretendard';
 }
 
+
 :root {
     --screen-height: 100vh; /* 화면 높이 */
-    --padding: 100px; /* 빼고 싶은 높이 */
+    --header-height: 50px; /* 빼고 싶은 높이 */
 }
 /* 사이드바 영역 */
 .Area {
     display: flex;
     width: 250px;
-    height: calc(100% - 100px); /*100% - padding-bottom */
+    height: calc(100% - 100px); /*100%? - padding-bottom*/
     background: #f1f6ff;
 
     padding-bottom: 100px;
@@ -28,8 +29,7 @@
 }
 /* 카테고리 글자 */
 #categories-icon {
-    width: 1.2em;
-    height: 1.2em;
+    width: 1.2em; height: 1.2em;
     margin-right: 10px;
 }
 #categories-title {
