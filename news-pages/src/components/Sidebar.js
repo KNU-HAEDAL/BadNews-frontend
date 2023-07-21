@@ -36,7 +36,7 @@ const SideBar = () => {
         <div className="Area">
             <div className="categories-container">
                 <div id="categories-title">
-                    <img src={category} alt="caregories icon" id="categories-icon" />
+                    <img src={category} alt="categories icon" id="categories-icon" />
                     <strong>카테고리</strong>
                 </div>
 
