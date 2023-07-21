@@ -1,10 +1,9 @@
 import './App.css';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import Login from './pages/Login';
 import MainPage from './pages/MainPage';
 import Mypage from './pages/Mypage';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
     {/*const headerStyle = {
@@ -26,17 +25,12 @@ function App() {
             <div className="App">
                 <Header />
                 
-                <Switch>
-                    <Route exact path="/">
-                        <MainPage />
-                    </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    <Route>
-                        <Mypage />
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route exact path="/" element={<MainPage />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/mypage" element={<Mypage />} />
+
+                </Routes>
             </div>
         </BrowserRouter>
     );
