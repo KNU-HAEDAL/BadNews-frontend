@@ -13,7 +13,7 @@
 .Area {
     display: flex;
     width: 250px;
-    height: calc(100% - 100px); /*100%? - padding-bottom*/
+    height: calc(100% - 100px); /*100% - padding-bottom*/
     background: #f1f6ff;
 
     padding-bottom: 100px;
