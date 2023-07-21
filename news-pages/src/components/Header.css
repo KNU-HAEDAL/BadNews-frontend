@@ -13,16 +13,16 @@
 .title-container {
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 100px;
   padding-left: 25px;
 }
 #icon {
-  width: 2em; height: 2em;
+  width: 2.5em; height: 2.5em;
   padding-right: 10px;
 }
 .header-title {
   color: #0357FF;
-  font-size: 35px;
+  font-size: 45px;
   text-decoration: none;
 }
 
