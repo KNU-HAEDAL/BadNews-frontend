@@ -45,27 +45,27 @@ const SideBar = () => {
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnStyle} className="Economy sideBox">
+                <button style={styles.btnStyle} className="Economy sideBox sidebar-btn">
                     경제
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnStyle} className="Society sideBox">
+                <button style={styles.btnStyle} className="Society sideBox sidebar-btn">
                     사회
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnStyle} className="IT sideBox">
+                <button style={styles.btnStyle} className="IT sideBox sidebar-btn">
                     IT Tech
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnStyle} className="Entertainment sideBox">
+                <button style={styles.btnStyle} className="Entertainment sideBox sidebar-btn">
                     연예
                 </button>
             </ul>
             <ul>
-                <button style={styles.btnStyle} className="Sprots sideBox">
+                <button style={styles.btnStyle} className="Sports sideBox sidebar-btn">
                     스포츠
                 </button>
             </ul>

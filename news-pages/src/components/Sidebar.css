@@ -91,7 +91,7 @@
 .Entertainment .sideBox {
     color: #000000;
 }
-.Sprots {
+.Sports {
     position: absolute;
     width: 98px;
     height: 39px;
@@ -103,7 +103,7 @@
     font-size: 32px;
     line-height: 39px;
 }
-.Sprots .sideBox {
+.Sports .sideBox {
     text-align: center;
     color: #000000;
 }
@@ -118,6 +118,7 @@
 
 .sidebar-btn:hover {
     background-color: #f1f6ff;
+    background-color: red;
     color: #000000;
     border-radius: 10px;
     width: 200px;
