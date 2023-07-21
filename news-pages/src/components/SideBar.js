@@ -24,7 +24,7 @@ const SideBar = () => {
             cursor: 'pointer',
             padding: '10px',
             margin: '5px',
-            fontSize: '1.5rem',
+            fontSize: '18px',
         },
     };
 
@@ -34,7 +34,6 @@ const SideBar = () => {
 
     return (
         <form style={styles.containStyle}>
-            <div style={styles.divStyle}>SideBar</div>
             <ul>
                 <button style={styles.buttonStyle} onClick={() => handleButtonClick('정치')}>
                     정치
