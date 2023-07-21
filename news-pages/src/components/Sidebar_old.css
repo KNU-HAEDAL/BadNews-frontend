@@ -1,0 +1,124 @@
+.Area {
+    display: flex;
+    width: 273px;
+    height: 100vh;
+    left: 0px;
+    top: 148px;
+    background: #d7e4ff;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Politics {
+    position: absolute;
+    display: flex;
+    width: 100px;
+    height: 39px;
+    /* 
+    top: 108px; */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+}
+.Politics .sideBox {
+    display: flex;
+    text-align: center;
+}
+.Economy {
+    position: absolute;
+    width: 100px;
+    height: 39px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+}
+
+.Economy .sideBox {
+    text-align: center;
+    color: #000000;
+}
+
+.Society {
+    position: absolute;
+    width: 100px;
+    height: 39px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+}
+.Society .sideBox {
+    text-align: center;
+    color: #000000;
+}
+
+.IT {
+    position: absolute;
+    width: 100px;
+    height: 39px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    white-space: nowrap;
+    text-align: center;
+}
+.IT .sideBox {
+    text-align: center;
+    color: #000000;
+}
+.Entertainment {
+    position: absolute;
+    width: 100px;
+    height: 39px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+}
+.Entertainment .sideBox {
+    color: #000000;
+}
+.Sports {
+    position: absolute;
+    width: 100px;
+    height: 39px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+}
+.Sports .sideBox {
+    text-align: center;
+    color: #000000;
+}
+
+.sidebar-btn {
+    color: #000000;
+    font-size: 32px;
+    background-color: #d7e4ff;
+    cursor: pointer; /* 커서 올렸을 때 모양 변경 */
+}
+
+.sidebar-btn:hover {
+    background-color: #f1f6ff;
+    background-color: red;
+    color: #000000;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    box-shadow: 0px 0px 15px #c2c2c2 inset;
+}
