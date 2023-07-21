@@ -10,15 +10,16 @@
   align-items: center;
 }
 
+/* 로고, 타이틀 */
 .title-container {
   display: flex;
   align-items: center;
   height: 100px;
   padding-left: 25px;
 }
-#icon {
-  width: 2.5em; height: 2.5em;
-  padding-right: 10px;
+#logo {
+  width: 2.2em; height: 2.2em;
+  padding-right: 15px;
 }
 .header-title {
   color: #0357FF;
@@ -26,6 +27,17 @@
   text-decoration: none;
 }
 
+/* 검색창 */
+.search-box {
+  width: 200; height: 50px;
+  border: 2px solid #0357FF;
+  border-radius: 30px;
+}
+#search {
+  width: 1em; height: 1em;
+}
+
+/* 로그인 | 마이페이지 */
 .txt-container {
   display: flex;
   justify-content: right;

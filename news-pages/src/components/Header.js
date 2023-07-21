@@ -1,19 +1,26 @@
 import React from 'react';
 import './Header.css';
-import icon from '../icon.png'
+import logo from '../logo.png'
+import search from '../search.png'
 import { Link } from 'react-router-dom';
+
+const SearchBox = () => {
+    return (
+        <div className="search-box">
+            <img src={search} alt="돋보기" id="search" />
+        </div>
+    );
+}
 
 const Header = () => {
     return ( 
     <div className="Header">
         <div className="title-container">
-            <img src={icon} alt="icon" id="icon"/>
+            <img src={logo} alt="Bad News logo" id="logo"/>
             <Link to="/" className="header-title"><strong>Bad News</strong></Link>
         </div>
 
-        {/* <div>
-            검색창
-        </div> */}
+        <SearchBox />
 
         <div className="txt-container">
             <Link to="/login" className="txt">로그인</Link>
