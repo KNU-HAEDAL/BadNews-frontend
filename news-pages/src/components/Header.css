@@ -32,6 +32,7 @@
 .search-login-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* 검색창 */
@@ -41,16 +42,21 @@
   width: 350px; height: 40px;
   border: 2px solid #0357FF;
   border-radius: 30px;
-  justify-content: center;
+  display:flex;
+  justify-content:space-between;
   align-items: center;
 
   padding-right: 10px; /* 컨테이너 내부 여백 */
   
   margin-right: 20px; /* 컨테이너 밖 여백 */
 }
+:root {
+  --container-width: 350px; 
+  --icon-width: 1.7em; /* 빼고 싶은 넓이 */
+}
 #search-box {
-  width: auto; height: auto;
-  /* border: none; outline: none; */
+  width: calc(var(--container-width) - var(--icon-width)); height: auto;
+  border: none; outline: none;
   font-size: 16px;
 }
 #search-box::placeholder {
@@ -59,11 +65,11 @@
 #search-icon {
   margin-left: 10px; /* 이미지 밖 여백 */
 
-  width: 1.6em; height: 1.6em;
-  /* justify-content: center; */
+  width: 1.7em; height: 1.7em;
+  display: flex;
   align-items: center;
   
-  margin-right: 15px; /* 이미지 밖 여백 */
+  margin-right: 5px; /* 이미지 밖 여백 */
 }
 
 /* 로그인 | 마이페이지 */
