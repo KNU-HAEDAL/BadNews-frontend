@@ -13,7 +13,7 @@ const CategoriesResult = () => {
 
     return (
         <div>
-            <div className="CategoryNameContainer">"{categoryName}"</div>
+            {/* <div className="CategoryNameContainer">"{categoryName}"</div> */}
             <div className="PageWrap1">
                 <form className="FormContainer">
                     <h2 className="TitleItem">{title}</h2>
