@@ -2,31 +2,21 @@ import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-const style = {
-    container: {
-        display: 'flex',
-        alignItems: 'center',
-        height: '50px',
-    },
-    title: {
-        color: '#0357FF',
-        fontSize: '35px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textDecoration: 'none',
-        paddingLeft: '25px'
-    },
-};
-
 const Header = () => {
     return ( <div>
-        <div style={style.container}>
-            <Link to="/" style={style.title}><strong>Bad News</strong></Link>          
+        <div className="title-container">
+            <img src="frontend/news-pages/public/icon.png" alt="icon" id="icon"/>
+            {/* frontend/news-pages/src/components/Header.js */}
+            <Link to="/" className="header-title"><strong>Bad News</strong></Link>
         </div>
 
-        <div className="txt-box">
+        {/* <div>
+            검색창
+        </div> */}
+
+        <div className="txt-container">
             <Link to="/login" className="txt">로그인</Link>
-            <div className="txt">{' | '}</div> 
+            <div className="txt">&nbsp;&nbsp;|&nbsp;&nbsp;</div> 
             <Link to="/mypage" className="txt">마이페이지</Link>
         </div>
     </div>

@@ -4,14 +4,32 @@
   font-family: "Nanum Gothic", Arial;
 }
 
-.txt-box {
+.title-container {
   display: flex;
-  justify-content: right;
-  align-items: top;
-  padding-right: 25px;
+  align-items: center;
+  height: 50px;
+  padding-left: 25px;
+}
+#icon {
+  size: fit-content;
+  padding-right: 10px;
+}
+.header-title {
+  color: #0357FF;
+  font-size: 35px;
+  text-decoration: none;
 }
 
+.txt-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 50px;
+  padding-right: 25px;
+}
 .txt {
+  display: flex;
+  align-items: center;
   color: #595959;
   font-size: 16px;
   text-decoration: none;
