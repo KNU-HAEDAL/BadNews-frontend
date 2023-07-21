@@ -1,5 +1,6 @@
 .Area {
-    position: absolute;
+    display: flex;
+    align-items: flex-start;
     width: 273px;
     height: 876px;
     left: 0px;
@@ -19,7 +20,8 @@
     line-height: 39px;
 }
 .Politics .sideBox {
-    text-align: center;
+    display: flex;
+    text-align: left;
 }
 .Economy {
     position: absolute;
@@ -104,4 +106,22 @@
 .Sprots .sideBox {
     text-align: center;
     color: #000000;
+}
+
+.sidebar-btn {
+    color: #000000;
+    font-size: 32px;
+    background-color: #d7e4ff;
+    padding: 8px 20px;
+    cursor: pointer; /* 커서 올렸을 때 모양 변경 */
+}
+
+.sidebar-btn:hover {
+    background-color: #f1f6ff;
+    color: #000000;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 15px #c2c2c2 inset;
 }

@@ -37,7 +37,7 @@ const SideBar = () => {
             <ul>
                 <button
                     style={isHovered ? { ...styles.btnStyle, ...styles.hoverStyle } : styles.btnStyle}
-                    className="Politics sideBox"
+                    className="Politics sideBox sidebar-btn"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
