@@ -5,9 +5,10 @@
 }
 
 .txt-box {
-
   display: flex;
   justify-content: right;
+  align-items: top;
+  padding-right: 25px;
 }
 
 .txt {
