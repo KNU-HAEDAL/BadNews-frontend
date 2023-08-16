@@ -1,13 +1,9 @@
-@import '../fonts/font.css';
+/* @import '../fonts/font.css';
 
 * {
     font-family: 'Pretendard';
-}
+} */
 
-:root {
-    --screen-height: 100vh; /* 화면 높이 */
-    --padding-size: 100px; /* 빼고 싶은 높이 */
-}
 /* 사이드바 영역 */
 .Area {
     display: flex;

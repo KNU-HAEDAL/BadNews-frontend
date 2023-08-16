@@ -2,13 +2,14 @@ import Sidebar from '../components/Sidebar';
 import CategoriesResult from '../components/Contents/CategoriesResult';
 import { Link } from 'react-router-dom';
 
+const header_height = '101px';
+
 const Mypage = () => {
     return (
-        <div className="Mypage">
-            <form>
-                <Sidebar />
-                <CategoriesResult />
-            </form>
+        <div className="MyPage" style={{height: `calc(100% - ${header_height})`}}>
+            <Sidebar />
+
+            <CategoriesResult />
         </div>
     );
 };
