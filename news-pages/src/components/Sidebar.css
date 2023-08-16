@@ -12,11 +12,12 @@
 .Area {
     display: flex;
     width: 250px;
-    height: calc(100% - 100px); /*100% - padding-bottom*/
+    height: 100%; 
     background: #f1f6ff;
 
     padding-bottom: 100px;
 }
+
 /* 글자들 담은 컨테이너 */
 .categories-container {
     /* position: fixed; 화면이 움직여도 고정 */
@@ -26,12 +27,14 @@
     align-items: center;
     flex-direction: column; /* 세로로 배열 */
 }
+
 /* 카테고리 아이콘 */
 #categories-icon {
     width: 1.2em;
     height: 1.2em;
     margin-right: 10px;
 }
+
 /* 카테고리 글자 */
 #categories-title {
     display: flex;
@@ -44,6 +47,7 @@
     font-size: 20px;
     color: black;
 }
+
 /* 각 버튼 */
 .categories-btn {
     display: flex;
@@ -60,6 +64,7 @@
 
     cursor: pointer;
 }
+
 .categories-btn:hover {
     background-color: white;
     color: #0357ff;
