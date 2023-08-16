@@ -48,6 +48,7 @@ const SideBar = () => {
                 >
                     정치
                 </button>
+
                 <button
                     className="categories-btn"
                     onClick={() => {
@@ -56,6 +57,7 @@ const SideBar = () => {
                 >
                     경제
                 </button>
+
                 <button
                     className="categories-btn"
                     onClick={() => {
@@ -64,32 +66,34 @@ const SideBar = () => {
                 >
                     사회
                 </button>
-                {/* IT/테크 맞나? */}
+                
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('IT/과학');
+                        showArticles('IT/테크');
                     }}
                 >
-                    IT | 과학
+                    IT | 테크
                 </button>
+
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('생활/문화');
+                        showArticles('문화/예술');
                     }}
                 >
-                    생활 | 문화
+                    문화 | 예술
                 </button>
-                {/* 이거도 스포츠/예술 맞나? */}
+                
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('세계');
+                        showArticles('스포츠');
                     }}
                 >
-                    세계
+                    스포츠
                 </button>
+                
             </div>
         </div>
     );
