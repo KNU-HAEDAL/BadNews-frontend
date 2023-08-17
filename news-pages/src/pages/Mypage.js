@@ -6,7 +6,8 @@ const header_height = '101px';
 
 const Mypage = () => {
     return (
-        <div className="MyPage" style={{height: `calc(100% - ${header_height})`}}>
+        <div className="MyPage" style={{display: 'flex', justifyContent: 'space-between', 
+                                        height: `calc(100% - ${header_height})`}}>
             <Sidebar />
 
             <CategoriesResult />
