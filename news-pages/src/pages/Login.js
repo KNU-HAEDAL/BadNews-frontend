@@ -38,7 +38,7 @@ const Table = () => {
     );
 };
 
-function saveAndSend(event) {
+function saveAndSend() {
     //event.preventDefault();
 
     // 변수에 인풋값 저장
