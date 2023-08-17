@@ -34,9 +34,9 @@ const CategoriesResult = () => {
             </div>
             <div className="PageWrap3">
                 <form className="FormContainer">
-                    <h2 className="TitleItem">{title1}</h2>
+                    <h2 className="TitleItem">{title3}</h2>
                     <ul className="DateItem"> {date}</ul>
-                    <ul className="SummaryItem">{summary2}</ul>
+                    <ul className="SummaryItem">{summary3}</ul>
                 </form>
             </div>
         </div>
