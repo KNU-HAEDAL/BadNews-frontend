@@ -3,7 +3,7 @@ import PageNumbers from './PageNumbers';
 import React from 'react';
 import './CategoriesResult.css';
 
-const title1 = '초전도체??? 대박일까?';
+const title1 = '상온 초전도체??? 대박일까?';
 const title2 = '태풍이 하나 더 올까?';
 const title3 = 'GPT 5.0이 등장할까???';
 const date = '2023.07.18';
