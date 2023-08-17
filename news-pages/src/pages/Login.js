@@ -1,5 +1,6 @@
 import './Login.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const styles = {
     textBlock: {
@@ -37,7 +38,7 @@ const Table = () => {
     );
 };
 
-function saveAndSend(event) {
+function saveAndSend() {
     //event.preventDefault();
 
     // 변수에 인풋값 저장
