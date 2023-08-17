@@ -9,9 +9,7 @@ const MainPage = () => {
     return (
         <div className="MainPage" style={{ height: 'calc(100% - 101px)' }}>
             <Sidebar />
-            <div style={{ float: 'left' }}>
-                <CategoriesResult />
-            </div>
+
             <Routes>
                 <Route exact path="/" element={<CategoriesResult />} />
                 <Route exact path="/search-result" element={<SearchResult />} />
