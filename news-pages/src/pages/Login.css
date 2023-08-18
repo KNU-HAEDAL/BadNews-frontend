@@ -46,7 +46,7 @@
     outline-color: #0357ff; /* 포커스되었을 때 테두리 색 */
 }
 
-.input-container {
+.input-table-container {
     display: flex;
     justify-content: center;
     align-items: center;
