@@ -1,6 +1,6 @@
 import './Login.css';
 import { Link } from 'react-router-dom';
-import axios from "axios";
+import axios from 'axios';
 
 const styles = {
     textBlock: {
@@ -69,28 +69,30 @@ function saveAndSend() {
             console.error('Error: User 정보가 없습니다. ', error);
         });
 
-        alert("Test")
+    alert('Test');
 
-    axios.post('http://localhost:8080/signup',{
-        id: idValue,
-        password: pwValue,
-    })
-    //성공시 then 실행
-    .then(function (response) {
-        console.log(response.data);
-        
-    })
-    //실패 시 catch 실행
-    .catch(function (error) {
-        console.log(error);
-    });
+    axios
+        .post('http://localhost:8080/signup', {
+            id: idValue,
+            password: pwValue,
+        })
+        //성공시 then 실행
+        .then(function (response) {
+            console.log(response.data);
+        })
+        //실패 시 catch 실행
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
 const LoginBtn = () => {
     return (
         <div className="login-btn-outer">
             <button className="login-btn" onClick={saveAndSend}>
-                <Link to="/" className="styled-link">로그인</Link>
+                <Link to="/" className="styled-link">
+                    로그인
+                </Link>
             </button>
         </div>
     );
