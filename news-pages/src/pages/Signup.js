@@ -1,4 +1,4 @@
-import './Login.css';
+import './Signup.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -11,8 +11,8 @@ const styles = {
 const TextBlock = () => {
     return (
         <div style={styles.textBlock}>
-            <strong className="login-title">Log In</strong>
-            <div className="txt">로그인을 해주세요!</div>
+            <strong className="sign_up-title">Sign Up</strong>
+            <div className="txt">회원가입 후 Bad News를 더욱 편리하게 사용하세요!</div>
         </div>
     );
 };
@@ -86,19 +86,19 @@ function saveAndSend() {
         });
 }
 
-const LoginBtn = () => {
+const SignupBtn = () => {
     return (
         <div className="login-btn-outer">
             <button className="login-btn" onClick={saveAndSend}>
                 <Link to="/" className="styled-link">
-                    로그인
+                    회원가입
                 </Link>
             </button>
         </div>
     );
 };
 
-const Login = () => {
+const Signup = () => {
     return (
         <div className="Login">
             <div className="input-table-outer">
@@ -108,11 +108,11 @@ const Login = () => {
                     <br />
                     <Table />
                     <br />
-                    <LoginBtn />
+                    <SignupBtn />
                 </form>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Signup;
