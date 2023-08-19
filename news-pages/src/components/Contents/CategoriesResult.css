@@ -1,15 +1,31 @@
-.PageWrap1 {
+.PageContainer {
+    display: flex;
+}
+
+.CategoryName {
+    /* 검색 결과 */
+
+    position: relative;
+    width: 232px;
+    height: 36px;
+    left: 60px;
+    top: 34px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 45px;
+
+    color: #898888;
+}
+/* .PageWrap1 {
     flex-direction: column;
     justify-content: flex-start;
 }
 .PageWrap2 {
-    box-sizing: border-box;
-
-    margin-top: 200px;
 }
 .PageWrap3 {
-    margin-top: 400px;
-}
+} */
 
 .FormContainer {
     /* display: 'flex';
@@ -17,22 +33,25 @@
     align-items: 'center'; */
     box-sizing: border-box;
 
-    position: absolute;
-    width: 1048px;
+    width: 77vw;
     height: auto;
-    left: 300px;
-    top: 102px;
+    left: 10px;
+    top: 50px;
 
     background: #ffffff;
     border: 2px solid rgba(194, 194, 194, 0.760784);
     box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
+
+    /*사각형과 나머지 요소 사이 간격 조정*/
+    position: relative;
     margin-top: 50px;
-    padding-left: 15px;
+    margin-left: 1vw;
+    margin-right: 3vw;
 }
 
 .TitleItem {
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 20px;
 }
 .DateItem {
