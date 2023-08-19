@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import logo from '../logo.png'
 import search from '../search.png'
@@ -14,6 +14,15 @@ const SearchBox = () => {
 }
 
 const Header = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    
+    const handleLoginButtonClick = () => {
+        // 여기에 로그인 여부를 검사한 뒤 
+        // 로그인 상태이면 setIsLoggedIn(isLoggedIn = true)
+        // 로그아웃 상태이면 setIsLoggedIn(isLoggedIn = false)
+        setIsLoggedIn(!isLoggedIn); // 클릭 시 isLoggedIn 값 반전
+    };
+
     return ( 
     <div className="Header">
         <Link to="/" className="title-container">
@@ -24,10 +33,11 @@ const Header = () => {
         <div className="search-login-container">
             <SearchBox />
 
-            <div className="txt-container">
-                <Link to="/login" className="txt">로그인</Link>
-                <div className="txt">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</div> 
-                <Link to="/mypage" className="txt">마이페이지</Link>
+            <div className="header-menu-container">
+                <Link to="/login" className="header-menu" onClick={handleLoginButtonClick}>
+                    {isLoggedIn ? '로그아웃' : '로그인'}</Link>
+                <div className="header-menu-bar">|&nbsp;</div> 
+                <Link to="/mypage" className="header-menu">마이페이지</Link>
             </div>
         </div>
     </div>

@@ -2,24 +2,19 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const styles = {
-    textBlock: {
-        paddingLeft: '5px',
-    },
-};
 
 const TextBlock = () => {
     return (
-        <div style={styles.textBlock}>
+        <div style={{paddingLeft: '5px'}}>
             <strong className="login-title">Log In</strong>
             <div className="txt">로그인을 해주세요!</div>
         </div>
     );
 };
 
-const Table = () => {
+const InputTable = () => {
     return (
-        <div className="input-container">
+        <div className="input-table-container">
             <table className="input-table">
                 <tr>
                     {/* <th><label className="txt">ID</label></th> */}
@@ -106,7 +101,7 @@ const Login = () => {
                     <TextBlock />
                     <br />
                     <br />
-                    <Table />
+                    <InputTable />
                     <br />
                     <LoginBtn />
                 </form>
