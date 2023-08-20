@@ -17,6 +17,7 @@ const CategoriesResult = () => {
 
     return (
         <div>
+            {/*<div className="CategoryName">"{categoryName}"</div>*/}
             {/* <div className="CategoryNameContainer">"{categoryName}"</div> */}
             <div className="PageWrap1">
                 <form className="FormContainer">
@@ -30,13 +31,6 @@ const CategoriesResult = () => {
                     <h2 className="TitleItem">{title2}</h2>
                     <ul className="DateItem"> {date}</ul>
                     <ul className="SummaryItem">{summary2}</ul>
-                </form>
-            </div>
-            <div className="PageWrap3">
-                <form className="FormContainer">
-                    <h2 className="TitleItem">{title3}</h2>
-                    <ul className="DateItem"> {date}</ul>
-                    <ul className="SummaryItem">{summary3}</ul>
                 </form>
             </div>
         </div>
