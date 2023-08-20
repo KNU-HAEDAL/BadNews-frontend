@@ -4,7 +4,7 @@ import category from '../category.png';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const SideBar = () => {
+const Sidebar = () => {
     const navigate = useNavigate();
 
     const navigateToPolitics = () => {
@@ -105,4 +105,4 @@ const SideBar = () => {
         </div>
     );
 };
-export default SideBar;
+export default Sidebar;
