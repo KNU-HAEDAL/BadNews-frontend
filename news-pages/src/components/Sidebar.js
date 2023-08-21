@@ -23,7 +23,7 @@ const Sidebar = () => {
         };
 
         axios
-            .post('http://13.124.161.27:8080/article/save', {
+            .post('http://localhost:8080/article/save', {
                 userId: idValue,
                 category: ctgrValue,
                 sort: 1,
@@ -78,19 +78,19 @@ const Sidebar = () => {
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('IT/과학');
+                        showArticles('IT/테크');
                     }}
                 >
-                    IT | 과학
+                    IT | 테크
                 </button>
 
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('생활/문화');
+                        showArticles('문화/예술');
                     }}
                 >
-                    생활 | 문화
+                    문화 | 예술
                 </button>
 
                 <button
@@ -99,7 +99,7 @@ const Sidebar = () => {
                         showArticles('스포츠');
                     }}
                 >
-                    스포츠(사용x)
+                    스포츠
                 </button>
             </div>
         </div>
