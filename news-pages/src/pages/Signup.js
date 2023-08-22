@@ -51,25 +51,25 @@ function saveAndSend() {
 
     const url = 'http://13.124.161.27:8080/login'; // 서버의 엔드포인트 URL
 
-    // // 서버로 값을 전송하는 코드
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    // })
-    //     .then((response) => response.json())
-    //     .then((result) => {
-    //         // 서버의 응답을 처리합니다.
-    //         console.log(result);
-    //     })
-    //     .catch((error) => {
-    //         // 에러 처리
-    //         console.error('Error: User 정보가 없습니다. ', error);
-    //     });
+    // 서버로 값을 전송하는 코드
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((result) => {
+            // 서버의 응답을 처리합니다.
+            console.log(result);
+        })
+        .catch((error) => {
+            // 에러 처리
+            console.error('Error: User 정보가 없습니다. ', error);
+        });
 
-    // alert('Test');
+    alert('Test');
 
     axios
         .post('http://13.124.161.27:8080/signup', {
