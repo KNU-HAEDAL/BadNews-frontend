@@ -21,11 +21,15 @@ const CategoriesResult = () => {
 
     const [isMarked, setIsMarked] = useState(false);
     
-    const handleBookmarkClick = () => {
-        // 북마크 상태 핸들러
+    const handleBookmarkClick = () => { // 북마크 상태 핸들러
         // 마크 상태이면 setIsMarked(isMarked = true)
         // 로그아웃 상태이면 setIsMarekd(isMarked = false)
-        setIsMarked(!isMarked); // 클릭 시 isMarked 값 반전
+
+        // setIsMarked(!isMarked); // 클릭 시 isMarked 값 반전
+
+        // 이미지 변경
+        var image = document.getElementById("bookmark");
+        image.src = {marked};
     };
 
     return (
@@ -33,17 +37,16 @@ const CategoriesResult = () => {
             {/*<div className="CategoryName">"{categoryName}"</div>*/}
             {/* <div className="CategoryNameContainer">"{categoryName}"</div> */}
             <div className="PageWrap1">
-                <form className="FormContainer">
-                    <img src={unmarked} alt="bookmark_unmarked" id="unmarked"/>
-                    <Link to="/login" className="header-menu" onClick={handleBookmarkClick}>
-                    {isMarked ? '로그아웃' : '로그인'}</Link>
+                <form className="article-container">
+                    <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick} />
                     <h2 className="TitleItem">{title1}</h2>
                     <ul className="DateItem"> {date}</ul>
                     <ul className="SummaryItem">{summary1}</ul>
                 </form>
             </div>
+            
             <div className="PageWrap2">
-                <form className="FormContainer">
+                <form className="article-container">
                     <h2 className="TitleItem">{title2}</h2>
                     <ul className="DateItem"> {date}</ul>
                     <ul className="SummaryItem">{summary2}</ul>

@@ -27,29 +27,37 @@
 .PageWrap3 {
 } */
 
-.FormContainer {
-    /* display: 'flex';
-    flex-direction: 'column';
-    align-items: 'center'; */
+.article-container {
+    /* 컨테이너 정렬 */
+    display: 'flex';
+    flex-direction: 'column'; /* 세로 정렬 */
+    justify-content: 'flex-start';
     box-sizing: border-box;
 
-    width: 77vw;
+    /* 컨테이너 사이즈 */
+    /* 왜 오른쪽 기준 정렬인 것 같지??? */
+    width: 160vh;
     height: auto;
     left: 10px;
-    top: 50px;
-
+    right: 10px;
+    top: 60px;
+    
+    /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
     box-shadow: 0px 0px 15px #c2c2c2;
     border-radius: 10px;
 
-    /*사각형과 나머지 요소 사이 간격 조정*/
+    /* 사각형과 나머지 요소 사이 간격 조정 */
     position: relative;
-    margin-top: 50px;
+    margin-bottom: 30px;
     margin-left: 1vw;
     margin-right: 3vw;
 }
-
+#bookmark {
+    display: flex;
+    justify-content: right;
+}
 .TitleItem {
     margin-left: 20px;
     margin-top: 20px;
@@ -62,7 +70,7 @@
     margin-bottom: '10px';
 }
 
-.CategoryNameContainer {
+/* .CategoryNameContainer {
     box-sizing: border-box;
 
     position: absolute;
@@ -72,4 +80,4 @@
     top: 102px;
 
     margin-top: 15px;
-}
+} */
