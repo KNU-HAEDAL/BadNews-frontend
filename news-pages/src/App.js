@@ -6,6 +6,7 @@ import Mypage from './pages/Mypage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signup from './pages/Signup';
 import politics from './pages/Categories/Politics';
+import ReturnPage from './pages/Returnpage';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/mypage" element={<Mypage />} />
                     <Route path="/politics" element={<politics />} />
+                    <Route path="/article/returnPage" element={<ReturnPage />} />
                 </Routes>
             </div>
         </BrowserRouter>

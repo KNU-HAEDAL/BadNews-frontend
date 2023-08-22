@@ -35,8 +35,8 @@ const CategoriesResult = () => {
             <div className="PageWrap1">
                 <form className="FormContainer">
                     <img src={unmarked} alt="bookmark_unmarked" id="unmarked"/>
-                    <Link to="/login" className="header-menu" onClick={handleBookmarkClick}>
-                    {isMarked ? '로그아웃' : '로그인'}</Link>
+                    {/* <Link to="/login" className="header-menu" onClick={handleBookmarkClick}>
+                    {isMarked ? '로그아웃' : '로그인'}</Link> */}
                     <h2 className="TitleItem">{title1}</h2>
                     <ul className="DateItem"> {date}</ul>
                     <ul className="SummaryItem">{summary1}</ul>
