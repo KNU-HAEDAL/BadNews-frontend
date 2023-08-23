@@ -42,10 +42,10 @@ const LoginBtn = () => {
         // 변수에 인풋값 저장
         const idValue = document.getElementById('id').value;
         const pwValue = document.getElementById('pw').value;
-        const data = {
-            id: idValue,
-            pw: pwValue,
-        };
+        // const data = {
+        //     id: idValue,
+        //     pw: pwValue,
+        // };
 
         // 서버로 로그인 요청
         axios
@@ -92,10 +92,15 @@ const LoginBtn = () => {
     }
 
     return (
-        <div className="login-btn-outer">
-            <button className="login-btn" onClick={saveAndSend}>로그인
-                {/* <Link to="/" className="styled-link">로그인</Link> */}
-            </button>
+        <div className="login-btn-container">
+             <table className="login-btn-table">
+                <tr>
+                    <button className="login-btn" onClick={saveAndSend}>로그인</button>
+                </tr>
+                <tr>
+                    <div className="small-txt">아직 계정이 없으신가요? <Link to="/signup">회원가입</Link></div>
+                </tr>
+            </table>
         </div>
     );
 };
