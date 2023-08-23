@@ -1,25 +1,21 @@
-import './Signup.css';
-import { Link } from 'react-router-dom';
+import './Login.css';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const styles = {
-    textBlock: {
-        paddingLeft: '5px',
-    },
-};
 
 const TextBlock = () => {
     return (
-        <div style={styles.textBlock}>
-            <strong className="sign_up-title">Sign Up</strong>
-            <div className="txt">회원가입 후 Bad News를 더욱 편리하게 사용하세요!</div>
+        <div style={{paddingLeft: '5px'}}>
+            <strong className="login-title">Sign Up</strong>
+            <div className="txt">회원가입 후 Bad News를 더욱 편리하게 사용해보세요!</div>
         </div>
     );
 };
 
-const Table = () => {
+
+const InputTable = () => {
     return (
-        <div className="input-container">
+        <div className="input-table-container">
             <table className="input-table">
                 <tr>
                     {/* <th><label className="txt">ID</label></th> */}
@@ -38,65 +34,49 @@ const Table = () => {
     );
 };
 
-function saveAndSend() {
-    //event.preventDefault();
 
-    // 변수에 인풋값 저장
-    const idValue = document.getElementById('id').value;
-    const pwValue = document.getElementById('pw').value;
-    const data = {
-        id: idValue,
-        pw: pwValue,
-    };
+const LoginBtn = () => {
+    const navigate = useNavigate();
 
-    const url = 'http://13.124.161.27:8080/login'; // 서버의 엔드포인트 URL
+    const saveAndSend = () => {   
+        // 변수에 인풋값 저장
+        const idValue = document.getElementById('id').value;
+        const pwValue = document.getElementById('pw').value;
+        // const data = {
+        //     id: idValue,
+        //     pw: pwValue,
+        // };
 
-    // 서버로 값을 전송하는 코드
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then((response) => response.json())
-        .then((result) => {
-            // 서버의 응답을 처리합니다.
-            console.log(result);
-        })
-        .catch((error) => {
-            // 에러 처리
-            console.error('Error: User 정보가 없습니다. ', error);
-        });
+        // 서버로 회원가입 요청
+        axios
+            .post('http://13.124.161.27:8080/signup', {
+                id: idValue,
+                password: pwValue,
+            })
+            //성공시 then 실행
+            .then(function (response) {
+                console.log(response.data);
+            })
+            //실패 시 catch 실행
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
-    alert('Test');
-
-    axios
-        .post('http://13.124.161.27:8080/signup', {
-            id: idValue,
-            password: pwValue,
-        })
-        //성공시 then 실행
-        .then(function (response) {
-            console.log(response.data);
-        })
-        //실패 시 catch 실행
-        .catch(function (error) {
-            console.log(error);
-        });
-}
-
-const SignupBtn = () => {
     return (
-        <div className="login-btn-outer">
-            <button className="login-btn" onClick={saveAndSend}>
-                <Link to="/" className="styled-link">
-                    회원가입
-                </Link>
-            </button>
+        <div className="login-btn-container">
+             <table className="login-btn-table">
+                <tr>
+                    <button className="login-btn" onClick={saveAndSend}>회원가입</button>
+                </tr>
+                <tr>
+                    <div className="small-txt">이미 계정이 있으신가요? <Link to="/login" className="link-style">로그인</Link></div>
+                </tr>
+            </table>
         </div>
     );
 };
+
 
 const Signup = () => {
     return (
@@ -106,9 +86,9 @@ const Signup = () => {
                     <TextBlock />
                     <br />
                     <br />
-                    <Table />
+                    <InputTable />
                     <br />
-                    <SignupBtn />
+                    <LoginBtn />
                 </form>
             </div>
         </div>
