@@ -19,11 +19,15 @@ const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     
     useEffect(() => {
-        // 서버에 로그인 상태를 확인하는 요청을 보냅니다.
-        axios.get('http://localhost:8080/checkLoginStatus')
+        // 서버에 로그인 상태 확인 요청 전송
+        axios.get('http://13.124.161.27:8080/login')
             .then(response => {
-                // 서버에서 로그인 상태를 확인한 후, 그 결과를 상태로 설정합니다.
-                setIsLoggedIn(response.data.isLoggedIn);
+                // 서버에서 로그인 상태를 확인한 후, 그 결과를 상태로 설정
+                if (response.data.result) { // 로그인 상태
+                    setIsLoggedIn(true);
+                } else { // 로그아웃 상태
+                    setIsLoggedIn(false);
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -31,8 +35,7 @@ const Header = () => {
     }, []);
 
     const handleLogin = () => {
-        // if return(idValue) == true:
-            setIsLoggedIn(true);
+        setIsLoggedIn(true);
     }
 
     const handleLogout = () => {
@@ -51,8 +54,8 @@ const Header = () => {
 
             <div className="header-menu-container">
                 { isLoggedIn ? 
-                    ( <Link to="/login" className="header-menu" onClick={handleLogout}>로그인</Link> ) : 
-                    ( <Link to="/" className="header-menu" onClick={handleLogin}>로그아웃</Link> ) 
+                    ( <Link to="/login" className="header-menu" onClick={useEffect}>로그인</Link> ) : 
+                    ( <Link to="/" className="header-menu" onClick={useEffect}>로그아웃</Link> ) 
                 } 
                 <div className="header-menu-bar">|&nbsp;</div> 
                 <Link to="/mypage" className="header-menu">마이페이지</Link>
