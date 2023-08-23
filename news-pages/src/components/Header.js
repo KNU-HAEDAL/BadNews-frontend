@@ -22,7 +22,6 @@ const Header = () => {
         // 서버에 로그인 상태 확인 요청 전송
         axios.get('http://13.124.161.27:8080/login')
             .then(response => {
-                // 서버에서 로그인 상태를 확인한 후, 그 결과를 상태로 설정
                 if (response.data.result) { // 로그인 상태
                     setIsLoggedIn(true);
                 } else { // 로그아웃 상태
@@ -34,13 +33,13 @@ const Header = () => {
             });
     }, []);
 
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-    }
+    // const handleLogin = () => {
+    //     setIsLoggedIn(true);
+    // }
 
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-    }
+    // const handleLogout = () => {
+    //     setIsLoggedIn(false);
+    // }
 
     return ( 
     <div className="Header">
@@ -54,8 +53,8 @@ const Header = () => {
 
             <div className="header-menu-container">
                 { isLoggedIn ? 
-                    ( <Link to="/login" className="header-menu" onClick={useEffect}>로그인</Link> ) : 
-                    ( <Link to="/" className="header-menu" onClick={useEffect}>로그아웃</Link> ) 
+                    ( <Link to="/login" className="header-menu" onClick={useEffect}>로그아웃</Link> ) : 
+                    ( <Link to="/" className="header-menu" onClick={useEffect}>로그인</Link> ) 
                 } 
                 <div className="header-menu-bar">|&nbsp;</div> 
                 <Link to="/mypage" className="header-menu">마이페이지</Link>
