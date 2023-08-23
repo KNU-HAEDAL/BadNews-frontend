@@ -70,16 +70,17 @@ const LoginBtn = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify( { id: idValue, password: pwValue } ),
         })
-            .then((response) => response.json())
-            .then((result) => {
-                if (result == true) {
-                    alert(`${idValue}님 환영합니다`);
+            .then((response) => response.json()) // 서버로부터의 응답을 파싱하고, data라는 변수에 담음
+            .then((data) => {
+                console.log(data); // 응답 출력. 확인용
+                if (data.result) {
+                    alert(`${data.id}님 환영합니다`);
                     navigate("/"); // root로 이동
                 } 
                 else {
-                    alert('로그인 실패');
+                    alert(`다시 시도하세요`);
                 }
             })
             .catch((error) => {
