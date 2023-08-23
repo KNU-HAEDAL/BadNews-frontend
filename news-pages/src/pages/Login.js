@@ -48,7 +48,6 @@ const LoginBtn = () => {
             id: idValue,
             pw: pwValue,
         };
-        const url = 'http://localhost:8080/login'; // 서버의 엔드포인트 URL
 
         // 서버로 회원가입 요청
         axios
@@ -66,7 +65,7 @@ const LoginBtn = () => {
             });
     
         // 서버로 로그인 요청
-        fetch(url, {
+        fetch('http://localhost:8080/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
