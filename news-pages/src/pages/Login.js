@@ -98,7 +98,7 @@ const LoginBtn = () => {
                     <button className="login-btn" onClick={saveAndSend}>로그인</button>
                 </tr>
                 <tr>
-                    <div className="small-txt">아직 계정이 없으신가요? <Link to="/signup">회원가입</Link></div>
+                    <div className="small-txt">아직 계정이 없으신가요? <Link to="/signup" className="link-style">회원가입</Link></div>
                 </tr>
             </table>
         </div>
