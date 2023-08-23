@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './CategoriesResult.css';
-import './PageNumbers';
-import PageNumbers from './PageNumbers';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
+import Posts from './Posts';
 
 const title1 = '상온 초전도체??? 대박일까?';
 const title2 = '태풍이 하나 더 올까?';
@@ -50,6 +49,9 @@ const CategoriesResult = () => {
                     <ul className="DateItem"> {date}</ul>
                     <ul className="SummaryItem">{summary2}</ul>
                 </form>
+            </div>
+            <div className="PageNumber">
+                <Posts />
             </div>
         </div>
     );

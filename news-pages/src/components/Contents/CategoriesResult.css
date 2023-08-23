@@ -41,7 +41,7 @@
     left: 10px;
     right: 10px;
     top: 60px;
-    
+  
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
@@ -80,4 +80,11 @@
     top: 102px;
 
     margin-top: 15px;
+} */
+
+/* 
+.PageNumber {
+    position: absolute;
+    bottom: 0%;
+    right: 100px;
 } */
