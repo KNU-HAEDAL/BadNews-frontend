@@ -16,9 +16,7 @@ function Posts() {
 
     return (
         <Layout>
-            <header>
-                <h1>게시물 목록</h1>
-            </header>
+            <header></header>
 
             {/*   */}
 
