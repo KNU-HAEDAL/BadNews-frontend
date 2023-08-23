@@ -1,38 +1,65 @@
-.PageWrap1 {
+.PageContainer {
+    display: flex;
+}
+
+.CategoryName {
+    /* 검색 결과 */
+
+    position: relative;
+    width: 232px;
+    height: 36px;
+    left: 60px;
+    top: 34px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 45px;
+
+    color: #898888;
+}
+/* .PageWrap1 {
     flex-direction: column;
     justify-content: flex-start;
 }
 .PageWrap2 {
-    box-sizing: border-box;
-
-    margin-top: 200px;
 }
 .PageWrap3 {
-    margin-top: 400px;
-}
+} */
 
-.FormContainer {
-    /* display: 'flex';
-    flex-direction: 'column';
-    align-items: 'center'; */
+.article-container {
+    /* 컨테이너 정렬 */
+    display: 'flex';
+    flex-direction: 'column'; /* 세로 정렬 */
+    justify-content: 'flex-start';
     box-sizing: border-box;
 
-    position: absolute;
-    width: 1048px;
+    /* 컨테이너 사이즈 */
+    /* 왜 오른쪽 기준 정렬인 것 같지??? */
+    width: 160vh;
     height: auto;
-    left: 300px;
-    top: 102px;
-
+    left: 10px;
+    right: 10px;
+    top: 60px;
+    
+    /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
-    border: 2px solid rgba(194, 194, 194, 0.760784);
-    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
+    border: thin solid #c2c2c2;
+    box-shadow: 0px 0px 15px #c2c2c2;
     border-radius: 10px;
-    margin-top: 50px;
-    padding-left: 15px;
-}
 
+    /* 사각형과 나머지 요소 사이 간격 조정 */
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: 1vw;
+    margin-right: 3vw;
+}
+#bookmark {
+    display: flex;
+    justify-content: right;
+}
 .TitleItem {
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 20px;
 }
 .DateItem {
@@ -43,7 +70,7 @@
     margin-bottom: '10px';
 }
 
-.CategoryNameContainer {
+/* .CategoryNameContainer {
     box-sizing: border-box;
 
     position: absolute;
@@ -53,4 +80,4 @@
     top: 102px;
 
     margin-top: 15px;
-}
+} */

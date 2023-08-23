@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import category from '../category.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const SideBar = () => {
+const Sidebar = () => {
+    const navigate = useNavigate();
+
+    const navigateToPolitics = () => {
+        navigate('/article/politics');
+    };
+
     function showArticles(choosedCtgr) {
         // 변수에 인풋값 저장
         // id 브라우저 내부 저장값으로 수정필요
@@ -30,6 +36,8 @@ const SideBar = () => {
             .catch(function (error) {
                 console.log(error);
             });
+
+        navigateToPolitics();
     }
 
     return (
@@ -66,7 +74,7 @@ const SideBar = () => {
                 >
                     사회
                 </button>
-                
+
                 <button
                     className="categories-btn"
                     onClick={() => {
@@ -84,7 +92,7 @@ const SideBar = () => {
                 >
                     문화 | 예술
                 </button>
-                
+
                 <button
                     className="categories-btn"
                     onClick={() => {
@@ -93,9 +101,8 @@ const SideBar = () => {
                 >
                     스포츠
                 </button>
-                
             </div>
         </div>
     );
 };
-export default SideBar;
+export default Sidebar;

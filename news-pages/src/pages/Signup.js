@@ -49,7 +49,7 @@ function saveAndSend() {
         pw: pwValue,
     };
 
-    const url = 'http://localhost:8080/login'; // 서버의 엔드포인트 URL
+    const url = 'http://13.124.161.27:8080/login'; // 서버의 엔드포인트 URL
 
     // 서버로 값을 전송하는 코드
     fetch(url, {
@@ -72,7 +72,7 @@ function saveAndSend() {
     alert('Test');
 
     axios
-        .post('http://localhost:8080/signup', {
+        .post('http://13.124.161.27:8080/signup', {
             id: idValue,
             password: pwValue,
         })
