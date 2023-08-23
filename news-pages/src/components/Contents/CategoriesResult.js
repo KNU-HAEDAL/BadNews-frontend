@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
+// import "./PageNumbers";
+// import PageNumbers from './PageNumbers';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
 
