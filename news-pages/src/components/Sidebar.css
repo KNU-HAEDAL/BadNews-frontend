@@ -4,7 +4,6 @@
     font-family: 'Pretendard';
 } */
 
-
 /* 사이드바 영역 */
 .Area {
     display: flex;
@@ -31,9 +30,6 @@
     height: 1.2em;
     margin-right: 10px;
 }
-
-/* $categories-btn-height: 60px; */
-
 /* 카테고리 */
 #categories-title {
     display: flex;

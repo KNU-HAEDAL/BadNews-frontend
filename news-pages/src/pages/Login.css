@@ -76,15 +76,13 @@ td {
     padding: 8px 20px;
     cursor: pointer; /* 커서 올렸을 때 모양 변경 */
 }
-
 .login-btn:hover {
     background-color: #d7e4ff;
     color: #0357ff;
     border: 2px solid #d7e4ff;
 }
-
-.styled-link {
+/* .styled-link {
     text-decoration: none;
     color: #0357ff;
-}
+} */
 /* style={{textDecoration: 'none', color: '#0357ff'}} */
