@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
-import ReturnArticles from './Categories/ReturnArticle';
+import ReturnArticles from '../components/Contents/ReturnArticles';
 import { useLocation } from 'react-router-dom';
 
 const header_height = '101px';

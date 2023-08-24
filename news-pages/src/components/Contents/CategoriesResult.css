@@ -72,3 +72,9 @@
 .article-summary {
     line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }
+
+.page-numbers {
+    position: absolute;
+    bottom: 0%;
+    right: 35%;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
+import Posts from './Posts';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
 
@@ -75,6 +76,10 @@ const CategoriesResult = () => {
                 <strong className="article-title">그냥 하나 더 추가</strong>
                 <div className="article-date">2023-08-23</div>
                 <div className="article-summary">룰룰........즐겁다</div>
+            </div>
+
+            <div className="page-numbers">
+                <Posts />
             </div>
         </div>
     );
