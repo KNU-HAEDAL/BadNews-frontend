@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Sidebar';
 import '../../components/Contents/CategoriesResult.css';
 import Posts from '../../components/Contents/Posts';
@@ -8,6 +8,18 @@ import marked from '../../bookmark_marked.png';
 
 
 function ReturnArticles(props) {
+    const [isMarked, setIsMarked] = useState(false);
+
+    const handleBookmarkClick1 = () => {
+        var image = document.getElementById('bookmark');
+        image.src = marked;
+    };
+
+    const handleBookmarkClick2 = () => {
+        var image = document.getElementById('bookmark');
+        image.src = marked;
+    };
+
     console.log('props');
     console.log(props);
     return (

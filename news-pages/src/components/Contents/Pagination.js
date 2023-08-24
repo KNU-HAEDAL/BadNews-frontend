@@ -1,70 +1,46 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import './Pagination.css';
 
 function Pagination({ total, limit, page, setPage }) {
     const numPages = Math.ceil(total / limit);
+    const [currentPage, setCurrentPage] = useState(page);
+
+    const handlePageChange = (newPage) => {
+        setPage(newPage);
+        setCurrentPage(newPage);
+    };
 
     return (
-        <>
-            <Nav>
-                <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
-                    &lt;
-                </Button>
-                {Array(numPages)
-                    .fill()
-                    .map((_, i) => (
-                        <Button
-                            key={i + 1}
-                            onClick={() => setPage(i + 1)}
-                            aria-current={page === i + 1 ? 'page' : null}
-                        >
-                            {i + 1}
-                        </Button>
-                    ))}
-                <Button onClick={() => setPage(page + 1)} disabled={page === numPages}>
-                    &gt;
-                </Button>
-            </Nav>
-        </>
+        <nav className="Pagination">
+            <button
+                className={`page-button ${currentPage === 1 ? 'disabled' : ''}`}
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+            >
+                &lt;
+            </button>
+            {Array(numPages)
+                .fill()
+                .map((_, i) => (
+                    <button
+                        key={i + 1}
+                        className={`page-button ${currentPage === i + 1 ? 'current' : ''}`}
+                        onClick={() ⇒ handlePageChange(i + 1)}
+                        aria-current={currentPage === i + 1 ? 'page' : null}
+                    >
+                        {i + 1}
+                    </button>
+                ))}
+            <button
+                className={`page-button ${currentPage === numPages ? 'disabled' : ''}`}
+                onClick={() ⇒ handlePageChange(currentPage + 1)}
+                disabled={currentPage === numPages}
+            >
+                &gt;
+            </button>
+        </nav>
     );
 }
-
-const Nav = styled.nav`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    margin: 16px;
-`;
-
-const Button = styled.button`
-    border: none;
-    border-radius: 8px;
-    padding: 8px;
-    margin: 0;
-    background: #f1f6ff;
-    color: #898989;
-    font-size: 1rem;
-
-    &:hover {
-        background: #6094fd;
-        color: black;
-        cursor: pointer;
-        transform: translateY(-2px);
-    }
-
-    &[disabled] {
-        background: #c2c2c2;
-        cursor: revert;
-        transform: revert;
-    }
-
-    &[aria-current] {
-        background: #d7e4ff;
-        color: black;
-        font-weight: bold;
-        cursor: revert;
-        transform: revert;
-    }
-`;
 
 export default Pagination;
