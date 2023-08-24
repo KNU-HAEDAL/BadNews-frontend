@@ -60,14 +60,15 @@ const CategoriesResult = () => {
                 <form className="article-container">
                     <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick} />
                     <h2 className="TitleItem">{title1}</h2>
-                    <ul className="DateItem"> 2023-08-23 17:10:40</ul>
+                    <ul className="DateItem"> 2023-08-23</ul>
                     <ul className="SummaryItem">{summary1}</ul>
                 </form>
             </div>
             <div className="PageWrap2">
                 <form className="article-container">
+                    <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick} />
                     <h2 className="TitleItem">{title2}</h2>
-                    <ul className="DateItem"> 2023-08-23 17:10:40</ul>
+                    <ul className="DateItem"> 2023-08-23</ul>
                     <ul className="SummaryItem">{summary2}</ul>
                 </form>
             </div>
