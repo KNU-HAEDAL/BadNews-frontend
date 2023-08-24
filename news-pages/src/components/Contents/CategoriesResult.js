@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
 // import "./PageNumbers";
-// import PageNumbers from './PageNumbers';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
 
-const title1 = '상온 초전도체??? 대박일까?';
-const title2 = '태풍이 하나 더 올까?';
-const summary1 = '상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될수있겠지?';
-const summary2 = '기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"';
 
 const CategoriesResult = () => {
     const [isMarked, setIsMarked] = useState(false);
 
-    const handleBookmarkClick = () => {
+    const handleBookmarkClick1 = () => {
+        var image = document.getElementById('bookmark');
+        image.src = marked;
+    };
+
+    const handleBookmarkClick2 = () => {
         var image = document.getElementById('bookmark');
         image.src = marked;
     };
@@ -55,21 +55,23 @@ const CategoriesResult = () => {
     return (
         <div className="ScrollBar">
             {/*<div className="CategoryName">"{categoryName}"</div>*/}
-            {/* <div className="CategoryNameContainer">"{categoryName}"</div> */}
-            <div className="PageWrap1">
+            <div className="today-text">오늘의 기사 요약!</div>
+
+            <div className="PageWrap">
                 <form className="article-container">
-                    <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick} />
-                    <h2 className="TitleItem">{title1}</h2>
+                    <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    <h2 className="TitleItem">상온 초전도체??? 대박일까?</h2>
                     <ul className="DateItem"> 2023-08-23</ul>
-                    <ul className="SummaryItem">{summary1}</ul>
+                    <ul className="SummaryItem">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될수있겠지?</ul>
                 </form>
             </div>
-            <div className="PageWrap2">
+
+            <div className="PageWrap">
                 <form className="article-container">
-                    <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick} />
-                    <h2 className="TitleItem">{title2}</h2>
+                    <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    <h2 className="TitleItem">태풍이 하나 더 올까?</h2>
                     <ul className="DateItem"> 2023-08-23</ul>
-                    <ul className="SummaryItem">{summary2}</ul>
+                    <ul className="SummaryItem">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</ul>
                 </form>
             </div>
         </div>
