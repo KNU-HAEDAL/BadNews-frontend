@@ -2,16 +2,14 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 const TextBlock = () => {
     return (
-        <div style={{paddingLeft: '5px'}}>
+        <div style={{ paddingLeft: '5px' }}>
             <strong className="login-title">Sign Up</strong>
             <div className="txt">회원가입 후 Bad News를 더욱 편리하게 사용해보세요!</div>
         </div>
     );
 };
-
 
 const InputTable = () => {
     return (
@@ -34,11 +32,10 @@ const InputTable = () => {
     );
 };
 
-
 const LoginBtn = () => {
     const navigate = useNavigate();
 
-    const saveAndSend = () => {   
+    const saveAndSend = () => {
         // 변수에 인풋값 저장
         const idValue = document.getElementById('id').value;
         const pwValue = document.getElementById('pw').value;
@@ -61,22 +58,28 @@ const LoginBtn = () => {
             .catch(function (error) {
                 console.log(error);
             });
-    }
+    };
 
     return (
         <div className="login-btn-container">
-             <table className="login-btn-table">
+            <table className="login-btn-table">
                 <tr>
-                    <button className="login-btn" onClick={saveAndSend}>회원가입</button>
+                    <button className="login-btn" onClick={saveAndSend}>
+                        회원가입
+                    </button>
                 </tr>
                 <tr>
-                    <div className="small-txt">이미 계정이 있으신가요? <Link to="/login" className="link-style">로그인</Link></div>
+                    <div className="small-txt">
+                        이미 계정이 있으신가요?{' '}
+                        <Link to="/login" className="link-style">
+                            로그인
+                        </Link>
+                    </div>
                 </tr>
             </table>
         </div>
     );
 };
-
 
 const Signup = () => {
     return (

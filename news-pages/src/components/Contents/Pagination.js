@@ -12,7 +12,7 @@ function Pagination({ total, limit, page, setPage }) {
     };
 
     return (
-        <nav className="Pagination">
+        <nav className="pagination">
             <button
                 className={`page-button ${currentPage === 1 ? 'disabled' : ''}`}
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -26,7 +26,7 @@ function Pagination({ total, limit, page, setPage }) {
                     <button
                         key={i + 1}
                         className={`page-button ${currentPage === i + 1 ? 'current' : ''}`}
-                        onClick={() ⇒ handlePageChange(i + 1)}
+                        onClick={() => handlePageChange(i + 1)}
                         aria-current={currentPage === i + 1 ? 'page' : null}
                     >
                         {i + 1}
@@ -34,7 +34,7 @@ function Pagination({ total, limit, page, setPage }) {
                 ))}
             <button
                 className={`page-button ${currentPage === numPages ? 'disabled' : ''}`}
-                onClick={() ⇒ handlePageChange(currentPage + 1)}
+                onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === numPages}
             >
                 &gt;
