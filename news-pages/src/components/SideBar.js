@@ -9,7 +9,6 @@ const Sidebar = (props) => {
 
     const navigateToPolitics = (article) => {
         console.log('title');
-        alert(article.title);
 
         navigate('/article/returnpage', {
             state: { data: article },

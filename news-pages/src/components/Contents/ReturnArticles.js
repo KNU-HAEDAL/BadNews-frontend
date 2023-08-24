@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Sidebar';
 import '../../components/Contents/CategoriesResult.css';
-import Posts from '../../components/Contents/Posts';
+import Pagination from './Pagination';
 import { Sidebar } from '../Sidebar';
 import { useLocation, useNavigate, Route } from 'react-router-dom';
 import unmarked from '../../bookmark_unmarked.png';
@@ -53,7 +53,7 @@ const ReturnArticles = (props) => {
             </div>
 
             <div className="page-numbers">
-                <Posts />
+                <Pagination />
             </div>
         </div>
     );

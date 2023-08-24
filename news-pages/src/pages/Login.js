@@ -16,15 +16,13 @@ const InputTable = () => {
         <div className="input-table-container">
             <table className="input-table">
                 <tr>
-                    {/* <th><label className="txt">ID</label></th> */}
                     <td>
-                        <input id="id" type="text" placeholder="User name"></input>
+                        <input id="id" type="text" placeholder="User name" />
                     </td>
                 </tr>
                 <tr>
-                    {/* <th><label className="txt">PW</label></th> */}
                     <td>
-                        <input id="pw" type="password" placeholder="Password"></input>
+                        <input id="pw" type="password" placeholder="Password" />
                     </td>
                 </tr>
             </table>
