@@ -4,30 +4,18 @@ import axios from 'axios';
 
 const TextBlock = () => {
     return (
-        <div style={{ paddingLeft: '5px' }}>
+        <div style={{ paddingLeft: '1.8rem' }}>
             <strong className="login-title">Sign Up</strong>
             <div className="txt">회원가입 후 Bad News를 더욱 편리하게 사용해보세요!</div>
         </div>
     );
 };
 
-const InputTable = () => {
+const Input = () => {
     return (
-        <div className="input-table-container">
-            <table className="input-table">
-                <tr>
-                    {/* <th><label className="txt">ID</label></th> */}
-                    <td>
-                        <input id="id" type="text" placeholder="User name"></input>
-                    </td>
-                </tr>
-                <tr>
-                    {/* <th><label className="txt">PW</label></th> */}
-                    <td>
-                        <input id="pw" type="password" placeholder="Password"></input>
-                    </td>
-                </tr>
-            </table>
+        <div className="input-container">
+            <input id="id" type="text" placeholder="User name" />
+            <input id="pw" type="password" placeholder="Password" />
         </div>
     );
 };
@@ -62,21 +50,11 @@ const LoginBtn = () => {
 
     return (
         <div className="login-btn-container">
-            <table className="login-btn-table">
-                <tr>
-                    <button className="login-btn" onClick={saveAndSend}>
-                        회원가입
-                    </button>
-                </tr>
-                <tr>
-                    <div className="small-txt">
-                        이미 계정이 있으신가요?{' '}
-                        <Link to="/login" className="link-style">
-                            로그인
-                        </Link>
-                    </div>
-                </tr>
-            </table>
+            <button className="login-btn" onClick={saveAndSend}>회원가입</button>
+            <div className="small-txt">
+                이미 계정이 있으신가요?{' '}
+                <Link to="/login" className="link-style">로그인</Link>
+            </div>
         </div>
     );
 };
@@ -84,16 +62,14 @@ const LoginBtn = () => {
 const Signup = () => {
     return (
         <div className="Login">
-            <div className="input-table-outer">
-                <form>
-                    <TextBlock />
-                    <br />
-                    <br />
-                    <InputTable />
-                    <br />
-                    <LoginBtn />
-                </form>
-            </div>
+            <form className="input-outer">
+                <TextBlock />
+                <br />
+                <br />
+                <Input />
+                <br />
+                <LoginBtn />
+            </form>
         </div>
     );
 };
