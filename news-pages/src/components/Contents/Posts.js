@@ -2,7 +2,16 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Pagination from './Pagination';
 
-function Posts() {
+
+const Layout = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+`;
+
+const Posts = () => {
     const [posts, setPosts] = useState([]);
     const [limit, setLimit] = useState(20);
     const [page, setPage] = useState(1);
@@ -16,23 +25,11 @@ function Posts() {
 
     return (
         <Layout>
-            <header></header>
-
-            {/*   */}
-
             <footer>
                 <Pagination total={posts.length} limit={limit} page={page} setPage={setPage} />
             </footer>
         </Layout>
     );
 }
-
-const Layout = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-`;
 
 export default Posts;

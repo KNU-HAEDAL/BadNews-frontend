@@ -36,6 +36,7 @@ const Header = () => {
     console.log("hi" + isLoggedIn);
   };
 
+
   const handleLogout = () => {
     console.log("hi2" + isLoggedIn);
   };

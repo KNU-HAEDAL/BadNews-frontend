@@ -1,0 +1,39 @@
+.Pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 16px;
+}
+
+.page-button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0;
+    background: #f1f6ff;
+    color: #898989;
+    font-size: 1rem;
+    transition: all 0.2s linear;
+
+    &.disabled {
+        background: #c2c2c2;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    &.current {
+        background: #d7e4ff;
+        color: black;
+        font-weight: bold;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    &:hover:not(:disabled):not(.current) {
+        background: #6094fd;
+        color: black;
+        cursor: pointer;
+        transform: translateY(-2px);
+    }
+}
