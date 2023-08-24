@@ -22,7 +22,9 @@ const ReturnArticles = (props) => {
     return (
         <div className="CategoriesResult">
             <div className="contents">
-                <div className="today-text"><strong>'{props.news.state.data[0].category}'</strong>&nbsp;카테고리 검색 결과</div>
+                <div className="today-text">
+                    <strong>'{props.news.state.data[0].category}'</strong>&nbsp;카테고리 결과
+                </div>
                 
                 <div className="article-container">
                     <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
