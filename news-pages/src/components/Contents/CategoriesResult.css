@@ -1,9 +1,4 @@
-.PageContainer {
-    display: flex;
-}
-
-.CategoryName {
-    /* 검색 결과 */
+/* .CategoryName {
     position: relative;
     width: 232px;
     height: 36px;
@@ -15,73 +10,65 @@
     font-size: 24px;
     line-height: 45px;
 
-    color: #898888;
-}
-/* .PageWrap1 {
-    flex-direction: column;
-    justify-content: flex-start;
-}
-.PageWrap2 {
-}
-.PageWrap3 {
+    color: #595959;
 } */
 
-.article-container {
-    /* 컨테이너 정렬 */
-    display: 'flex';
-    flex-direction: 'column'; /* 세로 정렬 */
-    justify-content: 'flex-start';
-    box-sizing: border-box;
+.CategoriesResult {
+    padding-left: 20px;
 
-    /* 컨테이너 사이즈 */
+    /* 스크롤바 */
+    overflow-y: scroll; /* 세로 스크롤바 표시 */
+    overflow-x: hidden; /* 가로 스크롤바 숨김 */
+    height: 100%; /* 스크롤바가 표시될 영역의 높이 */
+}
+.today-text {
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    color: #595959;
+    font-size: 20px;
+}
+.article-container {
+    /* 컨테이너 안 요소들 정렬 */
+    display: flex;
+    flex-direction: column; /* 요소들을 세로 정렬 */
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+
+    /* 컨테이너 사이즈, padding */
     /* 왜 오른쪽 기준 정렬인 것 같지??? */
     width: 160vh;
     height: auto;
-    left: 10px;
-    right: 10px;
-    top: 60px;
-
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
     box-shadow: 0px 0px 15px #c2c2c2;
     border-radius: 10px;
 
-    /* 사각형과 나머지 요소 사이 간격 조정 */
-    position: relative;
-    margin-bottom: 30px;
-    margin-left: 1vw;
-    margin-right: 3vw;
+    /* 컨테이너 간 간격 */
+    margin-bottom: 20px;
+}
+.bookmark-container {
+    display: flex;
+    justify-content: flex-end; /* 북마크를 오른쪽 정렬하려고 한 건데... 적용 안 됨*/
+    margin-bottom: 10px;
 }
 #bookmark {
-    display: flex;
-    justify-content: right;
+    width: 24px; height: 24px;
 }
-.TitleItem {
-    margin-left: 20px;
-    margin-top: 20px;
+.article-title {
+    font-size: 23px;
+    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
+   
 }
-.DateItem {
-    box-sizing: border-box;
-    left: 1000px;
+.article-date {
+    line-height: 3; /* 줄 간격, 텍스트 크기 기준 */
 }
-.SummaryItem {
-    margin-bottom: '10px';
-}
-
-/* .CategoryNameContainer {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 1048px;
-    height: auto;
-    left: 300px;
-    top: 102px;
-
-    margin-top: 15px;
-} */
-.PageNumber {
-    position: absolute;
-    bottom: 0%;
-    right: 35%;
+.article-summary {
+    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }
