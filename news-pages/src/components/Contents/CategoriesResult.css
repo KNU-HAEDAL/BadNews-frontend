@@ -4,7 +4,7 @@
 
 .CategoryName {
     /* 검색 결과 */
-
+    
     position: relative;
     width: 232px;
     height: 36px;
@@ -22,10 +22,7 @@
     flex-direction: column;
     justify-content: flex-start;
 }
-.PageWrap2 {
-}
-.PageWrap3 {
-} */
+ */
 
 .article-container {
     /* 컨테이너 정렬 */

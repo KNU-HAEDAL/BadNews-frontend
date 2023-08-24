@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Login } from '../pages/Login'
 import './Header.css';
 import logo from '../logo.png'
 import search from '../search.png'
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 const SearchBox = () => {
     return (
@@ -16,12 +18,28 @@ const SearchBox = () => {
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     
-    const handleLoginButtonClick = () => {
-        // 여기에 로그인 여부를 검사한 뒤 
-        // 로그인 상태이면 setIsLoggedIn(isLoggedIn = true)
-        // 로그아웃 상태이면 setIsLoggedIn(isLoggedIn = false)
-        setIsLoggedIn(!isLoggedIn); // 클릭 시 isLoggedIn 값 반전
-    };
+    useEffect(() => {
+        // 서버에 로그인 상태 확인 요청 전송
+        axios.get('http://13.124.161.27:8080/login')
+            .then(response => {
+                if (response.data.result) { // 로그인 상태
+                    setIsLoggedIn(true);
+                } else { // 로그아웃 상태
+                    setIsLoggedIn(false);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }, []);
+
+    // const handleLogin = () => {
+    //     setIsLoggedIn(true);
+    // }
+
+    // const handleLogout = () => {
+    //     setIsLoggedIn(false);
+    // }
 
     return ( 
     <div className="Header">
@@ -34,8 +52,10 @@ const Header = () => {
             <SearchBox />
 
             <div className="header-menu-container">
-                <Link to="/login" className="header-menu" onClick={handleLoginButtonClick}>
-                    {isLoggedIn ? '로그아웃' : '로그인'}</Link>
+                { isLoggedIn ? 
+                    ( <Link to="/login" className="header-menu" onClick={useEffect}>로그아웃</Link> ) : 
+                    ( <Link to="/" className="header-menu" onClick={useEffect}>로그인</Link> ) 
+                } 
                 <div className="header-menu-bar">|&nbsp;</div> 
                 <Link to="/mypage" className="header-menu">마이페이지</Link>
             </div>

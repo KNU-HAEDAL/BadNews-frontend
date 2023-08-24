@@ -4,11 +4,16 @@ import category from '../category.png';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     const navigate = useNavigate();
 
-    const navigateToPolitics = () => {
-        navigate('/article/politics');
+    const navigateToPolitics = (article) => {
+        console.log('title');
+        alert(article.title);
+
+        navigate('/article/returnpage', {
+            state: { data: article },
+        });
     };
 
     function showArticles(choosedCtgr) {
@@ -23,21 +28,22 @@ const Sidebar = () => {
         };
 
         axios
-            .post('http://localhost:8080/article/save', {
+            .post('http://13.124.161.27:8080/article/save', {
                 userId: idValue,
                 category: ctgrValue,
                 sort: 1,
             })
             //성공시 then 실행
             .then(function (response) {
-                console.log(response.result);
+                console.log(response.data);
+
+                //서버에서 받아온 데이터는 response.data에 저장
+                navigateToPolitics(response.data);
             })
             //실패 시 catch 실행
             .catch(function (error) {
                 console.log(error);
             });
-
-        navigateToPolitics();
     }
 
     return (
@@ -78,19 +84,19 @@ const Sidebar = () => {
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('IT/테크');
+                        showArticles('IT/과학');
                     }}
                 >
-                    IT | 테크
+                    IT | 과학
                 </button>
 
                 <button
                     className="categories-btn"
                     onClick={() => {
-                        showArticles('문화/예술');
+                        showArticles('생활/문화');
                     }}
                 >
-                    문화 | 예술
+                    생활 | 문화
                 </button>
 
                 <button
@@ -99,7 +105,7 @@ const Sidebar = () => {
                         showArticles('스포츠');
                     }}
                 >
-                    스포츠
+                    스포츠(사용x)
                 </button>
             </div>
         </div>
