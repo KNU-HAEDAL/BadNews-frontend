@@ -37,6 +37,7 @@
         background: transparent;
         /* background: #6094fd; */
         color: black;
+        font-weight: bold;
         cursor: pointer;
         transform: translateY(-3px); /* 올라가는 효과 */
     }
