@@ -17,14 +17,14 @@
 
     color: #898888;
 }
-/* .PageWrap1 {
+.PageWrap1 {
     flex-direction: column;
     justify-content: flex-start;
 }
 .PageWrap2 {
 }
 .PageWrap3 {
-} */
+} 
 
 .article-container {
     /* 컨테이너 정렬 */
