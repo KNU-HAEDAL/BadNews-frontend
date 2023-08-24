@@ -6,11 +6,10 @@ const header_height = '101px';
 
 const Mypage = () => {
     return (
-        <div 
-            className="MyPage" 
-            style={{display: 'flex', height: `calc(100% - ${header_height})`}}>
+        <div className="Mypage" 
+            style={{display: 'flex', height: `calc(100% - ${header_height})`}}
+        >
             <Sidebar />
-
             <MypageResult />
         </div>
     );
