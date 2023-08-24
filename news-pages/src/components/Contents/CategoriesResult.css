@@ -4,7 +4,6 @@
 
 .CategoryName {
     /* 검색 결과 */
-    
     position: relative;
     width: 232px;
     height: 36px;
@@ -22,7 +21,10 @@
     flex-direction: column;
     justify-content: flex-start;
 }
- */
+.PageWrap2 {
+}
+.PageWrap3 {
+} */
 
 .article-container {
     /* 컨테이너 정렬 */
@@ -38,7 +40,7 @@
     left: 10px;
     right: 10px;
     top: 60px;
-    
+
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
@@ -78,3 +80,8 @@
 
     margin-top: 15px;
 } */
+.PageNumber {
+    position: absolute;
+    bottom: 0%;
+    right: 35%;
+}
