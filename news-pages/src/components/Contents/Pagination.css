@@ -1,0 +1,44 @@
+.Pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* 요소 간 간격 */
+}
+
+.page-button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    
+    background: transparent;
+    /* background: #f1f6ff; */
+    color: #595959;
+    font-size: 1rem;
+    transition: all 0.2s linear; /* 올라가는 효과 */
+
+    &.disabled {
+        background: transform;
+        color: #c2c2c2;
+        /* background: #c2c2c2; */
+        /* cursor: not-allowed; */
+        transform: none;
+    }
+
+    &.current {
+        background: transparent;
+        /* background: #d7e4ff; */
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+        transform: none;
+    }
+
+    &:hover:not(:disabled):not(.current) {
+        background: transparent;
+        /* background: #6094fd; */
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        transform: translateY(-3px); /* 올라가는 효과 */
+    }
+}

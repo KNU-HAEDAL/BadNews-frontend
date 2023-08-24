@@ -91,6 +91,10 @@
   font-size: 16px;
   text-decoration: none; /* 밑줄 없앰 */
 }
+.header-menu:hover {
+  color: #0357FF;
+  font-weight: bold;
+}
 .header-menu-bar {
   display: flex;
   justify-content: center;
