@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
-import ReturnArticles from './Categories/ReturnArticle';
+import ReturnArticles from '../components/Contents/ReturnArticles';
 import { useLocation } from 'react-router-dom';
 
 const header_height = '101px';
@@ -23,11 +23,7 @@ const ReturnPage = (props) => {
     return (
         <div
             className="MainPage"
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: `calc(100% - ${header_height})`,
-            }}
+            style={{ display: 'flex', height: `calc(100% - ${header_height})` }}
         >
             <Sidebar propFunction={txtvalue} />
             <ReturnArticles news={location} />

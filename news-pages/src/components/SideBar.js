@@ -16,7 +16,7 @@ const Sidebar = (props) => {
         });
     };
 
-    function showArticles(choosedCtgr) {
+    const showArticles = (choosedCtgr) => {
         // 변수에 인풋값 저장
         // id 브라우저 내부 저장값으로 수정필요
         const idValue = '1234';
@@ -36,7 +36,7 @@ const Sidebar = (props) => {
             //성공시 then 실행
             .then(function (response) {
                 console.log(response.data);
-
+                
                 //서버에서 받아온 데이터는 response.data에 저장
                 navigateToPolitics(response.data);
             })
@@ -105,7 +105,7 @@ const Sidebar = (props) => {
                         showArticles('스포츠');
                     }}
                 >
-                    스포츠(사용x)
+                    스포츠
                 </button>
             </div>
         </div>

@@ -4,7 +4,7 @@ import MainPage from './pages/MainPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Mypage from './pages/Mypage';
-import ReturnPage from './pages/Returnpage';
+import ReturnPage from './pages/ReturnPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {

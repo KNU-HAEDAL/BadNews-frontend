@@ -2,16 +2,14 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 const TextBlock = () => {
     return (
-        <div style={{paddingLeft: '5px'}}>
+        <div style={{ paddingLeft: '5px' }}>
             <strong className="login-title">Log In</strong>
             <div className="txt">로그인 후 Bad News를 더욱 편리하게 사용해보세요!</div>
         </div>
     );
 };
-
 
 const InputTable = () => {
     return (
@@ -34,11 +32,10 @@ const InputTable = () => {
     );
 };
 
-
 const LoginBtn = () => {
     const navigate = useNavigate();
 
-    const saveAndSend = () => {   
+    const saveAndSend = () => {
         // 변수에 인풋값 저장
         const idValue = document.getElementById('id').value;
         const pwValue = document.getElementById('pw').value;
@@ -57,20 +54,20 @@ const LoginBtn = () => {
             .then(function (response) {
                 if (response.data.result) {
                     console.log(`${response.data.id}님 환영합니다`);
-                    navigate("/");
+                    navigate('/');
                 } else {
-                    console.log(`로그인 실패. 다시 시도하세요.`)
+                    console.log(`로그인 실패. 다시 시도하세요.`);
                 }
                 console.log(response.data);
-                navigate("/"); // root로 이동
+                navigate('/'); // root로 이동
             })
             //실패 시 catch 실행
             .catch(function (error) {
                 console.log(`다시 시도하세요.`);
             });
-    
+
         // 서버로 로그인 요청
-        // fetch('http://13.124.161.27:8080/login', 
+        // fetch('http://13.124.161.27:8080/login',
         //     { method: 'POST',
         //     headers: { 'Content-Type': 'application/json', },
         //     body: JSON.stringify( { id: idValue, password: pwValue } ), }
@@ -81,7 +78,7 @@ const LoginBtn = () => {
         //         if (data.result) {
         //             alert(`${data.id}님 환영합니다`);
         //             navigate("/"); // root로 이동
-        //         } 
+        //         }
         //         else {
         //             alert(`다시 시도하세요`);
         //         }
@@ -89,22 +86,28 @@ const LoginBtn = () => {
         //     .catch((error) => {
         //         console.error('Error: User 정보가 없습니다. ', error);
         //     });
-    }
+    };
 
     return (
         <div className="login-btn-container">
-             <table className="login-btn-table">
+            <table className="login-btn-table">
                 <tr>
-                    <button className="login-btn" onClick={saveAndSend}>로그인</button>
+                    <button className="login-btn" onClick={saveAndSend}>
+                        로그인
+                    </button>
                 </tr>
                 <tr>
-                    <div className="small-txt">아직 계정이 없으신가요? <Link to="/signup" className="link-style">회원가입</Link></div>
+                    <div className="small-txt">
+                        아직 계정이 없으신가요?{' '}
+                        <Link to="/signup" className="link-style">
+                            회원가입
+                        </Link>
+                    </div>
                 </tr>
             </table>
         </div>
     );
 };
-
 
 const Login = () => {
     return (

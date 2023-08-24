@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
+import Posts from './Posts';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
 
@@ -12,10 +13,10 @@ const CategoriesResult = () => {
         image.src = marked;
     };
 
-    const handleBookmarkClick2 = () => {
-        var image = document.getElementById('bookmark');
-        image.src = marked;
-    };
+    // const handleBookmarkClick2 = () => {
+    //     var image = document.getElementById('bookmark');
+    //     image.src = marked;
+    // };
 
     useEffect(() => {
         const observerCallback = (entries) => {
@@ -53,28 +54,39 @@ const CategoriesResult = () => {
 
     return (
         <div className="CategoriesResult">
-            {/*<div className="CategoryName">"{categoryName}"</div>*/}
-            <div className="today-text">오늘의 기사 요약!</div>
+            <div className="contents">
+                <div className="today-text">오늘의 기사 추천!</div>
 
-            <div className="article-container">
-                <div className="bookmark-container"><img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} /></div>
-                <strong className="article-title">상온 초전도체??? 대박일까?</strong>
-                <div className="article-date">2023-08-23</div>
-                <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
+                <div className="article-container">
+                    <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
+                        <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    </div>
+                    <strong className="article-title">상온 초전도체??? 대박일까?</strong>
+                    <div className="article-date" style={{display:'flex', justifyContent:'flex-end'}}>2023-08-23</div>
+                    <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
+                </div>
+
+                <div className="article-container">
+                    <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
+                        <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    </div>
+                    <strong className="article-title">태풍이 하나 더 올까?</strong>
+                    <div className="article-date" style={{display:'flex', justifyContent:'flex-end'}}>2023-08-23</div>
+                    <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
+                </div>
+
+                <div className="article-container">
+                    <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
+                        <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    </div>
+                    <strong className="article-title">그냥 하나 더 추가</strong>
+                    <div className="article-date" style={{display:'flex', justifyContent:'flex-end'}}>2023-08-23</div>
+                    <div className="article-summary">룰룰........즐겁다</div>
+                </div>
             </div>
 
-            <div className="article-container">
-                <div className="bookmark-container"><img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} /></div>
-                <strong className="article-title">태풍이 하나 더 올까?</strong>
-                <div className="article-date">2023-08-23</div>
-                <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
-            </div>
-
-            <div className="article-container">
-                <div className="bookmark-container"><img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} /></div>
-                <strong className="article-title">그냥 하나 더 추가</strong>
-                <div className="article-date">2023-08-23</div>
-                <div className="article-summary">룰룰........즐겁다</div>
+            <div className="page-numbers">
+                <Posts />
             </div>
         </div>
     );
