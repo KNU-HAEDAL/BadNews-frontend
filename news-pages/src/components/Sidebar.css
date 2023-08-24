@@ -1,9 +1,13 @@
-/* @import '../fonts/font.css';
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
 * {
-    font-family: 'Pretendard';
-} */
+  font-family: "Nanum Gothic", Arial;
+}
 
+:root {
+    --category-width: 18vw;
+    --category-height: 60px;
+}
 
 /* 사이드바 영역 */
 .Area {
@@ -39,8 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 60px;
+    width: var(--category-width);
+    height: var(--category-height);
     background-color: #d7e4ff;
 
     font-size: 20px;
@@ -54,8 +58,8 @@
     align-items: center;
 
     /* flex: 1 1 0; */
-    width: 250px;
-    height: 60px;
+    width: var(--category-width);
+    height: var(--category-height);
     background-color: transparent;
     border: none;
 

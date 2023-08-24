@@ -23,11 +23,7 @@ const ReturnPage = (props) => {
     return (
         <div
             className="MainPage"
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: `calc(100% - ${header_height})`,
-            }}
+            style={{ display: 'flex', height: `calc(100% - ${header_height})` }}
         >
             <Sidebar propFunction={txtvalue} />
             <ReturnArticles news={location} />

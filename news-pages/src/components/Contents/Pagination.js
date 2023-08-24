@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import './Pagination.css';
 
-function Pagination({ total, limit, page, setPage }) {
+const Pagination = ({ total, limit, page, setPage }) => {
     const numPages = Math.ceil(total / limit);
     const [currentPage, setCurrentPage] = useState(page);
 
@@ -12,7 +12,7 @@ function Pagination({ total, limit, page, setPage }) {
     };
 
     return (
-        <nav className="pagination">
+        <nav className="Pagination">
             <button
                 className={`page-button ${currentPage === 1 ? 'disabled' : ''}`}
                 onClick={() => handlePageChange(currentPage - 1)}

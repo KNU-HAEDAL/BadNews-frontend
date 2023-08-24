@@ -56,7 +56,7 @@ const Header = () => {
                 <img src={logo} alt="Bad News logo" id="logo" />
                 <strong className="header-title">Bad News</strong>
             </Link>
-
+            
             <div className="header-menu-container">
                 {isLoggedIn ? (
                     <Link to="/login" className="header-menu" onClick={useEffect}>
