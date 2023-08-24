@@ -3,7 +3,7 @@ import { Login } from "../pages/Login";
 import "./Header.css";
 import logo from "../logo.png";
 import search from "../search.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const SearchBox = () => {
@@ -23,33 +23,21 @@ const SearchBox = () => {
 };
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+  const isLoggedIn = location.state && location.state.isLoggedIn;
+  const defaultIsLoggedIn = false;
+  const actualIsLoggedIn =
+    isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
 
-  //   useEffect(() => {
-  //     // 서버에 로그인 상태를 확인하는 요청을 보냅니다.
-  //     axios
-  //       .post("http://13.124.161.27:8080/login", {
-  //         id: "1", // 사용자가 입력한 ID
-  //         password: "1", // 사용자가 입력한 Password
-  //       })
-  //       .then((response) => {
-  //         // 서버에서 로그인 상태를 확인한 후, 그 결과를 상태로 설정합니다.
-  //         console.log("response");
-  //         console.log(response.data.result);
-  //         setIsLoggedIn(response.data.result);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error:", error);
-  //       });
-  //   }, []);
-
+  useEffect(() => {
+    console.log("check login : " + isLoggedIn);
+  }, [isLoggedIn]);
   const handleLogin = () => {
-    // if return(idValue) === true:
-    setIsLoggedIn(true);
+    console.log("hi" + isLoggedIn);
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
+    console.log("hi2" + isLoggedIn);
   };
 
   return (
@@ -63,13 +51,13 @@ const Header = () => {
         <SearchBox />
 
         <div className="header-menu-container">
-          {isLoggedIn ? (
-            <Link to="/login" className="header-menu" onClick={handleLogout}>
-              로그인
-            </Link>
-          ) : (
+          {actualIsLoggedIn ? (
             <Link to="/" className="header-menu" onClick={handleLogin}>
               로그아웃
+            </Link>
+          ) : (
+            <Link to="/login" className="header-menu" onClick={handleLogout}>
+              로그인
             </Link>
           )}
           <div className="header-menu-bar">|&nbsp;</div>
