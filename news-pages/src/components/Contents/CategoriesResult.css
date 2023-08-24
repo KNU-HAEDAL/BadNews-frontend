@@ -33,7 +33,7 @@
     /* 컨테이너 안 요소들 정렬 */
     display: flex;
     flex-direction: column; /* 요소들을 세로 정렬 */
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     align-items: flex-start;
 
     /* 컨테이너 사이즈, padding */
@@ -41,7 +41,7 @@
     width: 160vh;
     height: auto;
     padding-top: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     padding-left: 25px;
     
     /* 컨테이너 쉐입&컬러 */
@@ -53,17 +53,22 @@
     /* 컨테이너 간 간격 */
     margin-bottom: 20px;
 }
+.bookmark-container {
+    display: flex;
+    justify-content: flex-end; /* 북마크를 오른쪽 정렬하려고 한 건데... 적용 안 됨*/
+    margin-bottom: 10px;
+}
 #bookmark {
     width: 24px; height: 24px;
-    display: flex;
-    justify-content: flex-end;
 }
 .article-title {
-
+    font-size: 23px;
+    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
+   
 }
 .article-date {
-
+    line-height: 3; /* 줄 간격, 텍스트 크기 기준 */
 }
 .article-summary {
-
+    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }

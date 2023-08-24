@@ -24,6 +24,7 @@
     padding: 20px;
 }
 
+/* Log In */
 .login-title {
     color: #0357ff;
     font-size: 28px;
@@ -31,6 +32,7 @@
     line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }
 
+/* 로그인 후 ~~! */
 .txt {
     font-size: 16px;
     line-height: 1.5;

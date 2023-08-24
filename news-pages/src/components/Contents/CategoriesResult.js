@@ -57,17 +57,24 @@ const CategoriesResult = () => {
             <div className="today-text">오늘의 기사 요약!</div>
 
             <div className="article-container">
-                <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
-                <h2 className="article-title">상온 초전도체??? 대박일까?</h2>
-                <ul className="article-date">2023-08-23</ul>
-                <ul className="article-summmary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</ul>
+                <div className="bookmark-container"><img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} /></div>
+                <strong className="article-title">상온 초전도체??? 대박일까?</strong>
+                <div className="article-date">2023-08-23</div>
+                <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
             </div>
 
             <div className="article-container">
-                <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
-                <h2 className="article-title">태풍이 하나 더 올까?</h2>
-                <ul className="article-date">2023-08-23</ul>
-                <ul className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</ul>
+                <div className="bookmark-container"><img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} /></div>
+                <strong className="article-title">태풍이 하나 더 올까?</strong>
+                <div className="article-date">2023-08-23</div>
+                <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
+            </div>
+
+            <div className="article-container">
+                <div className="bookmark-container"><img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} /></div>
+                <strong className="article-title">그냥 하나 더 추가</strong>
+                <div className="article-date">2023-08-23</div>
+                <div className="article-summary">룰룰........즐겁다</div>
             </div>
         </div>
     );
