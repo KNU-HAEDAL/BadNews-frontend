@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-// import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+// import Pagination from './Pagination';
 import './Pagination.css';
 
-const Pagination = ({ total, limit, page, setPage }) => {
+
+const PageNumbers = ({ total, limit, page, setPage }) => {
     const numPages = Math.ceil(total / limit);
     const [currentPage, setCurrentPage] = useState(page);
 
@@ -20,6 +22,7 @@ const Pagination = ({ total, limit, page, setPage }) => {
             >
                 &lt;
             </button>
+
             {Array(numPages)
                 .fill()
                 .map((_, i) => (
@@ -31,7 +34,9 @@ const Pagination = ({ total, limit, page, setPage }) => {
                     >
                         {i + 1}
                     </button>
-                ))}
+                ))
+            }
+
             <button
                 className={`page-button ${currentPage === numPages ? 'disabled' : ''}`}
                 onClick={() => handlePageChange(currentPage + 1)}
@@ -40,6 +45,34 @@ const Pagination = ({ total, limit, page, setPage }) => {
                 &gt;
             </button>
         </nav>
+    );
+}
+
+const Layout = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+`;
+
+const Pagination = () => {
+    const [posts, setPosts] = useState([]);
+    const [limit, setLimit] = useState(20);
+    const [page, setPage] = useState(1);
+    const offset = (page - 1) * limit;
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((res) => res.json())
+            .then((data) => setPosts(data));
+    }, []);
+
+    return (
+        <Layout>
+            <footer>
+                <PageNumbers total={posts.length} limit={limit} page={page} setPage={setPage} />
+            </footer>
+        </Layout>
     );
 }
 

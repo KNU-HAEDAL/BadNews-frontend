@@ -5,7 +5,7 @@
 }
 
 :root {
-    --page-numbers-height: 50px;
+    --page-numbers-height: 55px;
 }
 
 /* 가장 바깥 div: contents 영역 */
@@ -50,6 +50,7 @@
     padding-top: 10px;
     padding-bottom: 15px;
     padding-left: 25px;
+    padding-right: 25px;
     
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
@@ -87,5 +88,5 @@
     /* padding: 10px; */
 
     height: var(--page-numbers-height);
-    background-color: black;
+    /* background-color: black; */
 }

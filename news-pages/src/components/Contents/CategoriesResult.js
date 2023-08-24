@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
-import Posts from './Posts';
+import Pagination from './Pagination';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
 
@@ -86,7 +86,7 @@ const CategoriesResult = () => {
             </div>
 
             <div className="page-numbers">
-                <Posts />
+                <Pagination />
             </div>
         </div>
     );
