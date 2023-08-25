@@ -5,22 +5,25 @@
 }
 
 :root {
-  --header-height: 5rem;
+  --header-height: 6rem;
 }
 
 .Header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: var(--header-height);
   border-bottom: 1px solid #c2c2c2;
+  box-sizing: border-box; /* border까지 사이즈에 포함 */
 }
 
 /* 로고, 타이틀 */
 .title-container {
   margin-left: 25px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  height: var(--header-height);
+  height: auto;
 
   text-decoration: none;
 }

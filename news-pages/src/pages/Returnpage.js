@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar';
 import ReturnArticles from '../components/Contents/ReturnArticles';
 import { useLocation } from 'react-router-dom';
 
-const header_height = '5rem';
+const header_height = '6rem';
 
 const ReturnPage = (props) => {
     const [txtvalue, settxtValue] = useState([]);
@@ -22,7 +22,7 @@ const ReturnPage = (props) => {
 
     return (
         <div className="ReturnPage"
-            style={{ display: 'flex', height: `calc(100% - ${header_height})` }}
+            style={{ display: 'flex', height: `calc(100vh - ${header_height})` }}
         >
             <Sidebar propFunction={txtvalue} />
             <ReturnArticles news={location} />
