@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../Sidebar';
-import '../../components/Contents/CategoriesResult.css';
+import './CategoriesResult.css';
 import Pagination from './Pagination';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import unmarked from '../../bookmark_unmarked.png';
@@ -61,12 +60,8 @@ const ReturnArticles = (props) => {
                 </div>
                 
                 {/* articles */}
-                {articles.slice(0, 5).map((article, index) => (
-                    <Article
-                        key={index}
-                        article={article}
-                        handleBookmarkClick={handleBookmarkClick}
-                    />
+                {articles.slice(0, 5).map( (article, index) => (
+                    <Article key={index} article={article} handleBookmarkClick={handleBookmarkClick}/>
                 ))}
             </div>
 
