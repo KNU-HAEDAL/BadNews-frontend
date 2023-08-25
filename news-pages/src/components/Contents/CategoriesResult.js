@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
 import Pagination from './Pagination';
-// import '../../bookmark_unmarked1.png'
+import unmarked1 from '../../bookmark_unmarked1.png';
+import unmarked2 from '../../bookmark_unmarked2.png';
+import unmarked3 from '../../bookmark_unmarked3.png';
+import unmarked4 from '../../bookmark_unmarked4.png';
+import unmarked5 from '../../bookmark_unmarked5.png';
+import marked1 from '../../bookmark_marked1.png';
+import marked2 from '../../bookmark_marked2.png';
+import marked3 from '../../bookmark_marked3.png';
+import marked4 from '../../bookmark_marked4.png';
+import marked5 from '../../bookmark_marked5.png';
 
 
 const CategoriesResult = () => {
@@ -9,7 +18,7 @@ const CategoriesResult = () => {
 
     const handleBookmarkClick1 = () => {
         var image = document.getElementById('bookmark');
-        image.src = '../../bookmark_marked1.png';
+        image.src = {marked1};
     };
 
     useEffect(() => {
@@ -59,10 +68,10 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">상온 초전도체??? 대박일까?</strong>
                             <div className="bookmark-container">
-                                <img src='../../bookmark_unmarked1.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked1} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">2023-08-25</div>
+                        <div className="article-date">중앙일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
                     </div>
                     {/* <div className="article-subcontainer2">
@@ -76,10 +85,10 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">태풍이 하나 더 올까?</strong>
                             <div className="bookmark-container">
-                                <img src='../../bookmark_unmarked2.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked2} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">2023-08-25</div>
+                        <div className="article-date">이데일리&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
                     </div>
                     {/* <div className="article-subcontainer2">
@@ -93,10 +102,10 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">기사 3</strong>
                             <div className="bookmark-container">
-                                <img src='../../bookmark_unmarked3.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked3} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">2023-08-25</div>
+                        <div className="article-date">조선일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">룰룰........즐겁다</div>
                     </div>
                     {/* <div className="article-subcontainer2">

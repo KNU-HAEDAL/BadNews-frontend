@@ -3,7 +3,16 @@ import '../Sidebar';
 import '../../components/Contents/CategoriesResult.css';
 import Pagination from './Pagination';
 import { useLocation, useNavigate, Route } from 'react-router-dom';
-// import '../../bookmark_unmarked1.png'
+import unmarked1 from '../../bookmark_unmarked1.png';
+import unmarked2 from '../../bookmark_unmarked2.png';
+import unmarked3 from '../../bookmark_unmarked3.png';
+import unmarked4 from '../../bookmark_unmarked4.png';
+import unmarked5 from '../../bookmark_unmarked5.png';
+import marked1 from '../../bookmark_marked1.png';
+import marked2 from '../../bookmark_marked2.png';
+import marked3 from '../../bookmark_marked3.png';
+import marked4 from '../../bookmark_marked4.png';
+import marked5 from '../../bookmark_marked5.png';
 
 
 const ReturnArticles = (props) => {
@@ -11,7 +20,7 @@ const ReturnArticles = (props) => {
 
     const handleBookmarkClick1 = () => {
         var image = document.getElementById('bookmark');
-        image.src = '../../bookmark_marked1.png';
+        image.src = {marked1};
     };
 
     console.log('props');
@@ -30,10 +39,10 @@ const ReturnArticles = (props) => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">{props.news.state.data[0].title}</strong>
                             <div className="bookmark-container">
-                                <img src='../../bookmark_unmarked1.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={unmarked1} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">{props.news.state.data[0].date}</div>
+                        <div className="article-date">{props.news.state.data[0].author}&nbsp;&nbsp;|&nbsp;&nbsp;{props.news.state.data[0].date}</div>
                         <div className="article-summary">{props.news.state.data[0].context}</div>
                     </div>
                     {/* <div className="article-subcontainer2">
@@ -46,10 +55,10 @@ const ReturnArticles = (props) => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">{props.news.state.data[1].title}</strong>
                             <div className="bookmark-container">
-                                <img src='../../bookmark_unmarked2.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={unmarked2} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">{props.news.state.data[1].date}</div>
+                        <div className="article-date">{props.news.state.data[1].author}&nbsp;&nbsp;|&nbsp;&nbsp;{props.news.state.data[1].date}</div>
                         <div className="article-summary">{props.news.state.data[1].context}</div>
                     </div>
                     {/* <div className="article-subcontainer2">
@@ -62,10 +71,10 @@ const ReturnArticles = (props) => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">{props.news.state.data[2].title}</strong>
                             <div className="bookmark-container">
-                                <img src='../../bookmark_unmarked3.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={unmarked3} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">{props.news.state.data[2].date}</div>
+                        <div className="article-date">{props.news.state.data[2].author}&nbsp;&nbsp;|&nbsp;&nbsp;{props.news.state.data[2].date}</div>
                         <div className="article-summary">{props.news.state.data[2].context}</div>
                     </div>
                     {/* <div className="article-subcontainer2">
