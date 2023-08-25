@@ -51,9 +51,10 @@ const CategoriesResult = () => {
         <div className="CategoriesResult">
             <div className="contents">
                 {/* 상단 문구 */}
-                <strong className="today-text" style={{ color:'#0357ff', fontSize:'1.45rem' }}>
-                    오늘의 추천 기사
-                </strong>
+                <div className="today-text" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <strong style={{ color:'#0357ff', fontSize:'1.45rem' }}>내가 스크랩한 기사</strong>
+                    <div style={{ color: '#595959', fontSize: '1rem' }}>&nbsp;&nbsp;북마크로 관심 기사를 스크랩하고 관리해보세요</div>
+                </div>
 
                 {/* article 1 */}
                 <div className="article-container">
@@ -64,11 +65,10 @@ const CategoriesResult = () => {
                                 <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-info">중앙일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
+                        <div className="article-info">서울신문&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
                     </div>
                     {/* <div className="article-subcontainer2">
-                        <img src="../../기사-이미지.jpeg" alt="기사 이미지 1" id="article-img" />
                     </div> */}
                 </div>
 
@@ -81,11 +81,10 @@ const CategoriesResult = () => {
                                 <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">이데일리&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
+                        <div className="article-date">매일경제&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
                     </div>
                     {/* <div className="article-subcontainer2">
-                        <img src="../../기사-이미지.jpeg" alt="기사 이미지 1" id="article-img" />
                     </div> */}
                 </div>
 
@@ -98,11 +97,10 @@ const CategoriesResult = () => {
                                 <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">조선일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
+                        <div className="article-date">스포티비뉴스&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">룰룰........즐겁다</div>
                     </div>
                     {/* <div className="article-subcontainer2">
-                        <img src="../../기사-이미지.jpeg" alt="기사 이미지 1" id="article-img" />
                     </div> */}
                 </div>
             </div>
