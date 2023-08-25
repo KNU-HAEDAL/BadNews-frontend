@@ -1,3 +1,4 @@
+import { useState } from "react";
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -23,7 +24,9 @@ const Input = () => {
 const LoginBtn = () => {
     const navigate = useNavigate();
 
-    const saveAndSend = () => {
+    const handleSignup = (event) => {
+        event.preventDefault(); // 이벤트의 기본 동작(새로고침) 막기
+
         // 변수에 인풋값 저장
         const idValue = document.getElementById('id').value;
         const pwValue = document.getElementById('pw').value;
@@ -41,6 +44,7 @@ const LoginBtn = () => {
             //성공시 then 실행
             .then(function (response) {
                 console.log(response.data);
+                navigate("/complete-signup"); // 자동으로 페이지 이동
             })
             //실패 시 catch 실행
             .catch(function (error) {
@@ -50,7 +54,7 @@ const LoginBtn = () => {
 
     return (
         <div className="login-btn-container">
-            <button className="login-btn" onClick={saveAndSend}>회원가입</button>
+            <button className="login-btn" onClick={handleSignup}>회원가입</button>
             <div className="small-txt">
                 이미 계정이 있으신가요?{' '}
                 <Link to="/login" className="link-style">로그인</Link>
