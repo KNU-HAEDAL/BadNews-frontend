@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar';
 import ReturnArticles from '../components/Contents/ReturnArticles';
 import { useLocation } from 'react-router-dom';
 
-const header_height = '101px';
+const header_height = '5rem';
 
 const ReturnPage = (props) => {
     const [txtvalue, settxtValue] = useState([]);
