@@ -2,7 +2,7 @@ import Sidebar from '../components/Sidebar';
 import CategoriesResult from '../components/Contents/CategoriesResult';
 import { Route, Routes, Link, useLocation } from 'react-router-dom';
 
-const header_height = '101px';
+const header_height = '5rem';
 
 const MainPage = () => {
     return (
