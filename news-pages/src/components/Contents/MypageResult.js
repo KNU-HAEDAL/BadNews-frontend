@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
 import Pagination from './Pagination';
-import unmarked from '../../bookmark_unmarked.png';
-import marked from '../../bookmark_marked.png';
+// import '../../bookmark_unmarked1.png'
 
 
 const CategoriesResult = () => {
@@ -10,13 +9,8 @@ const CategoriesResult = () => {
 
     const handleBookmarkClick1 = () => {
         var image = document.getElementById('bookmark');
-        image.src = marked;
+        image.src = '../../bookmark_marked1.png';
     };
-
-    // const handleBookmarkClick2 = () => {
-    //     var image = document.getElementById('bookmark');
-    //     image.src = marked;
-    // };
 
     useEffect(() => {
         const observerCallback = (entries) => {
@@ -60,31 +54,52 @@ const CategoriesResult = () => {
                     <div style={{ color: '#595959', fontSize: '1rem' }}>&nbsp;&nbsp;북마크로 관심 기사를 스크랩하고 관리해보세요</div>
                 </div>
 
+                {/* article 1 */}
                 <div className="article-container">
-                    <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
-                        <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    <div className="article-subcontainer1">
+                        <div className="title-bookmark-container">
+                            <strong className="article-title">상온 초전도체??? 대박일까?</strong>
+                            <div className="bookmark-container">
+                                <img src='../../bookmark_unmarked1.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                            </div>
+                        </div>
+                        <div className="article-date">2023-08-25</div>
+                        <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
                     </div>
-                    <strong className="article-title">상온 초전도체??? 대박일까?</strong>
-                    <div className="article-date" style={{display:'flex', justifyContent:'flex-end'}}>2023-08-23</div>
-                    <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
+                    {/* <div className="article-subcontainer2">
+                    </div> */}
                 </div>
 
+                {/* article 2 */}
                 <div className="article-container">
-                    <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
-                        <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    <div className="article-subcontainer1">
+                        <div className="title-bookmark-container">
+                            <strong className="article-title">태풍이 하나 더 올까?</strong>
+                            <div className="bookmark-container">
+                                <img src='../../bookmark_unmarked2.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                            </div>
+                        </div>
+                        <div className="article-date">2023-08-25</div>
+                        <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
                     </div>
-                    <strong className="article-title">태풍이 하나 더 올까?</strong>
-                    <div className="article-date" style={{display:'flex', justifyContent:'flex-end'}}>2023-08-23</div>
-                    <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
+                    {/* <div className="article-subcontainer2">
+                    </div> */}
                 </div>
 
+                {/* article 3 */}
                 <div className="article-container">
-                    <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
-                        <img src={unmarked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                    <div className="article-subcontainer1">
+                        <div className="title-bookmark-container">
+                            <strong className="article-title">기사 3</strong>
+                            <div className="bookmark-container">
+                                <img src='../../bookmark_unmarked3.png' alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                            </div>
+                        </div>
+                        <div className="article-date">2023-08-25</div>
+                        <div className="article-summary">룰룰........즐겁다</div>
                     </div>
-                    <strong className="article-title">그냥 하나 더 추가</strong>
-                    <div className="article-date" style={{display:'flex', justifyContent:'flex-end'}}>2023-08-23</div>
-                    <div className="article-summary">룰룰........즐겁다</div>
+                    {/* <div className="article-subcontainer2">
+                    </div> */}
                 </div>
             </div>
 
