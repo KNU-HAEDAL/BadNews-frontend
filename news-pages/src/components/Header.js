@@ -5,8 +5,6 @@ import logo from "../logo.png";
 import search from "../search.png";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
-import { setLogin, setLogout } from "../modules/counter";
 
 const SearchBox = () => {
   return (
@@ -31,7 +29,7 @@ const Header = () => {
   const actualIsLoggedIn =
     isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
 
-  const isUserLoggedIn = useSelector((state) => state.counter.login);
+  // const isUserLoggedIn = useSelector((state) => state.counter.login);
 
   useEffect(() => {
     console.log("check login : " + isLoggedIn);
@@ -55,7 +53,7 @@ const Header = () => {
         <SearchBox />
 
         <div className="header-menu-container">
-          {actualIsLoggedIn ? (
+          {isLoggedIn ? (
             <Link to="/" className="header-menu" onClick={handleLogin}>
               로그아웃
             </Link>
