@@ -23,52 +23,45 @@ const SearchBox = () => {
 };
 
 const Header = () => {
-  const location = useLocation();
-  const isLoggedIn = location.state && location.state.isLoggedIn;
-  const defaultIsLoggedIn = false;
-  const actualIsLoggedIn =
-    isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
+    const location = useLocation();
+    const isLoggedIn = location.state && location.state.isLoggedIn;
+    const defaultIsLoggedIn = false;
+    const actualIsLoggedIn =
+        isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
 
-  useEffect(() => {
-    console.log("check login : " + isLoggedIn);
-  }, [isLoggedIn]);
-  const handleLogin = () => {
-    console.log("hi" + isLoggedIn);
-  };
+    useEffect(() => {
+        console.log("check login : " + isLoggedIn);
+    }, [isLoggedIn]);
+    
+    const handleLogin = () => {
+        console.log("hi" + isLoggedIn);
+    };
 
+    const handleLogout = () => {
+        console.log("hi2" + isLoggedIn);
+    };
 
-  const handleLogout = () => {
-    console.log("hi2" + isLoggedIn);
-  };
-
-  return (
-    <div className="Header">
-      <Link to="/" className="title-container">
-        <img src={logo} alt="Bad News logo" id="logo" />
-        <strong className="header-title">Bad News</strong>
-      </Link>
-
-      <div className="search-login-container">
-        <SearchBox />
-
-        <div className="header-menu-container">
-          {actualIsLoggedIn ? (
-            <Link to="/" className="header-menu" onClick={handleLogin}>
-              로그아웃
+    return (
+        <div className="Header">
+            <Link to="/" className="title-container">
+                <img src={logo} alt="Bad News logo" id="logo" />
+                <strong className="header-title">Bad News</strong>
             </Link>
-          ) : (
-            <Link to="/login" className="header-menu" onClick={handleLogout}>
-              로그인
-            </Link>
-          )}
-          <div className="header-menu-bar">|&nbsp;</div>
-          <Link to="/mypage" className="header-menu">
-            마이페이지
-          </Link>
+
+            <div className="search-login-container">
+                <SearchBox />
+
+                <div className="header-menu-container">
+                    {actualIsLoggedIn ? 
+                        (<Link to="/" className="header-menu" onClick={handleLogin}>로그아웃</Link>) : 
+                        (<Link to="/login" className="header-menu" onClick={handleLogout}>로그인</Link>)
+                    }
+                    <div className="header-menu-bar">|&nbsp;</div>
+                    <Link to="/mypage" className="header-menu">마이페이지</Link>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Header;
