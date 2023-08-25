@@ -8,12 +8,9 @@ const header_height = "101px";
 const ReturnPage = (props) => {
   const [txtvalue, settxtValue] = useState([]);
   const [data, setData] = useState([]);
-
-  const location = useLocation(); // useLocation 훅은 최상위 레벨에서 호출
-
+  const location = useLocation();
   useEffect(() => {
     console.log(location);
-    // settxtValue(location);
   }, [location]);
 
   function propFunction(text) {
