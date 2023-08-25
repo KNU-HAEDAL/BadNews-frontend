@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Sidebar';
 import '../../components/Contents/CategoriesResult.css';
 import Pagination from './Pagination';
-import { useLocation, useNavigate, Route } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
 
@@ -21,6 +21,8 @@ const Article = ({ article, handleBookmarkClick }) => {
                     </div>
                 </div>
                 <div className="article-date">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}</div>
+                <Link to={article.url} target="_blank" className="article-url">기사 원문</Link>
+                <div className="article-keywords"> {article.keywords.map(item => `#${item} `)} </div>
                 <div className="article-summary">{article.context}</div>
             </div>
             {/* <div className="article-subcontainer2">

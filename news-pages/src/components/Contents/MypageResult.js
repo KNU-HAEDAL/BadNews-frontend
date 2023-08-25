@@ -50,6 +50,7 @@ const CategoriesResult = () => {
     return (
         <div className="CategoriesResult">
             <div className="contents">
+                {/* 상단 문구 */}
                 <div className="today-text" style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <strong style={{ color:'#0357ff', fontSize:'1.45rem' }}>내가 스크랩한 기사</strong>
                     <div style={{ color: '#595959', fontSize: '1rem' }}>&nbsp;&nbsp;북마크로 관심 기사를 스크랩하고 관리해보세요</div>

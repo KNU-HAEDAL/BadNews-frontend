@@ -50,6 +50,7 @@ const CategoriesResult = () => {
     return (
         <div className="CategoriesResult">
             <div className="contents">
+                {/* 상단 문구 */}
                 <strong className="today-text" style={{ color:'#0357ff', fontSize:'1.45rem' }}>
                     오늘의 추천 기사
                 </strong>

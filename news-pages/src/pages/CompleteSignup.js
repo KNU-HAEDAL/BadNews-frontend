@@ -3,17 +3,16 @@ import './Signup';
 import { useNavigate, Link } from "react-router-dom";
 
 const textStyle = {
-    lineHeight: '2rem',
+    height: '2.5rem',
     color: '#0357ff',
     fontSize: '1.8rem',
-
+    fontWeight: 'bold',
 }
 
 const textStyle2 = {
-    lineHeight: '1.5rem',
+    lineHeight: '1.8rem',
     color: 'black',
 }
-
 
 const CompleteSignup = () => {
     return (

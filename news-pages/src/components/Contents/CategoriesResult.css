@@ -35,13 +35,12 @@
 .today-text {
     display: flex;
     align-items: center;
-    margin-top: 1.1rem; margin-bottom: 1.1rem;
+    margin-top: 16px; margin-bottom: 16px;
 }
 
 .article-container {
     /* 컨테이너 안 요소들 정렬 */
     display: flex;
-    align-items: flex-start;
 
     /* 컨테이너 사이즈, padding */
     width: 100%;
@@ -55,7 +54,7 @@
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
-    box-shadow: 0px 0px 15px #c2c2c2;
+    box-shadow: 0px 4px 8px #d1d1d1; /* 수평 수직 흐림정도 색상*/
     border-radius: 10px;
 
     margin-bottom: 1.25rem; /* 컨테이너 간 간격 */
@@ -73,14 +72,14 @@
     height: auto;
 } */
 .title-bookmark-container {
-    width: 100%;
+    width: 100%; height: 2rem;
     display: flex;
     justify-content:space-between;
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
 }
 .article-title {
     font-size: 23px;
-    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
-   
 }
 .bookmark-container {
     display: flex;
@@ -90,21 +89,40 @@
     width: 24px; height: 24px;
 }
 .article-date {
-    width: 100%;
+    width: 100%; height: 2rem;
     display: flex;
     justify-content: right;
-    line-height: 3; /* 줄 간격, 텍스트 크기 기준 */
+}
+.article-url-container {
+    display: flex;
+    justify-content: right;
+}
+.article-url {
+    width: auto; height: 1.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: thin solid #d7e4ff;
+    border-radius: 2rem;
+    padding-left: 0.8rem; padding-right: 0.8rem;
+    margin-bottom: 1rem;
+
+    color: #595959;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.article-url:hover {
+    color: #0357ff;
+}
+.article-keywords {
+    height: 2rem;
+    color: #595959;
 }
 .article-summary {
     line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }
 
 .page-numbers {
-    /* position: fixed;
-    bottom: 0;
-    left: 0; */
-    /* padding: 10px; */
-
     height: var(--page-numbers-height);
     /* background-color: black; */
 }

@@ -2,23 +2,39 @@ import React, { useState, useEffect } from "react";
 import { Login } from "../pages/Login";
 import "./Header.css";
 import logo from "../logo.png";
-import search from "../search.png";
+import search_active from "../search_active.png";
+import search_inactive from "../search_inactive.png";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const SearchBox = () => {
-  return (
-    <div className="search-container">
-      <input
-        id="search-box"
-        type="text"
-        placeholder="검색어를 입력하세요"
-        img
-      ></input>
-      <Link to="/">
-        <img src={search} alt="돋보기" id="search-icon" />
-      </Link>
-    </div>
+    const [inputText, setInputText] = useState("");
+    const [searchIcon, setSearchIcon] = useState({search_inactive});
+
+    const handleInputChange = (event) => {
+        const text = event.target.value;
+        setInputText(text);
+
+        if (text.length > 0) {
+            setSearchIcon({search_active});
+        } else {
+            setSearchIcon({search_inactive});
+        }
+    }
+
+    return (
+        <div className="search-container">
+            <input
+                id="search-input"
+                type="text"
+                placeholder="검색어를 입력하세요"
+                value={inputText} 
+                onChange={handleInputChange}
+            />
+            <Link to="/">
+                <img src={searchIcon} alt="검색 아이콘" id="search-icon" />
+            </Link>
+        </div>
   );
 };
 

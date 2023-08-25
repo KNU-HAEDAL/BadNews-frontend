@@ -6,6 +6,9 @@
 
 :root {
   --header-height: 6rem;
+
+  --search-container-width: 21rem; 
+  --search-icon-width: 1.7em;
 }
 
 .Header {
@@ -47,9 +50,9 @@
 .search-container {
   padding-left: 15px; /* 컨테이너 내부 여백 */
 
-  width: 21rem; height: 2.5rem;
+  width: var(--search-container-width); height: 2.5rem;
   border: 2px solid #0357FF;
-  border-radius: 30px;
+  border-radius: 2rem;
   display:flex;
   justify-content:space-between;
   align-items: center;
@@ -58,12 +61,11 @@
   
   /* margin-right: 20px; 컨테이너 밖 여백 */
 }
-:root {
-  --container-width: 350px; 
-  --icon-width: 1.7em; /* 빼고 싶은 넓이 */
+.search-container:hover {
+  box-shadow: 0px 2px 2px #d1d1d1; /* 수평 수직 흐림정도 색상 */
 }
-#search-box {
-  width: calc(var(--container-width) - var(--icon-width)); height: auto;
+#search-input {
+  width: calc(var(--container-width) - var(--search-icon-width)); height: auto;
   border: none; outline: none;
   font-size: 16px;
 }
