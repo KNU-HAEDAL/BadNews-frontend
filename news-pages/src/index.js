@@ -8,8 +8,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import counter from "./modules/counter";
 
-const store = createStore(counter); // 스토어를 만듭니다.
-console.log("redux 확인" + store.getState()); // 스토어의 상태를 확인해봅시다.
+const store = createStore(counter); //
+console.log("redux 확인 " + JSON.stringify(store.getState()));
+console.log("redux 확인 그냥 getState " + store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
