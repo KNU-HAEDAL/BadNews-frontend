@@ -55,9 +55,9 @@ const CategoriesResult = () => {
     return (
         <div className="CategoriesResult">
             <div className="contents">
-                <div className="today-text" style={{ color: '#595959', fontSize: '1.1rem' }}>
-                    오늘의 추천 기사를 확인하세요
-                </div>
+                <strong className="today-text" style={{ color:'#0357ff', fontSize:'1.45rem' }}>
+                    오늘의 추천 기사
+                </strong>
 
                 <div className="article-container">
                     <div className="bookmark-container" style={{display:'flex', justifyContent:'flex-end'}}>
