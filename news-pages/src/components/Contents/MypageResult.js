@@ -65,7 +65,7 @@ const CategoriesResult = () => {
                                 <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">서울신문&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
+                        <div className="article-info">서울신문&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
                     </div>
                     {/* <div className="article-subcontainer2">

@@ -25,7 +25,7 @@
     padding-top: 1rem; padding-bottom: 1.5rem;
 
     border: thin solid #c2c2c2; /* border-width border-style border-color */
-    border-radius: 0.8rem;
+    border-radius: 0.9rem;
     box-shadow: 0px 4px 10px #d1d1d1; /* 수평 수직 흐림정도 색상*/
 }
 

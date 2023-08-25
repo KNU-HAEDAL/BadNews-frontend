@@ -20,8 +20,10 @@ const Article = ({ article, handleBookmarkClick }) => {
                             onClick={() => handleBookmarkClick(article)} />
                     </div>
                 </div>
-                <div className="article-date">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}</div>
-                <Link to={article.url} target="_blank" className="article-url">기사 원문</Link>
+                <div className="article-info">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}</div>
+                <div className="article-url-container">
+                    <Link to={article.url} target="_blank" className="article-url">기사 원문</Link> 
+                </div>
                 <div className="article-keywords"> {article.keywords.map(item => `#${item} `)} </div>
                 <div className="article-summary">{article.context}</div>
             </div>
