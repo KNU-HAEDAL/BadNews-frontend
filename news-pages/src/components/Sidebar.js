@@ -5,9 +5,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Sidebar = (props) => {
+    // 카테고리 버튼 클릭 시 스타일 적용
+    var buttons = document.getElementsByClassName("categories-btn");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            var category = this.getAttribute("data-category");
+            var elements = document.querySelectorAll("[data-category='" + category + "']");
+            for (var j = 0; j < elements.length; j++) {
+            elements[j].style.fontWeight = "bold";
+            }
+        });
+    }
+    
+
     const navigate = useNavigate();
 
-    const navigateToPolitics = (article) => {
+    const navigateToCategory = (article) => {
         console.log('title');
 
         navigate('/article/returnpage', {
@@ -37,7 +50,7 @@ const Sidebar = (props) => {
                 console.log(response.data);
                 
                 //서버에서 받아온 데이터는 response.data에 저장
-                navigateToPolitics(response.data);
+                navigateToCategory(response.data);
             })
             //실패 시 catch 실행
             .catch(function (error) {
@@ -46,7 +59,7 @@ const Sidebar = (props) => {
     }
 
     return (
-        <div className="Area">
+        <div className="Sidebar">
             <div className="categories-container">
                 <div id="categories-title">
                     <img src={category} alt="categories icon" id="categories-icon" />
@@ -55,6 +68,7 @@ const Sidebar = (props) => {
 
                 <button
                     className="categories-btn"
+                    data-category="category1"
                     onClick={() => {
                         showArticles('정치');
                     }}
@@ -64,6 +78,7 @@ const Sidebar = (props) => {
 
                 <button
                     className="categories-btn"
+                    data-category="category2"
                     onClick={() => {
                         showArticles('경제');
                     }}
@@ -73,6 +88,7 @@ const Sidebar = (props) => {
 
                 <button
                     className="categories-btn"
+                    data-category="category3"
                     onClick={() => {
                         showArticles('사회');
                     }}
@@ -82,6 +98,7 @@ const Sidebar = (props) => {
 
                 <button
                     className="categories-btn"
+                    data-category="category4"
                     onClick={() => {
                         showArticles('IT/과학');
                     }}
@@ -91,6 +108,7 @@ const Sidebar = (props) => {
 
                 <button
                     className="categories-btn"
+                    data-category="category5"
                     onClick={() => {
                         showArticles('생활/문화');
                     }}
@@ -100,6 +118,7 @@ const Sidebar = (props) => {
 
                 <button
                     className="categories-btn"
+                    data-category="category6"
                     onClick={() => {
                         showArticles('스포츠');
                     }}
