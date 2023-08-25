@@ -7,7 +7,6 @@ const header_height = "101px";
 
 const ReturnPage = (props) => {
   const [txtvalue, settxtValue] = useState([]);
-  const [data, setData] = useState([]);
   const location = useLocation();
   useEffect(() => {
     console.log(location);
