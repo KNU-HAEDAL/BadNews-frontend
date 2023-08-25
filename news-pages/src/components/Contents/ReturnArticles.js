@@ -27,8 +27,9 @@ const Article = ({ article, handleBookmarkClick }) => {
                 <div className="article-keywords"> {article.keywords.map(item => `#${item} `)} </div>
                 <div className="article-summary">{article.context}</div>
             </div>
-            {/* <div className="article-subcontainer2">
-            </div> */}
+            <div className="article-subcontainer2">
+                <img src={article.image.path} alt="기사 이미지" id="article-img"/>
+            </div>
         </div>
     );
 }
