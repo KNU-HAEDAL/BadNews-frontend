@@ -4,29 +4,39 @@
   font-family: "Nanum Gothic", Arial;
 }
 
+:root {
+  --header-height: 6rem;
+
+  --search-container-width: 21rem; 
+  --search-icon-width: 1.7em;
+}
+
 .Header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: var(--header-height);
   border-bottom: 1px solid #c2c2c2;
+  box-sizing: border-box; /* border까지 사이즈에 포함 */
 }
 
 /* 로고, 타이틀 */
 .title-container {
   margin-left: 25px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  height: 100px;
+  height: auto;
 
   text-decoration: none;
 }
 #logo {
-  width: 40px; height: 40px;
+  width: 2.5rem; height: 2.5rem;
   margin-right: 15px;
 }
 .header-title {
   color: #0357FF;
-  font-size: 45px;
+  font-size: 2.7rem;
 }
 
 /* 검색창, 로그인 | 마이페이지 */
@@ -40,9 +50,9 @@
 .search-container {
   padding-left: 15px; /* 컨테이너 내부 여백 */
 
-  width: 350px; height: 40px;
+  width: var(--search-container-width); height: 2.5rem;
   border: 2px solid #0357FF;
-  border-radius: 30px;
+  border-radius: 2rem;
   display:flex;
   justify-content:space-between;
   align-items: center;
@@ -51,12 +61,11 @@
   
   /* margin-right: 20px; 컨테이너 밖 여백 */
 }
-:root {
-  --container-width: 350px; 
-  --icon-width: 1.7em; /* 빼고 싶은 넓이 */
+.search-container:hover {
+  box-shadow: 0px 2px 2px #d1d1d1; /* 수평 수직 흐림정도 색상 */
 }
-#search-box {
-  width: calc(var(--container-width) - var(--icon-width)); height: auto;
+#search-input {
+  width: calc(var(--container-width) - var(--search-icon-width)); height: auto;
   border: none; outline: none;
   font-size: 16px;
 }

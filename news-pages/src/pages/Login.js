@@ -26,7 +26,7 @@ export default function Login() {
             id: idValue,
             password: pwValue,
         };
-
+        
         axios
             .post("http://13.124.161.27:8080/login", datas, {
                 headers: {
@@ -39,7 +39,7 @@ export default function Login() {
                 if (response.data.result === true) {
                     alert("id: " + datas.id + "님 반갑습니다");
                     setLogin(true);
-                    navigate("/", { state: { isLoggedIn: true } });
+                    navigate("/", { state: { isLoggedIn: true } }); // 자동으로 홈 이동
                 } else {
                     alert("id: " + datas.id + " 유저가 없습니다.");
                 }
