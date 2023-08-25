@@ -8,76 +8,83 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const SearchBox = () => {
-    const [inputText, setInputText] = useState("");
-    const [searchIcon, setSearchIcon] = useState({search_inactive});
+  const [inputText, setInputText] = useState("");
+  const [searchIcon, setSearchIcon] = useState({ search_inactive });
 
-    const handleInputChange = (event) => {
-        const text = event.target.value;
-        setInputText(text);
+  const handleInputChange = (event) => {
+    const text = event.target.value;
+    setInputText(text);
 
-        if (text.length > 0) {
-            setSearchIcon({search_active});
-        } else {
-            setSearchIcon({search_inactive});
-        }
+    if (text.length > 0) {
+      setSearchIcon({ search_active });
+    } else {
+      setSearchIcon({ search_inactive });
     }
+  };
 
-    return (
-        <div className="search-container">
-            <input
-                id="search-input"
-                type="text"
-                placeholder="검색어를 입력하세요"
-                value={inputText} 
-                onChange={handleInputChange}
-            />
-            <Link to="/">
-                <img src={searchIcon} alt="검색 아이콘" id="search-icon" />
-            </Link>
-        </div>
+  return (
+    <div className="search-container">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="검색어를 입력하세요"
+        value={inputText}
+        onChange={handleInputChange}
+      />
+      <Link to="/">
+        <img src={searchIcon} alt="검색 아이콘" id="search-icon" />
+      </Link>
+    </div>
   );
 };
 
 const Header = () => {
-    const location = useLocation();
-    const isLoggedIn = location.state && location.state.isLoggedIn;
-    const defaultIsLoggedIn = false;
-    const actualIsLoggedIn =
-        isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
+  const location = useLocation();
+  const isLoggedIn = location.state && location.state.isLoggedIn;
+  const defaultIsLoggedIn = false;
+  const actualIsLoggedIn =
+    isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
 
-    useEffect(() => {
-        console.log("check login : " + isLoggedIn);
-    }, [isLoggedIn]);
-    
-    const handleLogin = () => {
-        console.log("hi" + isLoggedIn);
-    };
+  useEffect(() => {
+    console.log("check login : " + isLoggedIn);
+  }, [isLoggedIn]);
 
-    const handleLogout = () => {
-        console.log("hi2" + isLoggedIn);
-    };
+  const handleLogin = () => {
+    console.log("hi" + isLoggedIn);
+  };
 
-    return (
-        <div className="Header">
-            <Link to="/" className="title-container">
-                <img src={logo} alt="Bad News logo" id="logo" />
-                <strong className="header-title">Bad News</strong>
+  const handleLogout = () => {
+    console.log("hi2" + isLoggedIn);
+  };
+
+  return (
+    <div className="Header">
+      <Link to="/" className="title-container">
+        <img src={logo} alt="Bad News logo" id="logo" />
+        <strong className="header-title">Bad News</strong>
+      </Link>
+
+      <div className="search-login-container">
+        <SearchBox />
+
+        <div className="header-menu-container">
+          {actualIsLoggedIn ? (
+            <Link to="/" className="header-menu" onClick={handleLogin}>
+              로그아웃
             </Link>
-
-            <div className="search-login-container">
-                <SearchBox />
-
-                <div className="header-menu-container">
-                    {actualIsLoggedIn ? 
-                        (<Link to="/" className="header-menu" onClick={handleLogin}>로그아웃</Link>) : 
-                        (<Link to="/login" className="header-menu" onClick={handleLogout}>로그인</Link>)
-                    }
-                    <div className="header-menu-bar">|&nbsp;</div>
-                    <Link to="/mypage" className="header-menu">마이페이지</Link>
-                </div>
-            </div>
+          ) : (
+            <Link to="/login" className="header-menu" onClick={handleLogout}>
+              로그인
+            </Link>
+          )}
+          <div className="header-menu-bar">|&nbsp;</div>
+          <Link to="/mypage" className="header-menu">
+            마이페이지
+          </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Header;
