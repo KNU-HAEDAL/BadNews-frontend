@@ -22,8 +22,8 @@ const ReturnArticles = (props) => {
     return (
         <div className="CategoriesResult">
             <div className="contents">
-                <div className="today-text">
-                    <strong>'{props.news.state.data[0].category}'</strong>&nbsp;카테고리 결과
+                <div className="today-text" style={{ color: '#595959', fontSize: '1.1rem' }}>
+                    <strong>'{props.news.state.data[0].category}'</strong>&nbsp;영역 추천 기사
                 </div>
                 
                 <div className="article-container">

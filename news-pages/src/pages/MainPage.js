@@ -6,8 +6,7 @@ const header_height = '101px';
 
 const MainPage = () => {
     return (
-        <div
-            className="MainPage"
+        <div className="MainPage"
             style={{ display: 'flex', height: `calc(100% - ${header_height})` }}
         >
             <Sidebar />

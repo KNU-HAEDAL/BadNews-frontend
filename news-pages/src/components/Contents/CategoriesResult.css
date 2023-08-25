@@ -33,9 +33,6 @@
     height: 60px;
     display: flex;
     align-items: center;
-
-    color: #595959;
-    font-size: 18px;
 }
 .article-container {
     /* 컨테이너 안 요소들 정렬 */
@@ -51,6 +48,7 @@
     padding-bottom: 15px;
     padding-left: 25px;
     padding-right: 25px;
+    box-sizing: border-box; /* border까지 사이즈에 포함 */
     
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;

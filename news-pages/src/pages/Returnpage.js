@@ -21,8 +21,7 @@ const ReturnPage = (props) => {
     }
 
     return (
-        <div
-            className="MainPage"
+        <div className="ReturnPage"
             style={{ display: 'flex', height: `calc(100% - ${header_height})` }}
         >
             <Sidebar propFunction={txtvalue} />
