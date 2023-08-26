@@ -4,10 +4,6 @@
     font-family: 'Nanum Gothic', Arial;
 }
 
-:root {
-    --header-height: 5rem;
-  }
-
 .Login {
     display: flex;
     justify-content: center;
@@ -26,7 +22,7 @@
 
     border: thin solid #c2c2c2; /* border-width border-style border-color */
     border-radius: 0.9rem;
-    box-shadow: 0px 4px 10px #d1d1d1; /* 수평 수직 흐림정도 색상*/
+    box-shadow: 0px 4px 5px #d6d6d6; /* 수평 수직 흐림정도 색상*/
 }
 
 /* Log In */
