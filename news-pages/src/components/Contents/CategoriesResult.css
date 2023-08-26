@@ -68,16 +68,15 @@
     margin-right: 1rem;
 }
 .article-img-container {
-    width: 15rem;
+    width: 28rem;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 0 auto; /* 상하 좌우 */ /* 수평 중앙으로 위치 */
 }
-#article-img img {
-    max-width: 100%;
-    max-height: 100%;
+.article-img-container img {
+    width: 100%;
+    /* object-fit: scale-down; 이건 이미지 비율 유지 */
     object-fit: cover;
 }
 .title-bookmark-container {
