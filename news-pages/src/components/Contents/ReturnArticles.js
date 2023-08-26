@@ -39,8 +39,8 @@ const Article = ({ article, handleBookmarkClick }) => {
         <div className="article-summary">{article.context}</div>
       </div>
 
-      <div className="article-img-container" style={{ height: containerHeight }}>
-        <img src={article.image.path} alt="기사 이미지" id="article-img" />
+      <div className="article-img-container" >
+        <img src={article.image.path} alt="기사 이미지" style={{ height: containerHeight }}/>
       </div>
     </div>
   );
