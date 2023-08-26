@@ -7,18 +7,21 @@ import marked from "../../bookmark_marked.png";
 
 const Article = ({ article, handleBookmarkClick }) => {
   // 컨테이너 높이 동적으로 조정
+  const [containerHeight, setContainerHeight] = useState(0);
+
   useEffect(() => {
-    const articleSubcontainer1 = document.querySelector(".article-subcontainer-1");
-    const articleImgContainer = document.querySelector(".article-img-container");
-    const articleSubcontainer1Height = articleSubcontainer1.offsetHeight;
-    articleImgContainer.style.height = `${articleSubcontainer1Height}px`;
+    const subcontainer1 = document.querySelector(".article-subcontainer-1");
+    const subcontainer1Height = subcontainer1.offsetHeight;
+    setContainerHeight(subcontainer1Height);
   }, []);
 
   return (
     <div className="article-container">
       <div className="article-subcontainer-1">
         <div className="title-bookmark-container">
-          <strong className="article-title">{article.title}</strong>
+          <strong className="article-title">
+            <Link to={article.url} target="_blank">{article.title}</Link>
+          </strong>
           <div className="bookmark-container">
             <img
               src={article.isMarked ? marked : unmarked}
@@ -36,7 +39,7 @@ const Article = ({ article, handleBookmarkClick }) => {
         <div className="article-summary">{article.context}</div>
       </div>
 
-      <div className="article-img-container">
+      <div className="article-img-container" style={{ height: containerHeight }}>
         <img src={article.image.path} alt="기사 이미지" id="article-img" />
       </div>
     </div>
