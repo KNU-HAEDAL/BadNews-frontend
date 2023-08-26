@@ -44,7 +44,7 @@ const LoginBtn = () => {
             //성공시 then 실행
             .then(function (response) {
                 console.log(response.data);
-                navigate("/complete-signup"); // 자동으로 페이지 이동
+                navigate("/signup/complete"); // 자동으로 페이지 이동
             })
             //실패 시 catch 실행
             .catch(function (error) {
