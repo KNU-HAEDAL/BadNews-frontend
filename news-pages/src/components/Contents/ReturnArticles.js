@@ -6,9 +6,17 @@ import unmarked from "../../bookmark_unmarked.png";
 import marked from "../../bookmark_marked.png";
 
 const Article = ({ article, handleBookmarkClick }) => {
+  // 컨테이너 높이 동적으로 조정
+  useEffect(() => {
+    const articleSubcontainer1 = document.querySelector(".article-subcontainer-1");
+    const articleImgContainer = document.querySelector(".article-img-container");
+    const articleSubcontainer1Height = articleSubcontainer1.offsetHeight;
+    articleImgContainer.style.height = `${articleSubcontainer1Height}px`;
+  }, []);
+
   return (
     <div className="article-container">
-      <div className="article-subcontainer1">
+      <div className="article-subcontainer-1">
         <div className="title-bookmark-container">
           <strong className="article-title">{article.title}</strong>
           <div className="bookmark-container">
@@ -20,15 +28,11 @@ const Article = ({ article, handleBookmarkClick }) => {
             />
           </div>
         </div>
-
         <div className="article-info">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}</div>
-
         <div className="article-url-container">
           <Link to={article.url} target="_blank" className="article-url">기사 원문</Link>
         </div>
-
-        <div className="article-keywords">{article.keywords.map((item) => `#${item}`)}{" "}</div>
-
+        <div className="article-keywords">{article.keywords.map((item) => `#${item} `)}</div>
         <div className="article-summary">{article.context}</div>
       </div>
 
@@ -73,7 +77,7 @@ const ReturnArticles = (props) => {
   return (
     <div className="CategoriesResult">
       <div className="contents">
-        <div className="today-text"><strong>
+        <div className="today-text" style={{ fontSize:'1.3rem' }}><strong>
             '{props.news.state.data[0].category}'</strong>&nbsp;추천 기사
         </div>
 

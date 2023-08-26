@@ -60,17 +60,18 @@
 
     margin-bottom: 1.25rem; /* 컨테이너 간 간격 */
 }
-.article-subcontainer1 {
+.article-subcontainer-1 {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column; /* 요소들을 세로 정렬 */
 }
 .article-img-container {
-    padding-left: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12.5rem; height: 100%;
+    margin-left: 1rem;
+    width: 15rem; height: 100%;
     overflow: hidden;
 }
 #article-img img {
@@ -82,15 +83,17 @@
     width: 100%; height: auto;
     display: flex;
     justify-content:space-between;
-    margin-bottom: var(--article-elements-gap);
+    margin-bottom: calc(var(--article-elements-gap) + 0.2rem);
 }
 .article-title {
     font-size: 23px;
+    line-height: 1.8rem;
     display:flex;
 }
 .bookmark-container {
     display: flex;
-    justify-content: right; /* 북마크를 오른쪽 정렬 */
+    justify-content: right;
+    margin-left: 1rem;
 }
 #bookmark {
     width: 24px; height: 24px;
