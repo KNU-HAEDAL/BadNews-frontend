@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
 * {
-  font-family: "Nanum Gothic", Arial;
+    font-family: 'Nanum Gothic', Arial;
 }
 
 :root {
@@ -14,7 +14,7 @@
 .CategoriesResult {
     width: 100vw;
     /* height: 100vh; */
-    
+
     display: flex;
     align-items: space-between;
     flex-direction: column;
@@ -36,7 +36,8 @@
 .today-text {
     display: flex;
     align-items: center;
-    margin-top: 16px; margin-bottom: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .article-container {
@@ -51,7 +52,7 @@
     padding-left: 25px;
     padding-right: 25px;
     box-sizing: border-box; /* border까지 사이즈에 포함 */
-    
+
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
@@ -67,28 +68,51 @@
     flex-direction: column; /* 요소들을 세로 정렬 */
 }
 .article-img-container {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 1rem;
     width: 15rem; height: 100%;
+    overflow: hidden; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    width: 30rem;
+    height: 300px;
     overflow: hidden;
+    /* position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 50%;
+    height: 300px;
+    margin-left: 1rem;
+    align-items: center; */
 }
 #article-img img {
+    position: absolute;
     width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+
+    /* width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit:cover; */
 }
 .title-bookmark-container {
-    width: 100%; height: auto;
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin-bottom: calc(var(--article-elements-gap) + 0.2rem);
 }
 .article-title {
     font-size: 23px;
     line-height: 1.8rem;
-    display:flex;
+    display: flex;
 }
 .bookmark-container {
     display: flex;
@@ -96,7 +120,8 @@
     margin-left: 1rem;
 }
 #bookmark {
-    width: 24px; height: 24px;
+    width: 24px;
+    height: 24px;
 }
 .article-info {
     width: 100%;
@@ -105,20 +130,23 @@
     margin-bottom: 0.5rem;
 }
 .article-url-container {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-bottom: var(--article-elements-gap);
 }
 .article-url {
-    width: auto; height: auto;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border: thin solid #d7e4ff;
     border-radius: 2rem;
-    padding-left: 0.8rem; padding-right: 0.8rem;
-    padding-top: 0.2rem; padding-bottom: 0.2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 
     color: #595959;
     font-size: 0.85rem;
