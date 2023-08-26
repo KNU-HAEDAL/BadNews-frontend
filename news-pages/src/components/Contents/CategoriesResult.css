@@ -14,8 +14,7 @@
 .CategoriesResult {
     width: 100vw;
     /* height: 100vh; */
-
-    /* style={{display:'flex', alignItems:'space-between', flexDirection: 'column'}} */
+    
     display: flex;
     align-items: space-between;
     flex-direction: column;
@@ -61,33 +60,45 @@
 
     margin-bottom: 1.25rem; /* 컨테이너 간 간격 */
 }
-.article-subcontainer1 {
+.article-subcontainer-1 {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column; /* 요소들을 세로 정렬 */
+    margin-right: 1rem;
 }
-.article-subcontainer2 {
-    padding-left: 1rem;
+.article-img-container {
+    width: 15rem;
     display: flex;
+    justify-content: center;
     align-items: center;
+    overflow: hidden;
+    margin: 0 auto; /* 상하 좌우 */ /* 수평 중앙으로 위치 */
 }
-#article-img {
-    width: 13rem;
-    height: auto;
+#article-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 .title-bookmark-container {
     width: 100%; height: auto;
     display: flex;
     justify-content:space-between;
-    margin-bottom: var(--article-elements-gap);
+    margin-bottom: calc(var(--article-elements-gap) + 0.2rem);
 }
-.article-title {
+.article-title a {
     font-size: 23px;
-    display:flex;
+    color: black;
+    text-decoration: none;
+    line-height: 1.8rem;
+}
+.article-title:hover {
+    text-decoration: underline;
 }
 .bookmark-container {
     display: flex;
-    justify-content: right; /* 북마크를 오른쪽 정렬 */
+    justify-content: right;
+    margin-left: 1rem;
 }
 #bookmark {
     width: 24px; height: 24px;

@@ -5,7 +5,7 @@ export const setLogin = () => ({ type: SET_LOGIN });
 export const setLogout = () => ({ type: SET_LOGOUT });
 
 const initialState = {
-  login: false,
+  logined: 0,
 };
 
 export default function counter(state = initialState, action) {
@@ -13,12 +13,12 @@ export default function counter(state = initialState, action) {
     case SET_LOGIN:
       return {
         ...state,
-        login: true,
+        logined: 1,
       };
     case SET_LOGOUT:
       return {
         ...state,
-        login: false,
+        logined: 0,
       };
     default:
       return state;

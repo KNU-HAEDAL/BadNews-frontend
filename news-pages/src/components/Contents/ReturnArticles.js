@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "../../components/Contents/CategoriesResult.css";
 import Pagination from "./Pagination";
-import { useLocation, useNavigate, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import unmarked from "../../bookmark_unmarked.png";
 import marked from "../../bookmark_marked.png";
 
 const Article = ({ article, handleBookmarkClick }) => {
+  // 컨테이너 높이 동적으로 조정
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    const subcontainer1 = document.querySelector(".article-subcontainer-1");
+    const subcontainer1Height = subcontainer1.offsetHeight;
+    setContainerHeight(subcontainer1Height);
+  }, []);
+
   return (
     <div className="article-container">
-      <div className="article-subcontainer1">
+      <div className="article-subcontainer-1">
         <div className="title-bookmark-container">
-          <strong className="article-title">{article.title}</strong>
+          <strong className="article-title">
+            <Link to={article.url} target="_blank">{article.title}</Link>
+          </strong>
           <div className="bookmark-container">
             <img
               src={article.isMarked ? marked : unmarked}
@@ -20,21 +31,15 @@ const Article = ({ article, handleBookmarkClick }) => {
             />
           </div>
         </div>
-        <div className="article-info">
-          {article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}
-        </div>
+        <div className="article-info">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}</div>
         <div className="article-url-container">
-          <Link to={article.url} target="_blank" className="article-url">
-            기사 원문
-          </Link>
+          <Link to={article.url} target="_blank" className="article-url">기사 원문</Link>
         </div>
-        <div className="article-keywords">
-          {" "}
-          {article.keywords.map((item) => `#${item} `)}{" "}
-        </div>
+        <div className="article-keywords">{article.keywords.map((item) => `#${item} `)}</div>
         <div className="article-summary">{article.context}</div>
       </div>
-      <div className="article-subcontainer2">
+
+      <div className="article-img-container" style={{ height: containerHeight }}>
         <img src={article.image.path} alt="기사 이미지" id="article-img" />
       </div>
     </div>
@@ -75,9 +80,8 @@ const ReturnArticles = (props) => {
   return (
     <div className="CategoriesResult">
       <div className="contents">
-        <div className="today-text">
-          <strong>'{props.news.state.data[0].category}'</strong>&nbsp;카테고리
-          검색 결과
+        <div className="today-text" style={{ fontSize:'1.3rem' }}><strong>
+            '{props.news.state.data[0].category}'</strong>&nbsp;추천 기사
         </div>
 
         {articles.slice(0, 5).map((article, index) => (

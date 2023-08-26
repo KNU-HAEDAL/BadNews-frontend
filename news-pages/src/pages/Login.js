@@ -3,15 +3,16 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { setLogin, setLogout } from "../modules/counter";
+import { setLogin, setLogout, counter } from "../modules/counter";
 
 export default function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState("");
   const [pwValue, setPwValue] = useState("");
-  //   const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(false);
 
-  const login = useSelector((state) => state.counter.login);
+  const counterState = useSelector((state) => state.counter); // 상태값 가져오기
+  console.log("꺼내온거", counterState); // 수정된 부분
   const dispatch = useDispatch();
 
   const handleIdChange = (event) => {
@@ -43,8 +44,9 @@ export default function Login() {
 
         if (response.data.result === true) {
           alert("id: " + datas.id + "님 반갑습니다");
-          //   setLogin(true);
-          dispatch(setLogin());
+          setLogin(true);
+          dispatch(setLogin()); // 로그인 상태를 true로 변경
+
           navigate("/", { state: { isLoggedIn: true } });
         } else {
           alert("id: " + datas.id + " 유저가 없습니다.");
