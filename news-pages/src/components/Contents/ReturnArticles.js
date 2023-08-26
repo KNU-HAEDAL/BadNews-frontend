@@ -80,9 +80,17 @@ const ReturnArticles = (props) => {
   return (
     <div className="CategoriesResult">
       <div className="contents">
-        <div className="today-text" style={{ fontSize:'1.3rem' }}><strong>
-            '{props.news.state.data[0].category}'</strong>&nbsp;추천 기사
+        <div className="today-text" style={{ fontSize:'1.3rem' }}>
+          <strong>'{props.news.state.data[0].category}'&nbsp;</strong>
+          {props.news.state.data[0].category === "스포츠" ? 
+            ("최신 기사") : 
+            ("추천 기사")
+          }
+
+          {/* <strong>'{props.news.state.data[0].category}'</strong>&nbsp;추천 기사 */}
         </div>
+
+        
 
         {articles.slice(0, 5).map((article, index) => (
           <Article
