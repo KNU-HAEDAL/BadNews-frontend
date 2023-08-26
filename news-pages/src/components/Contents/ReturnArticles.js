@@ -15,6 +15,9 @@ const Article = ({ article, handleBookmarkClick }) => {
     setContainerHeight(subcontainer1Height);
   }, []);
 
+  // 날짜를 원하는 형식으로 포맷팅
+  const formattedDate = article.date.replace('T', ' ');
+  
   return (
     <div className="article-container">
       <div className="article-subcontainer-1">
@@ -31,7 +34,8 @@ const Article = ({ article, handleBookmarkClick }) => {
             />
           </div>
         </div>
-        <div className="article-info">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{article.date}</div>
+
+        <div className="article-info">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{formattedDate}</div>
         <div className="article-url-container">
           <Link to={article.url} target="_blank" className="article-url">기사 원문</Link>
         </div>
