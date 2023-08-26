@@ -5,22 +5,28 @@
 }
 
 :root {
-  --header-height: 5rem;
+  --header-height: 6rem;
+
+  --search-container-width: 21rem; 
+  --search-icon-width: 1.7em;
 }
 
 .Header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: var(--header-height);
   border-bottom: 1px solid #c2c2c2;
+  box-sizing: border-box; /* border까지 사이즈에 포함 */
 }
 
 /* 로고, 타이틀 */
 .title-container {
   margin-left: 25px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  height: var(--header-height);
+  height: auto;
 
   text-decoration: none;
 }
@@ -44,9 +50,9 @@
 .search-container {
   padding-left: 15px; /* 컨테이너 내부 여백 */
 
-  width: 21rem; height: 2.5rem;
+  width: var(--search-container-width); height: 2.5rem;
   border: 2px solid #0357FF;
-  border-radius: 30px;
+  border-radius: 2rem;
   display:flex;
   justify-content:space-between;
   align-items: center;
@@ -55,17 +61,16 @@
   
   /* margin-right: 20px; 컨테이너 밖 여백 */
 }
-:root {
-  --container-width: 350px; 
-  --icon-width: 1.7em; /* 빼고 싶은 넓이 */
+.search-container:hover {
+  box-shadow: 0px 2px 4px #d6d6d6; /* 수평 수직 흐림정도 색상 */
 }
-#search-box {
-  width: calc(var(--container-width) - var(--icon-width)); height: auto;
+#search-input {
+  width: calc(var(--container-width) - var(--search-icon-width)); height: auto;
   border: none; outline: none;
   font-size: 16px;
 }
 #search-box::placeholder {
-  color: #c2c2c2;
+  color: #d6d6d6;
 }
 #search-icon {
   margin-left: 10px; /* 이미지 밖 여백 */

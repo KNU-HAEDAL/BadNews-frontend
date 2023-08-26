@@ -6,14 +6,15 @@
 
 :root {
     --page-numbers-height: 55px;
+
+    --article-elements-gap: 1rem;
 }
 
 /* 가장 바깥 div: contents 영역 전체 */
 .CategoriesResult {
     width: 100vw;
     /* height: 100vh; */
-
-    /* style={{display:'flex', alignItems:'space-between', flexDirection: 'column'}} */
+    
     display: flex;
     align-items: space-between;
     flex-direction: column;
@@ -33,22 +34,20 @@
 }
 
 .today-text {
-    height: 100px;
     display: flex;
     align-items: center;
-    margin-top: 1.1rem; margin-bottom: 1.1rem;
+    margin-top: 16px; margin-bottom: 16px;
 }
 
 .article-container {
     /* 컨테이너 안 요소들 정렬 */
     display: flex;
-    align-items: flex-start;
 
     /* 컨테이너 사이즈, padding */
     width: 100%;
     height: auto;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 25px;
     padding-right: 25px;
     box-sizing: border-box; /* border까지 사이즈에 포함 */
@@ -56,56 +55,91 @@
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
-    box-shadow: 0px 0px 15px #c2c2c2;
-    border-radius: 10px;
+    box-shadow: 0px 4px 5px #d6d6d6; /* 수평 수직 흐림정도 색상*/
+    border-radius: 9px;
 
     margin-bottom: 1.25rem; /* 컨테이너 간 간격 */
 }
-.article-subcontainer1 {
+.article-subcontainer-1 {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column; /* 요소들을 세로 정렬 */
+    margin-right: 1rem;
 }
-/* .article-subcontainer2 {
-    padding-left: 0.5rem;
-} */
-/* #article-img {
-    width: 20rem;
-    height: auto;
-} */
-.title-bookmark-container {
+.article-img-container {
+    width: 28rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.article-img-container img {
     width: 100%;
+    /* object-fit: scale-down; 이건 이미지 비율 유지 */
+    object-fit: cover;
+}
+.title-bookmark-container {
+    width: 100%; height: auto;
     display: flex;
     justify-content:space-between;
+    margin-bottom: calc(var(--article-elements-gap) + 0.2rem);
 }
-.article-title {
+.article-title a {
     font-size: 23px;
-    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
-   
+    color: black;
+    text-decoration: none;
+    line-height: 1.8rem;
+}
+.article-title:hover {
+    text-decoration: underline;
 }
 .bookmark-container {
     display: flex;
-    justify-content: right; /* 북마크를 오른쪽 정렬 */
+    justify-content: right;
+    margin-left: 1rem;
 }
 #bookmark {
     width: 24px; height: 24px;
 }
-.article-date {
+.article-info {
     width: 100%;
     display: flex;
     justify-content: right;
-    line-height: 3; /* 줄 간격, 텍스트 크기 기준 */
+    margin-bottom: 0.5rem;
+}
+.article-url-container {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: var(--article-elements-gap);
+}
+.article-url {
+    width: auto; height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: thin solid #d7e4ff;
+    border-radius: 2rem;
+    padding-left: 0.8rem; padding-right: 0.8rem;
+    padding-top: 0.2rem; padding-bottom: 0.2rem;
+
+    color: #595959;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+.article-url:hover {
+    color: #0357ff;
+}
+.article-keywords {
+    margin-bottom: var(--article-elements-gap);
+    color: #595959;
 }
 .article-summary {
     line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
 }
 
 .page-numbers {
-    /* position: fixed;
-    bottom: 0;
-    left: 0; */
-    /* padding: 10px; */
-
     height: var(--page-numbers-height);
     /* background-color: black; */
 }

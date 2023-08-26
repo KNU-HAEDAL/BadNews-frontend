@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
 import Pagination from './Pagination';
-import unmarked1 from '../../bookmark_unmarked1.png';
-import unmarked2 from '../../bookmark_unmarked2.png';
-import unmarked3 from '../../bookmark_unmarked3.png';
-import unmarked4 from '../../bookmark_unmarked4.png';
-import unmarked5 from '../../bookmark_unmarked5.png';
-import marked1 from '../../bookmark_marked1.png';
-import marked2 from '../../bookmark_marked2.png';
-import marked3 from '../../bookmark_marked3.png';
-import marked4 from '../../bookmark_marked4.png';
-import marked5 from '../../bookmark_marked5.png';
+import unmarked from '../../bookmark_unmarked.png';
+import marked from '../../bookmark_marked.png';
 
 
 const CategoriesResult = () => {
@@ -18,7 +10,7 @@ const CategoriesResult = () => {
 
     const handleBookmarkClick1 = () => {
         var image = document.getElementById('bookmark');
-        image.src = {marked1};
+        image.src = {marked};
     };
 
     useEffect(() => {
@@ -58,6 +50,7 @@ const CategoriesResult = () => {
     return (
         <div className="CategoriesResult">
             <div className="contents">
+                {/* 상단 문구 */}
                 <div className="today-text" style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <strong style={{ color:'#0357ff', fontSize:'1.45rem' }}>내가 스크랩한 기사</strong>
                     <div style={{ color: '#595959', fontSize: '1rem' }}>&nbsp;&nbsp;북마크로 관심 기사를 스크랩하고 관리해보세요</div>
@@ -69,10 +62,10 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">상온 초전도체??? 대박일까?</strong>
                             <div className="bookmark-container">
-                                <img src={marked1} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
-                        <div className="article-date">서울신문&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
+                        <div className="article-info">서울신문&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
                         <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
                     </div>
                     {/* <div className="article-subcontainer2">
@@ -85,7 +78,7 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">태풍이 하나 더 올까?</strong>
                             <div className="bookmark-container">
-                                <img src={marked2} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
                         <div className="article-date">매일경제&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
@@ -101,7 +94,7 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">기사 3</strong>
                             <div className="bookmark-container">
-                                <img src={marked3} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
                             </div>
                         </div>
                         <div className="article-date">스포티비뉴스&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
