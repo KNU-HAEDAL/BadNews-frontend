@@ -6,23 +6,29 @@
 
 :root {
   --header-height: 6rem;
+  --header-padding-leftright: 22px;
 
   --search-container-width: 21rem; 
-  --search-icon-width: 1.7em;
+  --search-container-padding: 15px;
+  --search-icon-width: 24px;
+  --search-icon-margin: 5px;
+  --header-font-size: 1rem;
 }
 
 .Header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: var(--header-height);
   border-bottom: 1px solid #c2c2c2;
   box-sizing: border-box; /* border까지 사이즈에 포함 */
+  padding-left: var(--header-padding-leftright);
+  padding-right: var(--header-padding-leftright);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* 로고, 타이틀 */
 .title-container {
-  margin-left: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,59 +54,57 @@
 
 /* 검색창 */
 .search-container {
-  padding-left: 15px; /* 컨테이너 내부 여백 */
+  padding-left: var(--search-container-padding);
+  padding-right: var(--search-container-padding);
 
-  width: var(--search-container-width); height: 2.5rem;
+  width: var(--search-container-width); 
+  height: 2.5rem;
   border: 2px solid #0357FF;
   border-radius: 2rem;
   display:flex;
   justify-content:space-between;
   align-items: center;
-
-  padding-right: 10px; /* 컨테이너 내부 여백 */
-  
-  /* margin-right: 20px; 컨테이너 밖 여백 */
 }
 .search-container:hover {
-  box-shadow: 0px 2px 4px #d6d6d6; /* 수평 수직 흐림정도 색상 */
+  box-shadow: 0px 2px 5px #d6d6d6; /* 수평 수직 흐림정도 색상 */
 }
 #search-input {
-  width: calc(var(--container-width) - var(--search-icon-width)); height: auto;
-  border: none; outline: none;
-  font-size: 16px;
+  width: calc(var(--search-container-width) - var(--search-container-padding) - var(--search-icon-width)); 
+  height: auto;
+  border: none; 
+  outline: none;
+  font-size: var(--header-font-size);
+
+  margin-right: 10px;
+
 }
-#search-box::placeholder {
-  color: #d6d6d6;
+#search-input::placeholder {
+  color: #c2c2c2;
+  font-size: var(--header-font-size);
 }
 #search-icon {
-  margin-left: 10px; /* 이미지 밖 여백 */
-
-  width: 1.7em; height: 1.7em;
   display: flex;
   align-items: center;
-  
-  margin-right: 5px; /* 이미지 밖 여백 */
 }
 
-/* 로그인 | 마이페이지 */
+/* 메뉴 (로그인 | 마이페이지) */
 .header-menu-container {
   display: flex;
   justify-content: right;
   align-items: center;
   height: 50px;
-  /* padding-right: 10px; */
+  padding-left: var(--header-padding-leftright);
 }
-.header-menu {
+.header-menu a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 110px;
 
   color: #595959;
-  font-size: 16px;
+  font-size: var(--header-font-size);
   text-decoration: none; /* 밑줄 없앰 */
 }
-.header-menu:hover {
+.header-menu a:hover {
   color: #0357FF;
   font-weight: bold;
 }
