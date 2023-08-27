@@ -3,69 +3,123 @@ import './CategoriesResult.css';
 import Pagination from './Pagination';
 import unmarked from '../../bookmark_unmarked.png';
 import marked from '../../bookmark_marked.png';
+import { Link } from "react-router-dom";
 
 
-const CategoriesResult = () => {
-    const [isMarked, setIsMarked] = useState(false);
+const Article = ({ article, handleBookmarkClick }) => {
+  // 컨테이너 높이 동적으로 조정
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    const subcontainer1 = document.querySelector(".article-subcontainer-1");
+    const subcontainer1Height = subcontainer1.offsetHeight;
+    setContainerHeight(subcontainer1Height);
+  }, []);
+
+  // 날짜를 원하는 형식으로 포맷팅
+  const formattedDate = article.date.replace('T', ' ');
+  
+  return (
+    <div className="article-container">
+      <div className="article-subcontainer-1">
+        <div className="title-bookmark-container">
+          <strong className="article-title">
+            <Link to={article.url} target="_blank">{article.title}</Link>
+          </strong>
+          <div className="bookmark-container">
+            <img
+              src={article.isMarked ? marked : unmarked}
+              alt={article.isMarked ? "marked" : "unmarked"}
+              id="bookmark"
+              onClick={() => handleBookmarkClick(article)}
+            />
+          </div>
+        </div>
+
+        <div className="article-info">{article.author}&nbsp;&nbsp;|&nbsp;&nbsp;{formattedDate}</div>
+        <div className="article-url-container">
+          <Link to={article.url} target="_blank" className="article-url">기사 원문</Link>
+        </div>
+        <div className="article-keywords">{article.keywords.map((item) => `#${item} `)}</div>
+        <div className="article-summary">{article.context}</div>
+      </div>
+
+      <div className="article-img-container" >
+        <img src={article.image.path} alt="기사 이미지" style={{ height: containerHeight }}/>
+      </div>
+    </div>
+  );
+};
+
+
+const CategoriesResult = (props) => {
+    const [articles, setArticles] = useState(
+        props.news.state.data.map((article) => ({
+          ...article, isMarked: false,
+        }))
+    );
+
+    const handleBookmarkClick = (clickedArticle) => {
+        setArticles((prevArticles) =>
+            prevArticles.map((article) =>
+            article === clickedArticle
+                ? { ...article, isMarked: !article.isMarked }
+                : article
+            )
+        );
+    };
+
+    // 홈에 기사 가져오기 (endpoint: /article/home)
+    useEffect(() => {
+        const fetchArticles = async () => {
+            try {
+                const response = await fetch('/article/home');
+                if (response.ok) {
+                    const data = await response.json();
+                    const formattedArticles = data.map((article) => ({
+                        ...article,
+                        isMarked: false,
+                    }));
+                    setArticles(formattedArticles);
+                }
+            } catch (error) {
+                console.error('기사 가져오기 오류:', error);
+            }
+        };
+    
+        fetchArticles();
+    }, []); // 컴포넌트 마운트 시 기사 가져오기 위해 빈 종속성 배열 사용
+    
+
+    // useEffect(() => {
+    //     // Update articles whenever props.news.state.data changes
+    //     setArticles(
+    //       props.news.state.data.map((article) => ({
+    //         ...article, isMarked: false,
+    //       }))
+    //     );
+    // }, [props.news.state.data]); // Add props.news.state.data as a dependency
+
+    console.log("값이 도착했습니다.");
+    console.log(props);
 
     return (
         <div className="CategoriesResult">
             <div className="contents">
-                {/* 상단 문구 */}
-                <strong className="today-text" style={{ color:'#0357ff', fontSize:'1.45rem' }}>
-                    오늘의 추천 기사
-                </strong>
-
-                {/* article 1 */}
-                <div className="article-container">
-                    <div className="article-subcontainer1">
-                        <div className="title-bookmark-container">
-                            <strong className="article-title">상온 초전도체??? 대박일까?</strong>
-                            <div className="bookmark-container">
-                                <img src={marked} alt="unmarked" id="bookmark" />
-                            </div>
-                        </div>
-                        <div className="article-info">중앙일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
-                        <div className="article-summary">상온 초전도체 연구가 성공만 한다면... 우리나라는 부자가 될 수 있겠지?</div>
-                    </div>
-                    {/* <div className="article-subcontainer2">
-                        <img src="../../기사-이미지.jpeg" alt="기사 이미지 1" id="article-img" />
-                    </div> */}
+                <div className="today-text-container">
+                    <strong className="today-text" style={{ color:'#0357ff', fontSize:'1.45rem' }}>
+                        오늘의 추천 기사
+                    </strong>
                 </div>
 
-                {/* article 2 */}
-                <div className="article-container">
-                    <div className="article-subcontainer1">
-                        <div className="title-bookmark-container">
-                            <strong className="article-title">태풍이 하나 더 올까?</strong>
-                            <div className="bookmark-container">
-                                <img src={marked} alt="unmarked" id="bookmark" />
-                            </div>
-                        </div>
-                        <div className="article-date">이데일리&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
-                        <div className="article-summary">기상청의 잇따른 정보 오류로 인해... 국민들 모두 "혼란"</div>
-                    </div>
-                    {/* <div className="article-subcontainer2">
-                        <img src="../../기사-이미지.jpeg" alt="기사 이미지 1" id="article-img" />
-                    </div> */}
-                </div>
-
-                {/* article 3 */}
-                <div className="article-container">
-                    <div className="article-subcontainer1">
-                        <div className="title-bookmark-container">
-                            <strong className="article-title">기사 3</strong>
-                            <div className="bookmark-container">
-                                <img src={marked} alt="unmarked" id="bookmark" />
-                            </div>
-                        </div>
-                        <div className="article-date">조선일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
-                        <div className="article-summary">룰룰........즐겁다</div>
-                    </div>
-                    {/* <div className="article-subcontainer2">
-                        <img src="../../기사-이미지.jpeg" alt="기사 이미지 1" id="article-img" />
-                    </div> */}
-                </div>
+                {articles.map((article, index) => (
+                // {articles.slice(0, 5).map((article, index) => (
+                    <Article
+                        key={index}
+                        article={article}
+                        handleBookmarkClick={handleBookmarkClick}
+                    />
+                ))}
             </div>
 
             <div className="page-numbers">
