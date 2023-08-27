@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CategoriesResult.css';
 import Article from './Article';
 import Pagination from './Pagination';
-import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 const CategoriesResult = (props) => {
@@ -22,36 +22,37 @@ const CategoriesResult = (props) => {
         );
     };
 
-    // 홈에 기사 가져오기 (endpoint: /article/home)
+    // 홈에 기사 렌더링 - 서버 호출하여 값 리턴
+    // 컴포넌트가 마운트되거나 selectedCategory가 변경될 때마다 호출되는 효과(사이드 이펙트)
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const response = await fetch('/article/home');
-                if (response.ok) {
-                    const data = await response.json();
-                    const formattedArticles = data.map((article) => ({
-                        ...article,
-                        isMarked: false,
-                    }));
-                    setArticles(formattedArticles);
-                }
-            } catch (error) {
-                console.error('기사 가져오기 오류:', error);
-            }
+        if (!props.news) {
+            console.error("props.news is undefined");
+            return;
+        }
+   
+        const idValue = "1234";
+        const data = {
+            userId: idValue,
+            category: "default",
+            sort: 1,
         };
-    
-        fetchArticles();
-    }, []); // 컴포넌트 마운트 시 기사 가져오기 위해 빈 종속성 배열 사용
-    
 
-    // useEffect(() => {
-    //     // Update articles whenever props.news.state.data changes
-    //     setArticles(
-    //       props.news.state.data.map((article) => ({
-    //         ...article, isMarked: false,
-    //       }))
-    //     );
-    // }, [props.news.state.data]); // Add props.news.state.data as a dependency
+        axios
+        .post("http://13.124.161.27:8080/article/home", data)
+        .then(function (response) {
+            console.log("home:" + response.data);
+        })
+        .catch(function (error) {
+            console.log("failed to return articles to home:", error);
+        });
+
+        // Update articles whenever props.news.state.data changes
+        setArticles(
+            props.news.state.data.map((article) => ({
+                ...article, isMarked: false,
+            }))
+        );
+    }, [props.news.state.data]); // Add props.news.state.data as a dependency
 
     console.log("값이 도착했습니다.");
     console.log(props);
