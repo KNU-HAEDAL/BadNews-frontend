@@ -8,45 +8,6 @@ import marked from '../../bookmark_marked.png';
 const CategoriesResult = () => {
     const [isMarked, setIsMarked] = useState(false);
 
-    const handleBookmarkClick1 = () => {
-        var image = document.getElementById('bookmark');
-        image.src = {marked};
-    };
-
-    useEffect(() => {
-        const observerCallback = (entries) => {
-            entries.forEach((entry) => {
-                // 각 entry에 대한 처리 로직 작성
-                if (entry.isIntersecting) {
-                    console.log('Form element is intersecting!');
-                    // 관찰되었을 때 실행할 동작 추가
-                }
-            });
-        };
-
-        const observerOptions = {
-            root: document.querySelector('.ScrollableSection'), // 스크롤바를 적용할 부모 요소 선택
-            rootMargin: '0px',
-            threshold: 0.5,
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        const formsToObserve = document.querySelectorAll('.ScrollableSection form');
-
-        formsToObserve.forEach((form) => {
-            observer.observe(form);
-        });
-
-        return () => {
-            formsToObserve.forEach((form) => {
-                observer.unobserve(form);
-            });
-
-            // Observer 해제 로직 추가 (컴포넌트 언마운트 시)
-        };
-    }, []); // 빈 배열은 컴포넌트가 처음 마운트될 때만 실행
-
     return (
         <div className="CategoriesResult">
             <div className="contents">
@@ -61,7 +22,7 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">상온 초전도체??? 대박일까?</strong>
                             <div className="bookmark-container">
-                                <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked} alt="unmarked" id="bookmark" />
                             </div>
                         </div>
                         <div className="article-info">중앙일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
@@ -78,7 +39,7 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">태풍이 하나 더 올까?</strong>
                             <div className="bookmark-container">
-                                <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked} alt="unmarked" id="bookmark" />
                             </div>
                         </div>
                         <div className="article-date">이데일리&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
@@ -95,7 +56,7 @@ const CategoriesResult = () => {
                         <div className="title-bookmark-container">
                             <strong className="article-title">기사 3</strong>
                             <div className="bookmark-container">
-                                <img src={marked} alt="unmarked" id="bookmark" onClick={handleBookmarkClick1} />
+                                <img src={marked} alt="unmarked" id="bookmark" />
                             </div>
                         </div>
                         <div className="article-date">조선일보&nbsp;&nbsp;|&nbsp;&nbsp;2023-08-25</div>
