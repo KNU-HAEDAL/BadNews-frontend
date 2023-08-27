@@ -81,6 +81,10 @@
     font-weight: bold;
     /* text-decoration: none; */
 }
+.categories-btn.active {
+    color: #0357ff;
+    font-weight: bold;
+}
 #categories-politics-btn {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;

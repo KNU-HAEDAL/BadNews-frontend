@@ -65,19 +65,21 @@ const Header = () => {
         <SearchBox />
 
         <div className="header-menu-container">
-          {actualIsLoggedIn ? (
-            <Link to="/" className="header-menu" onClick={handleLogin}>
-              로그아웃
-            </Link>
-          ) : (
-            <Link to="/login" className="header-menu" onClick={handleLogout}>
-              로그인
-            </Link>
-          )}
-          <div className="header-menu-bar">|&nbsp;</div>
-          <Link to="/mypage" className="header-menu">
-            마이페이지
-          </Link>
+          <div className="header-menu">
+            {actualIsLoggedIn ? (
+              <Link to="/" onClick={handleLogin}>
+                로그아웃
+              </Link>
+            ) : (
+              <Link to="/login" onClick={handleLogout}>
+                로그인
+              </Link>
+            )}
+          </div>
+          <div className="header-menu-bar"> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; </div>
+          <div className="header-menu">
+            <Link to="/mypage"> 마이페이지 </Link>
+          </div>
         </div>
       </div>
     </div>

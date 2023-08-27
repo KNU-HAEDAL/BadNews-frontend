@@ -16,7 +16,7 @@ export default function Sidebar(props) {
   };
 
   const handleCategoryClick = async (choosedCtgr) => {
-    setClick(!click);
+    setClick(choosedCtgr);
     setSelectedCategory(choosedCtgr); // 선택한 카테고리 업데이트
   };
   useEffect(() => {
@@ -50,32 +50,34 @@ export default function Sidebar(props) {
 
         <div id="categories-list">
           <button
-            className="categories-btn"
+            className={`categories-btn ${click === "정치" ? "active" : ""}`}
+            id="categories-politics-btn"
             onClick={() => handleCategoryClick("정치")}
           >정치</button>
 
           <button
-            className="categories-btn"
+            className={`categories-btn ${click === "경제" ? "active" : ""}`}
             onClick={() => handleCategoryClick("경제")}
           >경제</button>
 
           <button
-            className="categories-btn"
+            className={`categories-btn ${click === "사회" ? "active" : ""}`}
             onClick={() => handleCategoryClick("사회")}
           >사회</button>
 
           <button
-            className="categories-btn"
+            className={`categories-btn ${click === "IT/과학" ? "active" : ""}`}
             onClick={() => handleCategoryClick("IT/과학")}
           >IT | 과학</button>
 
           <button
-            className="categories-btn"
+            className={`categories-btn ${click === "생활/문화" ? "active" : ""}`}
             onClick={() => handleCategoryClick("생활/문화")}
           >생활 | 문화</button>
 
           <button
-            className="categories-btn"
+            className={`categories-btn ${click === "스포츠" ? "active" : ""}`}
+            id="categories-sports-btn"
             onClick={() => handleCategoryClick("스포츠")}
           >스포츠</button>
         </div>
