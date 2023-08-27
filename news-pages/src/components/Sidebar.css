@@ -5,57 +5,59 @@
 }
 
 :root {
+    --bow-shadow-blur: 6px;
+    --box-shadow-color: #e0e0e0;
+    
     --category-width: 16vw;
-    --category-height: 10vh;
+    --category-height: 9vh;
     --category-font-size: 1.2rem;
 }
 
 .Sidebar {
-    display: flex;
-    width: var(--category-width) + 2vw;
+    width: calc(var(--category-width) + 5vw);
     height: 100vh - var(--header-height);
+    padding-bottom: 100px;
+
     background: #f1f6ff;
 
-    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-/* 글자들 담은 컨테이너 */
 .categories-container {
     /* position: fixed; 화면이 움직여도 고정 */
     display: flex;
-    height: auto;
-    /* justify-content: space-between; */
+    justify-content: center;
     align-items: center;
-    flex-direction: column; /* 세로로 배열 */
+    flex-direction: column; /* 요소들을 세로로 배열 */
 }
 
-/* 카테고리 아이콘 */
 #categories-icon {
     width: 1.2em;
     height: 1.2em;
     margin-right: 10px;
 }
-
-/* $categories-btn-height: 60px; */
-
-/* 카테고리 */
 #categories-title {
     display: flex;
     justify-content: center;
     align-items: center;
     width: var(--category-width);
     height: var(--category-height);
-    background-color: #d7e4ff;
+    /* background-color: #d7e4ff; */
 
     font-size: var(--category-font-size);
-    color: black;
 }
 
-.categories-list {
-    /* padding: 10rem 0; */
+#categories-list {
+    /* 컨테이너 쉐입&컬러 */
     border: thin solid #c2c2c2;
-    box-shadow: 0px 4px 5px #d6d6d6; /* 수평 수직 흐림정도 색상*/
+    box-shadow: 0 5px 5px #e0e0e0;
     border-radius: 9px;
+
+    display: flex;
+    flex-direction: column; /* 요소들을 세로로 배열 */
+    justify-content: center;
 }
 .categories-btn {
     display: flex;
@@ -63,11 +65,12 @@
     align-items: center;
 
     /* flex: 1 1 0; */
-    width: 16vw;
+    width: var(--category-width);
     height: var(--category-height);
     background-color: transparent;
     border: none;
-
+    /* border-radius: 9px; */
+    
     font-size: var(--category-font-size);
 
     cursor: pointer;
@@ -77,4 +80,12 @@
     color: #0357ff;
     font-weight: bold;
     /* text-decoration: none; */
+}
+#categories-politics-btn {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+#categories-sports-btn {
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
 }

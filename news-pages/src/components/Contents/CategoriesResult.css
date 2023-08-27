@@ -5,8 +5,8 @@
 }
 
 :root {
+    --category-height: 9vh;
     --page-numbers-height: 55px;
-
     --article-elements-gap: 1rem;
 }
 
@@ -34,10 +34,9 @@
 }
 
 .today-text {
+    height: var(--category-height);
     display: flex;
     align-items: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
 }
 
 .article-container {
@@ -56,7 +55,7 @@
     /* 컨테이너 쉐입&컬러 */
     background: #ffffff;
     border: thin solid #c2c2c2;
-    box-shadow: 0px 4px 5px #d6d6d6; /* 수평 수직 흐림정도 색상*/
+    box-shadow: 0 5px 5px #e0e0e0; /* 수평 수직 흐림정도 색상*/
     border-radius: 9px;
 
     margin-bottom: 1.25rem; /* 컨테이너 간 간격 */

@@ -6,6 +6,9 @@ import marked from "../../bookmark_marked.png";
 import { Link } from "react-router-dom";
 
 
+const category_font_size = '1.2rem';
+
+
 const Article = ({ article, handleBookmarkClick }) => {
   // 컨테이너 높이 동적으로 조정
   const [containerHeight, setContainerHeight] = useState(0);
@@ -80,16 +83,18 @@ const ReturnArticles = (props) => {
 
   console.log("값이 도착했습니다.");
   console.log(props);
-
+  
   return (
     <div className="CategoriesResult">
       <div className="contents">
-        <div className="today-text" style={{ fontSize:'1.3rem' }}>
-          <strong>'{props.news.state.data[0].category}'&nbsp;</strong>
-          {props.news.state.data[0].category === "스포츠" ? 
-            ("최신 기사") : 
-            ("추천 기사")
-          }
+        <div className="today-text-container">
+          <div className="today-text" style={{ fontSize: {category_font_size} }}>
+            <strong>'{props.news.state.data[0].category}'&nbsp;</strong>
+            {props.news.state.data[0].category === "스포츠" ? 
+              ("최신 기사") : 
+              ("추천 기사")
+            }
+          </div>
         </div>
         
         {articles.map((article, index) => (
