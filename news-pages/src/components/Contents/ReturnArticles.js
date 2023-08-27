@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../components/Contents/CategoriesResult.css";
 import Pagination from "./Pagination";
-import { Link } from "react-router-dom";
 import unmarked from "../../bookmark_unmarked.png";
 import marked from "../../bookmark_marked.png";
+import { Link } from "react-router-dom";
+
 
 const Article = ({ article, handleBookmarkClick }) => {
   // 컨테이너 높이 동적으로 조정
@@ -50,11 +51,11 @@ const Article = ({ article, handleBookmarkClick }) => {
   );
 };
 
+
 const ReturnArticles = (props) => {
   const [articles, setArticles] = useState(
     props.news.state.data.map((article) => ({
-      ...article,
-      isMarked: false,
+      ...article, isMarked: false,
     }))
   );
 
@@ -72,8 +73,7 @@ const ReturnArticles = (props) => {
     // Update articles whenever props.news.state.data changes
     setArticles(
       props.news.state.data.map((article) => ({
-        ...article,
-        isMarked: false,
+        ...article, isMarked: false,
       }))
     );
   }, [props.news.state.data]); // Add props.news.state.data as a dependency
@@ -90,13 +90,10 @@ const ReturnArticles = (props) => {
             ("최신 기사") : 
             ("추천 기사")
           }
-
-          {/* <strong>'{props.news.state.data[0].category}'</strong>&nbsp;추천 기사 */}
         </div>
-
         
-
-        {articles.slice(0, 5).map((article, index) => (
+        {articles.map((article, index) => (
+        // {articles.slice(0, 5).map((article, index) => (
           <Article
             key={index}
             article={article}
