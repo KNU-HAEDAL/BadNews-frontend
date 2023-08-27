@@ -51,7 +51,6 @@ export default function Sidebar(props) {
         <div id="categories-list">
           <button
             className="categories-btn"
-            id="categories-politics-btn"
             onClick={() => handleCategoryClick("정치")}
           >정치</button>
 
@@ -77,7 +76,6 @@ export default function Sidebar(props) {
 
           <button
             className="categories-btn"
-            id="categories-sports-btn"
             onClick={() => handleCategoryClick("스포츠")}
           >스포츠</button>
         </div>
