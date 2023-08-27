@@ -8,18 +8,15 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const SearchBox = () => {
-  const [inputText, setInputText] = useState("");
-  const [searchIcon, setSearchIcon] = useState({ search_inactive });
+  // 검색 아이콘 상태변경
+  const [input, setInput] = useState("");
+  const [searchIcon, setSearchIcon] = useState( search_inactive );
 
   const handleInputChange = (event) => {
-    const text = event.target.value;
-    setInputText(text);
-
-    if (text.length > 0) {
-      setSearchIcon({ search_active });
-    } else {
-      setSearchIcon({ search_inactive });
-    }
+    const inputValue = event.target.value;
+    setInput(inputValue);
+    
+    setSearchIcon(inputValue === "" ? search_inactive : search_active);
   };
 
   return (
@@ -28,7 +25,7 @@ const SearchBox = () => {
         id="search-input"
         type="text"
         placeholder="검색어를 입력하세요"
-        value={inputText}
+        value={input}
         onChange={handleInputChange}
       />
       <Link to="/">

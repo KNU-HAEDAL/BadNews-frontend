@@ -80,16 +80,18 @@ const ReturnArticles = (props) => {
 
   console.log("값이 도착했습니다.");
   console.log(props);
-
+  
   return (
     <div className="CategoriesResult">
       <div className="contents">
-        <div className="today-text" style={{ fontSize:'1.3rem' }}>
-          <strong>'{props.news.state.data[0].category}'&nbsp;</strong>
-          {props.news.state.data[0].category === "스포츠" ? 
-            ("최신 기사") : 
-            ("추천 기사")
-          }
+        <div className="today-text-container">
+          <div className="today-text" style={{ fontSize: '1.2rem' }}>
+            <strong>'{props.news.state.data[0].category}'&nbsp;</strong>
+            {props.news.state.data[0].category === "스포츠" ? 
+              ("최신 기사") : 
+              ("추천 기사")
+            }
+          </div>
         </div>
         
         {articles.map((article, index) => (
