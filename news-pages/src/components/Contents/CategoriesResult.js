@@ -1,31 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './CategoriesResult.css';
 import Article from './Article';
 import Pagination from './Pagination';
 import axios from 'axios';
 
 const CategoriesResult = (props) => {
-    const [articles, setArticles] = useState([]);
+    const navigate = useNavigate();
 
+    // 뉴스 데이터 가공 -> article로 저장
+    // const [article, setArticle] = useState(
+    //     props.news.state.data.map((article) => ({
+    //     ...article, isMarked: false,
+    //     }))
+    // );
+    const [article, setArticle] = useState([]);
+
+    // 북마크 상태 변경하여 article 상태 저장
     const handleBookmarkClick = (clickedArticle) => {
-        setArticles((prevArticles) =>
+        setArticle((prevArticles) =>
             prevArticles.map((article) =>
-                article === clickedArticle ? { ...article, isMarked: !article.isMarked } : article
+                article === clickedArticle 
+                ? { ...article, isMarked: !article.isMarked } 
+                : article
             )
         );
     };
 
     // 홈에 기사 렌더링 - 서버 호출하여 값 리턴
-    // 컴포넌트가 마운트되거나 selectedCategory가 변경될 때마다 호출되는 효과(사이드 이펙트)
+    // 컴포넌트가 마운트되거나 props가 변경될 때마다
     useEffect(() => {
-        if (!props.news || !props.news.state || !props.news.state.data) {
-            console.error('props.news is undefined');
-            return;
-        }
-
-        const idValue = '1234';
         const data = {
-            userId: idValue,
+            userId: '1234',
             category: 'default',
             sort: 1,
         };
@@ -36,7 +42,7 @@ const CategoriesResult = (props) => {
                 console.log('home:' + response.data);
 
                 // Update articles with the response data
-                setArticles(
+                setArticle(
                     response.data.map((article) => ({
                         ...article, isMarked: false,
                     }))
@@ -45,14 +51,8 @@ const CategoriesResult = (props) => {
             .catch(function (error) {
                 console.log('failed to return articles to home:', error);
             });
-
-        // // Update articles whenever props.news.state.data changes
-        // setArticles(
-        //     props.news.state.data.map((article) => ({
-        //         ...article, isMarked: false,
-        //     }))
-        // );
-    }, [props.news]); // Add props.news as a dependency
+            
+    }, [props.news.state]); 
 
     console.log('값이 도착했습니다.');
     console.log(props);
@@ -66,7 +66,7 @@ const CategoriesResult = (props) => {
                     </strong>
                 </div>
 
-                {articles.map((article, index) => (
+                {article.map((article, index) => (
                 // {articles.slice(0, 5).map((article, index) => (
                     <Article
                         key={index}

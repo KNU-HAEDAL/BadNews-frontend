@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import category from "../category.png";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Sidebar(props) {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const [chosenCategory, setChosenCategory] = useState("");
   const [click, setClick] = useState(false);
 
-  const navigateToPolitics = (article) => {
-    navigate("/article/returnpage", {
+  const navigateToChosenCategory = (article) => {
+    navigate("/article/save", {
       state: { data: article },
     });
   };
 
-  const handleCategoryClick = async (choosedCtgr) => {
+  const handleCategoryClick = async (chosenCtgr) => {
     setClick(!click);
-    setSelectedCategory(choosedCtgr); // 선택한 카테고리 업데이트
+    setChosenCategory(chosenCtgr); // 선택한 카테고리 업데이트
   };
+
   useEffect(() => {
-    if (selectedCategory) {
-      const idValue = "1234";
+    // axios 통신 - 서버로 POST 요청 (해당 카테고리의 기사를 가져오도록)
+    if (chosenCategory) {
       const data = {
-        userId: idValue,
-        category: selectedCategory,
+        userId: "1234",
+        category: chosenCategory,
         sort: 1,
       };
 
@@ -32,13 +34,13 @@ export default function Sidebar(props) {
         .post("http://13.125.37.219:8080/article/save", data)
         .then(function (response) {
           console.log("click:" + response.data);
-          navigateToPolitics(response.data);
+          navigateToChosenCategory(response.data);
         })
         .catch(function (error) {
           console.log(error);
         });
     }
-  }, [click]);
+  }, [click]); // click 상태가 변경될 때마다
 
   return (
     <div className="Sidebar">
