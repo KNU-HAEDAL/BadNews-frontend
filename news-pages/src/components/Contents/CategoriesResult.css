@@ -153,3 +153,55 @@
     height: var(--page-numbers-height);
     /* background-color: black; */
 }
+.article-title {
+    font-size: 23px;
+    display:flex;
+}
+.bookmark-container {
+    display: flex;
+    justify-content: right; /* 북마크를 오른쪽 정렬 */
+}
+#bookmark {
+    width: 24px; height: 24px;
+}
+.article-info {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 0.5rem;
+}
+.article-url-container {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: var(--article-elements-gap);
+}
+.article-url {
+    width: auto; height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: thin solid #d7e4ff;
+    border-radius: 2rem;
+    padding-left: 0.8rem; padding-right: 0.8rem;
+    padding-top: 0.2rem; padding-bottom: 0.2rem;
+
+    color: #595959;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+.article-url:hover {
+    color: #0357ff;
+}
+.article-keywords {
+    margin-bottom: var(--article-elements-gap);
+    color: #595959;
+}
+.article-summary {
+    line-height: 1.5; /* 줄 간격, 텍스트 크기 기준 */
+}
+
+.page-numbers {
+    height: var(--page-numbers-height);
+    /* background-color: black; */
+}
