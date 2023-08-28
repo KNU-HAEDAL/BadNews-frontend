@@ -31,7 +31,7 @@ const CategoriesResult = (props) => {
         };
 
         axios
-            .post('http://13.124.161.27:8080/article/home', data)
+            .post('http://13.125.37.219:8080/article/home', data)
             .then(function (response) {
                 console.log('home:' + response.data);
 

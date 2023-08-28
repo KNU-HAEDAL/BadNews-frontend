@@ -29,7 +29,7 @@ export default function Sidebar(props) {
       };
 
       axios
-        .post("http://13.124.161.27:8080/article/save", data)
+        .post("http://13.125.37.219:8080/article/save", data)
         .then(function (response) {
           console.log("click:" + response.data);
           navigateToPolitics(response.data);
