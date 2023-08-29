@@ -1,71 +1,72 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './CategoriesResult.css';
 import Article from './Article';
 import Pagination from './Pagination';
-import { Link } from "react-router-dom";
-
+import axios from 'axios';
 
 const CategoriesResult = (props) => {
-    const [articles, setArticles] = useState(
-        props.news.state.data.map((article) => ({
-          ...article, isMarked: false,
-        }))
-    );
+    const navigate = useNavigate();
 
+    // 뉴스 데이터 가공 -> article로 저장
+    // const [article, setArticle] = useState(
+    //     props.news.state.data.map((article) => ({
+    //     ...article, isMarked: false,
+    //     }))
+    // );
+    const [article, setArticle] = useState([]);
+
+    // 북마크 상태 변경하여 article 상태 저장
     const handleBookmarkClick = (clickedArticle) => {
-        setArticles((prevArticles) =>
+        setArticle((prevArticles) =>
             prevArticles.map((article) =>
-            article === clickedArticle
-                ? { ...article, isMarked: !article.isMarked }
+                article === clickedArticle 
+                ? { ...article, isMarked: !article.isMarked } 
                 : article
             )
         );
     };
 
-    // 홈에 기사 가져오기 (endpoint: /article/home)
+    // 홈에 기사 렌더링 - 서버 호출하여 값 리턴
+    // 컴포넌트가 마운트되거나 props가 변경될 때마다
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const response = await fetch('/article/home');
-                if (response.ok) {
-                    const data = await response.json();
-                    const formattedArticles = data.map((article) => ({
-                        ...article,
-                        isMarked: false,
-                    }));
-                    setArticles(formattedArticles);
-                }
-            } catch (error) {
-                console.error('기사 가져오기 오류:', error);
-            }
+        const data = {
+            userId: '1234',
+            category: 'default',
+            sort: 1,
         };
-    
-        fetchArticles();
-    }, []); // 컴포넌트 마운트 시 기사 가져오기 위해 빈 종속성 배열 사용
-    
 
-    // useEffect(() => {
-    //     // Update articles whenever props.news.state.data changes
-    //     setArticles(
-    //       props.news.state.data.map((article) => ({
-    //         ...article, isMarked: false,
-    //       }))
-    //     );
-    // }, [props.news.state.data]); // Add props.news.state.data as a dependency
+        axios
+            .post('http://13.125.37.219:8080/article/home', data)
+            .then(function (response) {
+                console.log('home:' + response.data);
 
-    console.log("값이 도착했습니다.");
+                // Update articles with the response data
+                setArticle(
+                    response.data.map((article) => ({
+                        ...article, isMarked: false,
+                    }))
+                );
+            })
+            .catch(function (error) {
+                console.log('failed to return articles to home:', error);
+            });
+            
+    }, [props.news.state]); 
+
+    console.log('값이 도착했습니다.');
     console.log(props);
 
     return (
         <div className="CategoriesResult">
             <div className="contents">
                 <div className="today-text-container">
-                    <strong className="today-text" style={{ color:'#0357ff', fontSize:'1.45rem' }}>
+                    <strong className="today-text" style={{ color: '#0357ff', fontSize: '1.45rem' }}>
                         오늘의 추천 기사
                     </strong>
                 </div>
 
-                {articles.map((article, index) => (
+                {article.map((article, index) => (
                 // {articles.slice(0, 5).map((article, index) => (
                     <Article
                         key={index}
