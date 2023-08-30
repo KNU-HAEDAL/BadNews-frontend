@@ -17,7 +17,7 @@ export default function Sidebar(props) {
   };
   
   const handleCategoryClick = async (chosenCtgr) => {
-    setClick(!click);
+    setClick(chosenCtgr);
     setChosenCategory(chosenCtgr); // 선택한 카테고리 업데이트
   };
 
