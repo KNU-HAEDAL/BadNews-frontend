@@ -8,13 +8,13 @@
     --bow-shadow-blur: 6px;
     --box-shadow-color: #e0e0e0;
     
-    --category-width: 16vw;
+    --category-width: 14vw;
     --category-height: 9vh;
     --category-font-size: 1.2rem;
 }
 
 .Sidebar {
-    width: calc(var(--category-width) + 5vw);
+    width: calc(var(--category-width) + 7vw);
     height: 100vh - var(--header-height);
     padding-bottom: 100px;
 

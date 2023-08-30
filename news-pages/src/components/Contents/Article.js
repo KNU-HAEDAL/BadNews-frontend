@@ -22,9 +22,9 @@ const Article = ({ article, handleBookmarkClick }) => {
     <div className="article-container">
       <div className="article-subcontainer-1">
         <div className="title-bookmark-container">
-          <strong className="article-title">
-            <Link to={article.url} target="_blank">{article.title}</Link>
-          </strong>
+          <div>
+            <Link to={article.url} target="_blank" id="article-title">{article.title}</Link>
+          </div>
           <div className="bookmark-container">
             <img
               src={article.isMarked ? marked : unmarked}
@@ -43,7 +43,7 @@ const Article = ({ article, handleBookmarkClick }) => {
         <div className="article-summary">{article.context}</div>
       </div>
 
-      <div className="article-img-container" >
+      <div className="article-img-container">
         <img src={article.image.path} alt="기사 이미지" style={{ height: containerHeight }}/>
       </div>
     </div>

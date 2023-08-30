@@ -2,21 +2,28 @@ import React, { useState, useEffect } from "react";
 import { Login } from "../pages/Login";
 import "./Header.css";
 import logo from "../logo.png";
+import clearIcon from "../clear.png"
 import search_active from "../search_active.png";
 import search_inactive from "../search_inactive.png";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const SearchBox = () => {
-  // 검색 아이콘 상태변경
-  const [input, setInput] = useState("");
-  const [searchIcon, setSearchIcon] = useState( search_inactive );
+  const [input, setInput] = useState(""); // 검색창에 입력된 값
+  const [searchIcon, setSearchIcon] = useState(search_inactive); // 검색 아이콘
 
+  // 검색아이콘 색상 변경
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setInput(inputValue);
     
     setSearchIcon(inputValue === "" ? search_inactive : search_active);
+  };
+
+  // 모두 지우기
+  const handleClearClick = () => {
+    setInput("");
+    setSearchIcon(search_inactive);
   };
 
   return (
@@ -28,6 +35,9 @@ const SearchBox = () => {
         value={input}
         onChange={handleInputChange}
       />
+      {input !== "" && (
+        <img src={clearIcon} onClick={handleClearClick} id="clear-icon" />
+      )}
       <Link to="/">
         <img src={searchIcon} alt="검색 아이콘" id="search-icon" />
       </Link>

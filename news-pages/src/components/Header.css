@@ -8,10 +8,11 @@
   --header-height: 6rem;
   --header-padding-leftright: 22px;
 
-  --search-container-width: 21rem; 
+  --search-container-width: 20rem; 
   --search-container-padding: 15px;
+  --clear-icon-width: 18px;
+  --clear-icon-margin: 10px;
   --search-icon-width: 24px;
-  --search-icon-margin: 5px;
   --header-font-size: 1rem;
 }
 
@@ -69,18 +70,24 @@
   box-shadow: 0px 2px 5px #d6d6d6; /* 수평 수직 흐림정도 색상 */
 }
 #search-input {
-  width: calc(var(--search-container-width) - var(--search-container-padding) - var(--search-icon-width)); 
+  width: calc(var(--search-container-width) - var(--clear-icon-width) - var(--clear-icon-margin)*2 - var(--search-icon-width)); 
   height: auto;
   border: none; 
   outline: none;
   font-size: var(--header-font-size);
-
-  margin-right: 10px;
-
 }
 #search-input::placeholder {
   color: #c2c2c2;
   font-size: var(--header-font-size);
+}
+#clear-icon {
+  width: var(--clear-icon-width);
+  height: var(--clear-icon-width);
+  margin-left: var(--clear-icon-margin);
+  margin-right: var(--clear-icon-margin);
+}
+#clear-icon:hover {
+  cursor: pointer;
 }
 #search-icon {
   display: flex;
@@ -92,7 +99,6 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  height: 50px;
   padding-left: var(--header-padding-leftright);
 }
 .header-menu a {
@@ -103,10 +109,16 @@
   color: #595959;
   font-size: var(--header-font-size);
   text-decoration: none; /* 밑줄 없앰 */
+
+  /* 테두리 */
+  padding: 4px;
+  border-radius: 6px;
+  background-color: transparent;
 }
 .header-menu a:hover {
-  color: #0357FF;
-  font-weight: bold;
+  /* color: #0357FF; */
+  /* font-weight: bold; */
+  background-color: #ececec;
 }
 .header-menu-bar {
   display: flex;
