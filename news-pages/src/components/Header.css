@@ -92,7 +92,6 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  height: 50px;
   padding-left: var(--header-padding-leftright);
 }
 .header-menu a {
@@ -103,10 +102,16 @@
   color: #595959;
   font-size: var(--header-font-size);
   text-decoration: none; /* 밑줄 없앰 */
+
+  /* 테두리 */
+  padding: 4px;
+  border-radius: 6px;
+  background-color: transparent;
 }
 .header-menu a:hover {
-  color: #0357FF;
-  font-weight: bold;
+  /* color: #0357FF; */
+  /* font-weight: bold; */
+  background-color: #ececec;
 }
 .header-menu-bar {
   display: flex;
