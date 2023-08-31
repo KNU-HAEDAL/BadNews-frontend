@@ -10,7 +10,7 @@
 ## 팀원 소개
 | 권수현 | 권용민 | 이수현 | 김강민 | 김민주 |
 | :-----: | :-----: | :-----: | :-----: | :-----: |
-| [<img src="https://github.com/kwonssshyeon.png" width="100px">](https://github.com/kwonssshyeon) | [<img src="https://github.com/rnjs5540.png" width="100px">](https://github.com/rnjs5540) | [<img src="https://github.com/DingX2.png" width="100px">] | [<img src="https://github.com/dobbymin.png" width="100px">](https://github.com/dobbymin) | [<img src="https://github.com/joojjang.png" width="100px">](https://github.com/joojjang) | 
+| [<img src="https://github.com/kwonssshyeon.png" width="100px">](https://github.com/kwonssshyeon) | [<img src="https://github.com/rnjs5540.png" width="100px">](https://github.com/rnjs5540) | [<img src="https://github.com/DingX2.png" width="100px">](https://github.com/DingX2) | [<img src="https://github.com/dobbymin.png" width="100px">](https://github.com/dobbymin) | [<img src="https://github.com/joojjang.png" width="100px">](https://github.com/joojjang) | 
 | 백엔드 | 백엔드 | 프론트엔드 | 프론트엔드 | 프론트엔드
 <br>
 
