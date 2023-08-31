@@ -8,7 +8,7 @@
 <br>
 
 ## 팀원 소개
-| 권수현 | 권용민 | 김강민 | 김민주 | 
+| 권수현 | 권용민 | 김강민 | 김민주 | 이수현 |
 | :-----: | :-----: | :-----: | :-----: |
 | [<img src="https://github.com/kwonssshyeon.png" width="100px">](https://github.com/kwonssshyeon) | [<img src="https://github.com/rnjs5540.png" width="100px">](https://github.com/rnjs5540) | [<img src="https://github.com/dobbymin.png" width="100px">](https://github.com/dobbymin) | [<img src="https://github.com/joojjang.png" width="100px">](https://github.com/joojjang) | 
 | 백엔드 | 백엔드 | 프론트엔드 | 프론트엔드 | 
