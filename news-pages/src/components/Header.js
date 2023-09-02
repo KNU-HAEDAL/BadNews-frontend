@@ -6,7 +6,10 @@ import clearIcon from "../clear.png"
 import search_active from "../search_active.png";
 import search_inactive from "../search_inactive.png";
 import { Link, useLocation } from "react-router-dom";
-import axios from "axios";
+import { Provider, useSelector, useDispatch } from 'react-redux';
+import store from '../store';
+import { login, logout } from '../actions';
+
 
 const SearchBox = () => {
   const [input, setInput] = useState(""); // 검색창에 입력된 값
@@ -47,52 +50,59 @@ const SearchBox = () => {
 
 const Header = () => {
   const location = useLocation();
-  const isLoggedIn = location.state && location.state.isLoggedIn;
-  const defaultIsLoggedIn = false;
-  const actualIsLoggedIn =
-    isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
+  // const isLoggedIn = location.state && location.state.isLoggedIn;
+  // const defaultIsLoggedIn = false;
+  // const actualIsLoggedIn =
+  //   isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
 
-  useEffect(() => {
-    console.log("check login : " + isLoggedIn);
-  }, [isLoggedIn]);
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   console.log("check login : " + isLoggedIn);
+  // }, [isLoggedIn]);
 
   const handleLogin = () => {
     console.log("hi" + isLoggedIn);
+    dispatch(login());
   };
 
   const handleLogout = () => {
-    console.log("hi2" + isLoggedIn);
+    console.log("Bye" + isLoggedIn);
+    dispatch(logout());
   };
 
   return (
-    <div className="Header">
-      <Link to="/" className="title-container">
-        <img src={logo} alt="Bad News logo" id="logo" />
-        <strong className="header-title">Bad News</strong>
-      </Link>
+    <Provider store={store}>
+      <div className="Header">
+        <Link to="/" className="title-container">
+          <img src={logo} alt="Bad News logo" id="logo" />
+          <strong className="header-title">Bad News</strong>
+        </Link>
 
-      <div className="search-login-container">
-        <SearchBox />
+        <div className="search-login-container">
+          <SearchBox />
 
-        <div className="header-menu-container">
-          <div className="header-menu">
-            {actualIsLoggedIn ? (
-              <Link to="/" onClick={handleLogin}>
-                로그아웃
-              </Link>
-            ) : (
-              <Link to="/login" onClick={handleLogout}>
-                로그인
-              </Link>
-            )}
-          </div>
-          <div className="header-menu-bar"> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; </div>
-          <div className="header-menu">
-            <Link to="/mypage"> 마이페이지 </Link>
+          <div className="header-menu-container">
+            <div className="header-menu">
+              {isLoggedIn ? (
+                <Link to="/" onClick={handleLogout}>
+                  로그아웃
+                </Link>
+              ) : (
+                <Link to="/login" onClick={handleLogin}>
+                  로그인
+                </Link>
+              )}
+            </div>
+            <div className="header-menu-bar" style={{ marginLeft:"10px", marginRight:"10px" }}> | </div>
+            <div className="header-menu">
+              <Link to="/mypage"> 마이페이지 </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Provider>
   );
 };
 
