@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import category from "../category.png";
 import axios from "axios";
+import { useCookies } from 'react-cookie';
 
+axios.defaults.withCredentials=true;
 export default function Sidebar(props) {
   const navigate = useNavigate();
+  const [cookies, setCookies] = useCookies();
 
   const [chosenCategory, setChosenCategory] = useState("");
   const [click, setClick] = useState(false);
@@ -31,7 +34,13 @@ export default function Sidebar(props) {
       };
 
       axios
-        .post("http://13.125.37.219:8080/article/save", data)
+        .post("https://127.0.0.1:8443/article/save", data, {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin":'https://127.0.0.1:8443',
+            withCredentials: true 
+          },
+        })
         .then(function (response) {
           console.log("click:" + response.data);
           navigateToChosenCategory(response.data);

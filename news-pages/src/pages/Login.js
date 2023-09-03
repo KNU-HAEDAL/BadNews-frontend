@@ -6,12 +6,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { setLogin, setLogout, counter } from "../modules/counter";
 import { useCookies } from 'react-cookie';
 
+
 export default function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState("");
   const [pwValue, setPwValue] = useState("");
   const [login, setLogin] = useState(false);
   const [cookies, setCookies] = useCookies(); // 쿠키 훅 
+  const expireDay = new Date();
+  expireDay.setMinutes(expireDay.getMinutes() + 60);
 
   const counterState = useSelector((state) => state.counter); // 상태값 가져오기
   console.log("꺼내온거", counterState); // 수정된 부분
@@ -36,7 +39,7 @@ export default function Login() {
     };
 
     axios
-      .post("http://127.0.0.1:8080/security/login", datas, {
+      .post("https://127.0.0.1:8443/security/login", datas, {
         headers: {
           "Content-Type": "application/json",
           withCredentials: true 
@@ -46,7 +49,8 @@ export default function Login() {
         console.log(response.headers);
         console.log(response.data);
 
-        setCookies("userCookie",response.data.id,1000000)
+        //setCookies("userCookie",response.data.id,1000000)
+        setCookies("Cookie",response.data.id, {secure: true, sameSite: 'none',expires:expireDay});
 
         if (response.data.result === true) {
           alert("id: " + datas.id + "님 반갑습니다");

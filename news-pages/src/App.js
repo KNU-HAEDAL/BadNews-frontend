@@ -6,11 +6,13 @@ import Mypage from "./pages/Mypage";
 import Signup from "./pages/Signup";
 import CompleteSignup from "./pages/CompleteSignup";
 import Login from "./pages/Login";
+import { CookiesProvider } from 'react-cookie';
 
 function App() {
   const paths = ["/", "article/save"];
 
   return (
+    <CookiesProvider>
     <BrowserRouter>
       <div className="App">
         <Header />
@@ -25,6 +27,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    </CookiesProvider>
   );
 }
 
