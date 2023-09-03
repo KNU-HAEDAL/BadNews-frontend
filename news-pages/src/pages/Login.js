@@ -4,12 +4,14 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogin, setLogout, counter } from "../modules/counter";
+import { useCookies } from 'react-cookie';
 
 export default function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState("");
   const [pwValue, setPwValue] = useState("");
   const [login, setLogin] = useState(false);
+  const [cookies, setCookies] = useCookies(); // 쿠키 훅 
 
   const counterState = useSelector((state) => state.counter); // 상태값 가져오기
   console.log("꺼내온거", counterState); // 수정된 부분
@@ -34,13 +36,17 @@ export default function Login() {
     };
 
     axios
-      .post("http://13.124.161.27:8080/login", datas, {
+      .post("http://127.0.0.1:8080/security/login", datas, {
         headers: {
           "Content-Type": "application/json",
+          withCredentials: true 
         },
       })
       .then((response) => {
+        console.log(response.headers);
         console.log(response.data);
+
+        setCookies("userCookie",response.data.id,1000000)
 
         if (response.data.result === true) {
           alert("id: " + datas.id + "님 반갑습니다");

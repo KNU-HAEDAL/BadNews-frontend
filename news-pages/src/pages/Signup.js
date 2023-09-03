@@ -37,7 +37,7 @@ const LoginBtn = () => {
 
         // 서버로 회원가입 요청
         axios
-            .post('http://13.125.37.219:8080/signup', {
+            .post('http://127.0.0.1:8080/signup', {
                 id: idValue,
                 password: pwValue,
             })
