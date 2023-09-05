@@ -59,7 +59,14 @@ const CategoriesResult = () => {
         userId: userId,
       })
       .then((response) => {
-        console.log(response.data);
+        console.log("스크랩 데이터 확인용" + response.data);
+        // setArticles(id, title, date, summary); 넣어야하는데 일단 백엔드 명세서 따라적음 id가 없는데
+        // setArticles(
+        //   response.data.id,
+        //   response.data.title,
+        //   response.data.date,
+        //   response.data.context
+        // );
       })
       .catch((error) => {
         console.error(error);
