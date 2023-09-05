@@ -49,26 +49,14 @@ const SearchBox = () => {
 
 const Header = () => {
   const location = useLocation();
-  const isLoggedIn = location.state && location.state.isLoggedIn;
-  const defaultIsLoggedIn = false;
-  const actualIsLoggedIn =
-    isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
   const dispatch = useDispatch();
   const counterState = useSelector((state) => state.counter); // 상태값 가져오기
 
-  useEffect(() => {
-    console.log("check local login : " + isLoggedIn);
-    console.log("counterState login : " + counterState.logined);
-  }, [isLoggedIn]);
-
   const handleLogin = () => {
-    console.log("login click" + isLoggedIn);
     dispatch(setLogout()); // SET_LOGOUT 액션 디스패치
   };
 
-  const handleLogout = () => {
-    console.log("Logout click" + isLoggedIn);
-  };
+  const handleLogout = () => {};
 
   return (
     <div className="Header">
