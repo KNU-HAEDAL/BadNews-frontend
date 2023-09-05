@@ -6,11 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 import "./fonts/font.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import counter from "./modules/counter";
+import rootReducer from "./rootReducer"; // rootReducer의 실제 경로에 따라 수정
 
-const store = createStore(counter); //
+const store = createStore(rootReducer); // rootReducer를 사용하여 스토어 생성
 console.log("redux 확인 " + JSON.stringify(store.getState()));
-console.log("redux 확인 그냥 getState " + store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
