@@ -37,6 +37,8 @@
     height: var(--category-height);
     display: flex;
     align-items: center;
+    color: #0357ff;
+    font-size: 1.45rem;
 }
 
 .article-container {
@@ -205,3 +207,38 @@
     height: var(--page-numbers-height);
     /* background-color: black; */
 }
+
+
+@media screen and (max-width: 320px) {
+.today-text-container{
+    /* font-size: 1rem; */
+}
+.today-text{
+    font-size: 0.8rem;
+}
+.article-container{
+
+    #article-title{
+        font-size: 0.8rem;
+        line-height: 0;
+    }
+}
+.article-info{
+    font-size: 0.75rem;
+}
+
+.article-keywords{
+    font-size: 0.5rem;
+}
+
+.article-summary {
+    
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.article-img-container{
+    width: 10vw;
+    height: 10vh;
+}
+  }

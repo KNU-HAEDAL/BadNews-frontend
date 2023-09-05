@@ -80,10 +80,7 @@ const Header = () => {
               </Link>
             )}
           </div>
-          <div className="header-menu-bar">
-            {" "}
-            &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{" "}
-          </div>
+          <div className="header-menu-bar"> | </div>
           <div className="header-menu">
             <Link to="/mypage"> 마이페이지 </Link>
           </div>

@@ -5,6 +5,11 @@
     src: url('./Pretendard-Light.woff') format('woff');
 }
 */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 body {
     height: 100vh;

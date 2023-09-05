@@ -93,3 +93,24 @@
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
 }
+
+@media screen and (max-width: 320px) {
+
+    .categories-container {
+        font-size: 0.5rem;
+    }
+    #categories-title {
+        flex-direction: column;
+        font-size: 0.5rem;
+    }
+    #categories-icon{
+        width: 15px;
+        height: 15px;
+        margin: 0;
+    }
+
+    .categories-btn {
+        font-size: 0.5rem;
+    }
+
+}
