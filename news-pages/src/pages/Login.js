@@ -1,5 +1,5 @@
 import "./Login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,20 +9,21 @@ export default function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState("");
   const [pwValue, setPwValue] = useState("");
-  const [login, setLogin] = useState(false);
+  const [logins, setLogins] = useState(false);
 
   const counterState = useSelector((state) => state.counter); // 상태값 가져오기
   console.log("꺼내온거", counterState); // 수정된 부분
   const dispatch = useDispatch();
 
   const handleIdChange = (event) => {
-    setIdValue(event.target.value);
-    console.log(event.target.value);
+    const newValue = event.target.value;
+    setIdValue(newValue);
+    console.log("ID:" + newValue);
   };
 
   const handlePwChange = (event) => {
     setPwValue(event.target.value);
-    console.log(event.target.value);
+    console.log("PW:" + event.target.value);
   };
 
   const handleLogin = (event) => {
@@ -32,21 +33,19 @@ export default function Login() {
       id: idValue,
       password: pwValue,
     };
+    console.log("보낸데이터" + datas.id + datas.password);
 
     axios
-      .post("http://13.124.161.27:8080/login", datas, {
+      .post("http://13.125.37.219:8080/login", datas, {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((response) => {
-        console.log(response.data);
-
         if (response.data.result === true) {
           alert("id: " + datas.id + "님 반갑습니다");
-          setLogin(true);
-          dispatch(setLogin()); // 로그인 상태를 true로 변경
-
+          setLogins(true);
+          dispatch(setLogin()); // SET_LOGIN 액션 디스패치
           navigate("/", { state: { isLoggedIn: true } });
         } else {
           alert("id: " + datas.id + " 유저가 없습니다.");

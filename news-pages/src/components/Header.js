@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Login } from "../pages/Login";
 import "./Header.css";
 import logo from "../logo.png";
-import clearIcon from "../clear.png"
+import clearIcon from "../clear.png";
 import search_active from "../search_active.png";
 import search_inactive from "../search_inactive.png";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setLogin, setLogout, counter } from "../modules/counter"; // 액션 생성자 import
 
 const SearchBox = () => {
   const [input, setInput] = useState(""); // 검색창에 입력된 값
@@ -16,7 +18,7 @@ const SearchBox = () => {
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setInput(inputValue);
-    
+
     setSearchIcon(inputValue === "" ? search_inactive : search_active);
   };
 
@@ -51,17 +53,21 @@ const Header = () => {
   const defaultIsLoggedIn = false;
   const actualIsLoggedIn =
     isLoggedIn !== undefined ? isLoggedIn : defaultIsLoggedIn;
+  const dispatch = useDispatch();
+  const counterState = useSelector((state) => state.counter); // 상태값 가져오기
 
   useEffect(() => {
-    console.log("check login : " + isLoggedIn);
+    console.log("check local login : " + isLoggedIn);
+    console.log("counterState login : " + counterState.logined);
   }, [isLoggedIn]);
 
   const handleLogin = () => {
-    console.log("hi" + isLoggedIn);
+    console.log("login click" + isLoggedIn);
+    dispatch(setLogout()); // SET_LOGOUT 액션 디스패치
   };
 
   const handleLogout = () => {
-    console.log("hi2" + isLoggedIn);
+    console.log("Logout click" + isLoggedIn);
   };
 
   return (
@@ -76,7 +82,7 @@ const Header = () => {
 
         <div className="header-menu-container">
           <div className="header-menu">
-            {actualIsLoggedIn ? (
+            {counterState.logined ? (
               <Link to="/" onClick={handleLogin}>
                 로그아웃
               </Link>
@@ -86,7 +92,10 @@ const Header = () => {
               </Link>
             )}
           </div>
-          <div className="header-menu-bar"> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; </div>
+          <div className="header-menu-bar">
+            {" "}
+            &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{" "}
+          </div>
           <div className="header-menu">
             <Link to="/mypage"> 마이페이지 </Link>
           </div>
