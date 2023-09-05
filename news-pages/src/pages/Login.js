@@ -12,7 +12,7 @@ export default function Login() {
   const [logins, setLogins] = useState(false);
 
   const counterState = useSelector((state) => state.counter); // 상태값 가져오기
-  console.log("꺼내온거", counterState); // 수정된 부분
+  console.log("꺼내온거", counterState);
   const dispatch = useDispatch();
 
   const handleIdChange = (event) => {
@@ -45,7 +45,7 @@ export default function Login() {
         if (response.data.result === true) {
           alert("id: " + datas.id + "님 반갑습니다");
           setLogins(true);
-          dispatch(setLogin()); // SET_LOGIN 액션 디스패치
+          dispatch(setLogin(response.data.id)); // SET_LOGIN 액션 디스패치
           navigate("/", { state: { isLoggedIn: true } });
         } else {
           alert("id: " + datas.id + " 유저가 없습니다.");
@@ -98,7 +98,7 @@ const Input = ({ handleIdChange, handlePwChange }) => {
 
 const TextBlock = () => {
   return (
-    <div style={{ paddingLeft: "1.8rem" }}>
+    <div>
       <strong className="login-title">Log In</strong>
       <div className="txt">
         로그인 후 Bad News를 더욱 편리하게 사용해보세요!

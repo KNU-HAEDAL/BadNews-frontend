@@ -14,6 +14,7 @@
     align-items: center;
     height: calc(100vh - var(--header-height));
     flex-direction: column; /* 요소들을 세로 정렬 */
+    padding-left: 1.8rem;
 }
 
 .input-outer {
@@ -94,4 +95,22 @@
 
 .link-style {
     color: #595959;
+}
+
+@media screen and (max-width:320px) {
+    .txt {
+        margin-top: 0.4rem;
+        font-size: 0.75rem;
+    }
+    .Login{
+       height: auto;
+        flex-direction: row;
+        padding: 20px 10px;
+    }
+    .login-title{
+      font-size: 2rem;
+    }
+    .input-outer{
+        align-items: center;
+    }
 }

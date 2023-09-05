@@ -15,7 +15,7 @@ export default function Sidebar(props) {
       state: { data: article },
     });
   };
-  
+
   const handleCategoryClick = async (chosenCtgr) => {
     setClick(chosenCtgr);
     setChosenCategory(chosenCtgr); // 선택한 카테고리 업데이트
@@ -55,33 +55,47 @@ export default function Sidebar(props) {
             className={`categories-btn ${click === "정치" ? "active" : ""}`}
             id="categories-politics-btn"
             onClick={() => handleCategoryClick("정치")}
-          >정치</button>
+          >
+            정치
+          </button>
 
           <button
             className={`categories-btn ${click === "경제" ? "active" : ""}`}
             onClick={() => handleCategoryClick("경제")}
-          >경제</button>
+          >
+            경제
+          </button>
 
           <button
             className={`categories-btn ${click === "사회" ? "active" : ""}`}
             onClick={() => handleCategoryClick("사회")}
-          >사회</button>
+          >
+            사회
+          </button>
 
           <button
             className={`categories-btn ${click === "IT/과학" ? "active" : ""}`}
             onClick={() => handleCategoryClick("IT/과학")}
-          >IT | 과학</button>
+          >
+            IT | 과학
+          </button>
 
           <button
-            className={`categories-btn ${click === "생활/문화" ? "active" : ""}`}
+            className={`categories-btn ${
+              click === "생활/문화" ? "active" : ""
+            }`}
             onClick={() => handleCategoryClick("생활/문화")}
-          >생활 | 문화</button>
+          >
+            생활 | 문화
+          </button>
 
           <button
             className={`categories-btn ${click === "스포츠" ? "active" : ""}`}
             id="categories-sports-btn"
             onClick={() => handleCategoryClick("스포츠")}
-          >스포츠</button>
+          >
+            스포츠
+          </button>
         </div>
       </div>
     </div>

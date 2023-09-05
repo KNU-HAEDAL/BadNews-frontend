@@ -1,18 +1,17 @@
-import Sidebar from '../components/Sidebar';
-import MypageResult from '../components/Contents/MypageResult';
-import { Link } from 'react-router-dom';
+import Sidebar from "../components/Sidebar";
+import MypageResult from "../components/Contents/MypageResult";
+import { Link } from "react-router-dom";
+import "./ReturnPage.css";
 
-const header_height = '6rem';
+const header_height = "6rem";
 
 const Mypage = () => {
-    return (
-        <div className="Mypage" 
-            style={{ display: 'flex', height: `calc(100vh - ${header_height})` }}
-        >
-            <Sidebar />
-            <MypageResult />
-        </div>
-    );
+  return (
+    <div className="ReturnPage">
+      <Sidebar />
+      <MypageResult />
+    </div>
+  );
 };
 
 export default Mypage;
