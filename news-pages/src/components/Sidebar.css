@@ -96,8 +96,16 @@
 
 @media screen and (max-width: 320px) {
 
+    .Sidebar{
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        justify-content:left;
+        align-items: center;
+    }
     .categories-container {
         font-size: 0.5rem;
+        align-items: center;
     }
     #categories-title {
         flex-direction: column;
@@ -111,6 +119,9 @@
 
     .categories-btn {
         font-size: 0.5rem;
+    }
+    #categories-list{
+        flex-direction: row;
     }
 
 }

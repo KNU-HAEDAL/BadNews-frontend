@@ -1,0 +1,10 @@
+.ReturnPage{
+  display: flex;
+
+  height: 100vh- 6rem;
+}
+
+@media screen and (max-width:320px) {
+  .ReturnPage{
+ flex-direction: column; }
+}
