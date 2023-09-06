@@ -48,6 +48,8 @@
 
 
 ## 프로젝트 설명
+![TV - 3 (2)](https://github.com/KNU-HAEDAL/BadNews-backend/assets/104684033/b0b59c42-8a8e-4683-814f-ad150a7d2811)
+
 <br>
 <br>
 
