@@ -56,10 +56,11 @@ const CategoriesResult = () => {
   useEffect(() => {
     axios
       .post("http://13.125.37.219:8080/article/scrap", {
-        userId: userId,
+        userId,
       })
       .then((response) => {
-        console.log("스크랩 데이터 확인용" + response.data);
+        console.log("스크랩 데이터 확인용" + response);
+        console.log("userId는" + userId);
         // setArticles(id, title, date, summary); 넣어야하는데 일단 백엔드 명세서 따라적음 id가 없는데
         // setArticles(
         //   response.data.id,
@@ -112,14 +113,9 @@ const CategoriesResult = () => {
     <div className="CategoriesResult">
       <div className="contents">
         {/* 상단 문구 */}
-        <div
-          className="today-text"
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <strong style={{ color: "#0357ff", fontSize: "1.45rem" }}>
-            내가 스크랩한 기사
-          </strong>
-          <div style={{ color: "#595959", fontSize: "1rem" }}>
+        <div className="today-text">
+          <strong>내가 스크랩한 기사</strong>
+          <div className="today-text-context">
             &nbsp;&nbsp;북마크로 관심 기사를 스크랩하고 관리해보세요
           </div>
         </div>
