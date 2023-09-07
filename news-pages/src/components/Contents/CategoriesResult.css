@@ -14,10 +14,10 @@
 .CategoriesResult {
     width: 100vw;
     /* height: 100vh; */
-
     display: flex;
     align-items: space-between;
     flex-direction: column;
+    padding: 1rem 0rem 1rem;
 }
 
 .contents {
@@ -32,14 +32,16 @@
     overflow-x: hidden; /* 가로 스크롤바 숨김 */
     height: 100vh;
 }
+.today-text-container{
+    padding-bottom: 1rem;
+}
 
 .today-text {
-    height: var(--category-height);
-    display: flex;
+    height: fit-content;
+    /* height: var(--category-height); */
     align-items: center;
     color: #0357ff;
-    font-size: 1.45rem;
-    padding: 10px 20px 10px 0px;
+    font-size: 1.1rem;
 }
 
 .today-text-context{
@@ -51,7 +53,7 @@
 .article-container {
     /* 컨테이너 안 요소들 정렬 */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     /* 컨테이너 사이즈, padding */
     width: 100%;
@@ -87,12 +89,15 @@
     width: 30rem;
     height: 300px;
     overflow: hidden;
+    border-radius: 10px;
 }
 .article-img-container img {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: auto;
+    height: 300px;
     /* object-fit: scale-down; 이건 이미지 비율 유지 */
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .title-bookmark-container {
@@ -219,13 +224,16 @@
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
 .today-text-container{
+    padding-bottom: 1rem;
     /* font-size: 1rem; */
 }
 .today-text{
+    height: fit-content;
     font-size: 0.8rem;
     flex-direction: column;
+    text-align: center;
 }
 .today-text-context{
     font-size: 0.5rem;
@@ -233,7 +241,7 @@
     letter-spacing: -0.9px;
 }
 .article-container{
-
+    flex-direction: column;
     #article-title{
         font-size: 0.8rem;
         line-height: 0;
@@ -255,9 +263,12 @@
 
 .article-img-container{
     width: 100%;
-    height: fit-content;
+    height: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
     .img{
         height: fit-content;
+        object-fit: cover;
     }
 }
   }

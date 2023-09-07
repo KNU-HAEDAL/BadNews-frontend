@@ -97,7 +97,7 @@
     color: #595959;
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 480px) {
     .txt {
         margin-top: 0.4rem;
         font-size: 0.75rem;
