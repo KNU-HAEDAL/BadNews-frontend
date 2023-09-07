@@ -18,7 +18,21 @@ const CategoriesResult = (props) => {
   const [isLoading, setIsLoading] = useState(true); // loading state
 
   // 북마크 상태 변경하여 article 상태 저장
-  const handleBookmarkClick = (clickedArticle) => {
+  const handleBookmarkClick = (clickedArticle, index) => {
+    console.log("bookmark CategoriesResults 클릭");
+    console.log(article[0].image.id);
+    const imageId = article[index].image.id;
+    console.log(imageId);
+    axios
+      .get(`http://13.125.37.219:8080/article/scrap/update?id=${imageId}`)
+      // .get(`http://13.125.37.219:8080/article/scrap/update`, imageId)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     setArticle((prevArticles) =>
       prevArticles.map((article) =>
         article === clickedArticle
@@ -42,8 +56,6 @@ const CategoriesResult = (props) => {
         .post("http://13.125.37.219:8080/article/home", data)
         .then(function (response) {
           console.log("home:" + response.data);
-
-          // Update articles with the response data
           setArticle(
             response.data.map((article) => ({
               ...article,
@@ -63,9 +75,6 @@ const CategoriesResult = (props) => {
     return <p className="loading-state">Loading data...</p>; // Render loading indicator while fetching data
   }
 
-  console.log("값이 도착했습니다.");
-  console.log(props);
-
   return (
     <div className="CategoriesResult">
       <div className="contents">
@@ -78,7 +87,7 @@ const CategoriesResult = (props) => {
           <Article
             key={index}
             article={article}
-            handleBookmarkClick={handleBookmarkClick}
+            handleBookmarkClick={() => handleBookmarkClick(article, index)} // 기사와 인덱스 모두 전달
           />
         ))}
       </div>
