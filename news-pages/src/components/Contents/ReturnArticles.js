@@ -53,7 +53,7 @@ const ReturnArticles = (props) => {
     <div className="CategoriesResult">
       <div className="contents">
         <div className="today-text-container">
-          <div className="today-text" style={{ fontSize: "1.2rem" }}>
+          <div className="today-text">
             <strong>'{article[0].category}'&nbsp;</strong>
             {article[0].category === "스포츠" ? "최신 기사" : "추천 기사"}
           </div>

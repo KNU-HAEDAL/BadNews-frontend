@@ -20,12 +20,9 @@ const CategoriesResult = (props) => {
   // 북마크 상태 변경하여 article 상태 저장
   const handleBookmarkClick = (clickedArticle, index) => {
     console.log("bookmark CategoriesResults 클릭");
-    console.log(article[0].image.id);
     const imageId = article[index].image.id;
-    console.log(imageId);
     axios
       .get(`http://13.125.37.219:8080/article/scrap/update?id=${imageId}`)
-      // .get(`http://13.125.37.219:8080/article/scrap/update`, imageId)
       .then((response) => {
         console.log(response.data);
       })
@@ -87,7 +84,7 @@ const CategoriesResult = (props) => {
           <Article
             key={index}
             article={article}
-            handleBookmarkClick={() => handleBookmarkClick(article, index)} // 기사와 인덱스 모두 전달
+            handleBookmarkClick={() => handleBookmarkClick(article, index)} 
           />
         ))}
       </div>
