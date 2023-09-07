@@ -14,6 +14,8 @@
 | 백엔드 | 백엔드 | 프론트엔드 | 프론트엔드 | 프론트엔드
 <br>
 
+## 노션페이지
+> https://encouraging-hawk-156.notion.site/Bad-News-67e88df69b10434383755fd6a10d2f02?pvs=4
 ## 배포링크
 > 백엔드 서버 : http://13.124.161.27:8080/
 > <br>
